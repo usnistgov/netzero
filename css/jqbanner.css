@@ -1,0 +1,357 @@
+#jqb_object img{ border: none; }
+#jqb_object { position:relative; width:400px; height:325px; overflow:hidden; }
+#jqb_object .jqb_bar{ position:absolute; width:400px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.90;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 500; /*extreme z-index to ensure that this bar always remains on top*/ }
+#jqb_object #s1 .jqb_slide{	width:400px; height:325px; text-align: left; }
+#jqb_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 285px; height: 50px; font-size: 12px; }
+#jqb_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#jqb_object .jqb_info1{width:386px;padding-right:7px; }
+#jqb_object .jqb_info2{width:347px;}
+#jqb_object .jqb_info3{width:326px;}
+#jqb_object .jqb_info4{width:313px;}
+#jqb_object .jqb_nav{ padding-top:15px;	padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#jqb_object .jqb_nav1{width:0; display:none;}
+#jqb_object .jqb_nav2{width:39px;}
+#jqb_object .jqb_nav3{width:55px;}
+#jqb_object .jqb_nav4{width:72px;}
+#jqb_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #000; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#jqb_object .jqb_navpager {margin: 0 0 0 4px;}
+#jqb_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#jqb_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#jqb_object .jqb_navpager a:focus { outline: none; }
+#jqb_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#jqb_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#jqb_object .jqb_btn_pause{ background:#000000 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#jqb_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#health_object img{ border: 3px solid #d9d9d9; }
+#health_object { position:relative; width:655px; height:300px; overflow:hidden; }
+#health_object .jqb_bar{ position:absolute; width:655px; height: 50px; left:0px; bottom:0px; background:#497090; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 100; /*extreme z-index to ensure that this bar always remains on top*/ }
+#health_object #s1 .jqb_slide{ width:655px; height:300px; text-align: left; }
+#health_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 540px; height: 50px; font-size: 12px; }
+#health_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#health_object .jqb_info1{width:641px;padding-right:7px; }
+#health_object .jqb_info2{width:574px;}
+#health_object .jqb_info3{width:562px;}
+#health_object .jqb_info4{width:505px;}
+#health_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#health_object .jqb_nav1{width:0; display:none;}
+#health_object .jqb_nav2{width:58px;}
+#health_object .jqb_nav3{width:74px;}
+#health_object .jqb_nav4{width:91px;}
+#health_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#health_object .jqb_navpager {}
+#health_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #5185ad; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#health_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#health_object .jqb_navpager a:focus { outline: none; }
+#health_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#health_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#health_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#health_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#lightweighting_object img{ border: 3px solid #d9d9d9; }
+#lightweighting_object { position:relative; width:655px; height:300px; overflow:hidden; }
+#lightweighting_object .jqb_bar{ position:absolute; width:655px; height: 50px; left:0px; bottom:0px; background:#4C4E50; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#lightweighting_object #s1 .jqb_slide{ width:655px; height:300px; text-align: left; }
+#lightweighting_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 540px; height: 50px; font-size: 12px; }
+#lightweighting_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#lightweighting_object .jqb_info1{width:641px;padding-right:7px; }
+#lightweighting_object .jqb_info2{width:574px;}
+#lightweighting_object .jqb_info3{width:562px;}
+#lightweighting_object .jqb_info4{width:505px;}
+#lightweighting_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#lightweighting_object .jqb_nav1{width:0; display:none;}
+#lightweighting_object .jqb_nav2{width:58px;}
+#lightweighting_object .jqb_nav3{width:74px;}
+#lightweighting_object .jqb_nav4{width:91px;}
+#lightweighting_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#lightweighting_object .jqb_navpager {}
+#lightweighting_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #5185ad; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#lightweighting_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#lightweighting_object .jqb_navpager a:focus { outline: none; }
+#lightweighting_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#lightweighting_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#lightweighting_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#lightweighting_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#cnst_object img{ border: none; }
+#cnst_object { position:relative; width:300px; height:438px; overflow:hidden; }
+#cnst_object .jqb_bar{ position:absolute; width:300px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.85;
+	filter:alpha(opacity=70); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#cnst_object #s1 .jqb_slide{ width:300px; height:438px; text-align: left; }
+#cnst_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 100px; height: 50px; font-size: 12px; }
+#cnst_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#cnst_object .jqb_info1{width:280px;padding-right:7px; }
+#cnst_object .jqb_info2{width:220px;}
+#cnst_object .jqb_info3{width:208px;}
+#cnst_object .jqb_info4{width:151px;}
+#cnst_object .jqb_nav{ padding-top:15px;	padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#cnst_object .jqb_nav1{width:0; display:none;}
+#cnst_object .jqb_nav2{width:58px;}
+#cnst_object .jqb_nav3{width:74px;}
+#cnst_object .jqb_nav4{width:91px;}
+#cnst_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #000; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#cnst_object .jqb_navpager {}
+#cnst_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#cnst_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#cnst_object .jqb_navpager a:focus { outline: none; }
+#cnst_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#cnst_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#cnst_object .jqb_btn_pause{ background:#000000 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#cnst_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#teachlearn_object img{ border: none; }
+#teachlearn_object { position:relative; width:655px; height:300px; overflow:hidden; }
+#teachlearn_object .jqb_bar{ position:absolute; width:655px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#teachlearn_object #s1 .jqb_slide{ width:655px; height:300px; text-align: left; }
+#teachlearn_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 540px; height: 50px; font-size: 12px; }
+#teachlearn_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#teachlearn_object .jqb_info1{width:641px;padding-right:7px; }
+#teachlearn_object .jqb_info2{width:574px;}
+#teachlearn_object .jqb_info3{width:562px;}
+#teachlearn_object .jqb_info4{width:505px;}
+#teachlearn_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#teachlearn_object .jqb_nav1{width:0; display:none;}
+#teachlearn_object .jqb_nav2{width:58px;}
+#teachlearn_object .jqb_nav3{width:74px;}
+#teachlearn_object .jqb_nav4{width:91px;}
+#teachlearn_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#teachlearn_object .jqb_navpager {}
+#teachlearn_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #5185ad; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#teachlearn_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#teachlearn_object .jqb_navpager a:focus { outline: none; }
+#teachlearn_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#teachlearn_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#teachlearn_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#teachlearn_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#teachlearn1_object img{ border: none; }
+#teachlearn1_object { position:relative; width:400px; height:325px; overflow:hidden; }
+#teachlearn1_object .jqb_bar{ position:absolute; width:400px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.75;
+	filter:alpha(opacity=70); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#teachlearn1_object #s1 .jqb_slide{	width:400px; height:325px; text-align: left; }
+#teachlearn1_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 285px; height: 50px; font-size: 12px; }
+#teachlearn1_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#teachlearn1_object .jqb_info1{width:386px;padding-right:7px; }
+#teachlearn1_object .jqb_info2{width:347px;}
+#teachlearn1_object .jqb_info3{width:326px;}
+#teachlearn1_object .jqb_info4{width:313px;}
+#teachlearn1_object .jqb_nav{ padding-top:15px;	padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#teachlearn1_object .jqb_nav1{width:0; display:none;}
+#teachlearn1_object .jqb_nav2{width:39px;}
+#teachlearn1_object .jqb_nav3{width:55px;}
+#teachlearn1_object .jqb_nav4{width:72px;}
+#teachlearn1_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #000; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#teachlearn1_object .jqb_navpager {margin: 0 0 0 4px;}
+#teachlearn1_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#teachlearn1_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#teachlearn1_object .jqb_navpager a:focus { outline: none; }
+#teachlearn1_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#teachlearn1_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#teachlearn1_object .jqb_btn_pause{ background:#000000 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#teachlearn1_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#oles_object img{ border: none; }
+#oles_object { position:relative; width:238px; height:238px; overflow:hidden; }
+#oles_object .jqb_bar{ position:absolute; width:238px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.75;
+	filter:alpha(opacity=70); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#oles_object #s1 .jqb_slide{ width:238px; height:238px; text-align: left; }
+#oles_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 123px; height: 50px; font-size: 12px; }
+#oles_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#oles_object .jqb_info1{width:224px;padding-right:7px; }
+#oles_object .jqb_info2{width:185px;}
+#oles_object .jqb_info3{width:164px;}
+#oles_object .jqb_info4{width:151px;}
+#oles_object .jqb_nav{ padding-top:15px;	padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#oles_object .jqb_nav1{width:0; display:none;}
+#oles_object .jqb_nav2{width:39px;}
+#oles_object .jqb_nav3{width:55px;}
+#oles_object .jqb_nav4{width:72px;}
+#oles_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #000; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#oles_object .jqb_navpager {margin: 0 0 0 4px;}
+#oles_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#oles_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#oles_object .jqb_navpager a:focus { outline: none; }
+#oles_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#oles_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#oles_object .jqb_btn_pause{ background:#000000 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#oles_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+#oleslarge_object img{ border: 3px solid #000; }
+#oleslarge_object { position:relative; width:655px; height:300px; overflow:hidden; }
+#oleslarge_object .jqb_bar{ position:absolute; width:655px; height: 50px; left:0px; bottom:0px; background:#000000; opacity:0.75;
+	filter:alpha(opacity=70); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#oleslarge_object #s1 .jqb_slide{ width:655px; height:300px; text-align: left; }
+#oleslarge_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 540px; height: 50px; font-size: 12px; }
+#oleslarge_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#oleslarge_object .jqb_info1{width:641px;padding-right:7px; }
+#oleslarge_object .jqb_info2{width:574px;}
+#oleslarge_object .jqb_info3{width:562px;}
+#oleslarge_object .jqb_info4{width:505px;}
+#oleslarge_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#oleslarge_object .jqb_nav1{width:0; display:none;}
+#oleslarge_object .jqb_nav2{width:58px;}
+#oleslarge_object .jqb_nav3{width:74px;}
+#oleslarge_object .jqb_nav4{width:91px;}
+#oleslarge_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #000; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#oleslarge_object .jqb_navpager {}
+#oleslarge_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#oleslarge_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#oleslarge_object .jqb_navpager a:focus { outline: none; }
+#oleslarge_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#oleslarge_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#oleslarge_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#oleslarge_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#calibrations_object img{ border: 3px solid #696969; }
+#calibrations_object { position:relative; width:655px; height:300px; overflow:hidden; }
+#calibrations_object .jqb_bar{ position:absolute; width:655px; height: 50px; left:0px; bottom:0px; background:#800000; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#calibrations_object #s1 .jqb_slide{ width:655px; height:300px; text-align: left; }
+#calibrations_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 540px; height: 50px; font-size: 12px; }
+#calibrations_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#calibrations_object .jqb_info1{width:641px;padding-right:7px; }
+#calibrations_object .jqb_info2{width:574px;}
+#calibrations_object .jqb_info3{width:562px;}
+#calibrations_object .jqb_info4{width:505px;}
+#calibrations_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#calibrations_object .jqb_nav1{width:0; display:none;}
+#calibrations_object .jqb_nav2{width:58px;}
+#calibrations_object .jqb_nav3{width:74px;}
+#calibrations_object .jqb_nav4{width:91px;}
+#calibrations_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#calibrations_object .jqb_navpager {}
+#calibrations_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #8B0000; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#calibrations_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#calibrations_object .jqb_navpager a:focus { outline: none; }
+#calibrations_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#calibrations_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#calibrations_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#calibrations_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#www_object img{ border: none; }
+#www_object { position:relative; width:1000px; height:363px; overflow:hidden; }
+#www_object .jqb_bar{ position:absolute; width:1000px; height: 50px; left:0px; bottom:0px; background:#424542; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#www_object #s1 .jqb_slide{ width:1000px; height:300px; text-align: left; }
+#www_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 905px; height: 50px; font-size: 12px; }
+#www_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#www_object .jqb_info1{width:986px;padding-right:7px; }
+#www_object .jqb_info2{width:919px;}
+#www_object .jqb_info3{width:852px;}
+#www_object .jqb_info4{width:785px;}
+#www_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#www_object .jqb_nav1{width:0; display:none;}
+#www_object .jqb_nav2{width:58px;}
+#www_object .jqb_nav3{width:74px;}
+#www_object .jqb_nav4{width:91px;}
+#www_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#www_object .jqb_navpager {}
+#www_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #424542; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#www_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#www_object .jqb_navpager a:focus { outline: none; }
+#www_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#www_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#www_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#www_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#nstic_object img{ border: none; }
+#nstic_object { position:relative; width:949px; height:363px; overflow:hidden; }
+#nstic_object .jqb_bar{ position:absolute; width:949px; height: 50px; left:0px; bottom:0px; background:#497090; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#nstic_object #s1 .jqb_slide{ width:949px; height:300px; text-align: left; }
+#nstic_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 905px; height: 50px; font-size: 12px; }
+#nstic_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#nstic_object .jqb_info1{width:935px;padding-right:7px; }
+#nstic_object .jqb_info2{width:868px;}
+#nstic_object .jqb_info3{width:801px;}
+#nstic_object .jqb_info4{width:734px;}
+#nstic_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#nstic_object .jqb_nav1{width:0; display:none;}
+#nstic_object .jqb_nav2{width:58px;}
+#nstic_object .jqb_nav3{width:74px;}
+#nstic_object .jqb_nav4{width:91px;}
+#nstic_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#nstic_object .jqb_navpager {}
+#nstic_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #497090; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#nstic_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#nstic_object .jqb_navpager a:focus { outline: none; }
+#nstic_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#nstic_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#nstic_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#nstic_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
+
+
+#nsticsmall_object img{ border: 3px solid #d9d9d9; }
+#nsticsmall_object { position:relative; width:635px; height:300px; overflow:hidden; }
+#nsticsmall_object .jqb_bar{ position:absolute; width:635px; height: 50px; left:0px; bottom:0px; background:#497090; opacity:0.85;
+	filter:alpha(opacity=90); color: #ffffff; z-index: 9999; /*extreme z-index to ensure that this bar always remains on top*/ }
+#nsticsmall_object #s1 .jqb_slide{ width:635px; height:300px; text-align: left; }
+#nsticsmall_object .jqb_info{ padding: 7px 0 7px 7px; float: left; width: 520px; height: 50px; font-size: 12px; }
+#nsticsmall_object .jqb_info a{ color:white; }
+/* change the width of the info box depending on number of items in the nav area */
+#nsticsmall_object .jqb_info1{width:621px;padding-right:7px; }
+#nsticsmall_object .jqb_info2{width:554px;}
+#nsticsmall_object .jqb_info3{width:542px;}
+#nsticsmall_object .jqb_info4{width:485px;}
+#nsticsmall_object .jqb_nav{ padding-top:15px; padding-right:5px; float: right; width: 90px; height:50px }
+/* change the width of the nav box depending on number of items in the nav area */
+#nsticsmall_object .jqb_nav1{width:0; display:none;}
+#nsticsmall_object .jqb_nav2{width:58px;}
+#nsticsmall_object .jqb_nav3{width:74px;}
+#nsticsmall_object .jqb_nav4{width:91px;}
+#nsticsmall_object .jqb_btn{width: 8px; height: 12px; float: right; border: 1px solid #fff; background: #fff; background-position:0px 1px;
+	text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff; display: inline-block; }
+#nsticsmall_object .jqb_navpager {}
+#nsticsmall_object .jqb_navpager a { font-size:10px; border: 1px solid #fff; background: #5185ad; text-decoration: none; margin: 0 2px 0 0; padding: 2px 3px; color: #fff;display: inline-block; }
+#nsticsmall_object .jqb_navpager a.activeSlide { background: #fff; color: #000; border: 1px solid #fff; }
+#nsticsmall_object .jqb_navpager a:focus { outline: none; }
+#nsticsmall_object .jqb_btn_next{ background-image:url(/images/ui/rotator_demo/btn_up.gif); }
+#nsticsmall_object .jqb_btn_prev{ background-image:url(/images/ui/rotator_demo/btn_down.gif); }
+#nsticsmall_object .jqb_btn_pause{ background:#497090 url(/images/ui/rotator_demo/btn_stop.gif) no-repeat; }
+#nsticsmall_object .jqb_btn_play{ background-image:url(/images/ui/rotator_demo/btn_play.gif); }
