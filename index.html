@@ -1,216 +1,193 @@
 <html>
-    <head>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-         <link href="css/nzertf.css" rel="stylesheet" >
-        <link href="css/cursor.css" rel="stylesheet" >
-        <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
-        
-        <!--graphs-->
-            <script src="http://d3js.org/d3.v3.min.js"></script>
-            <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-            <script src="http://dygraphs.com/dygraph-combined.js"></script>
-        <!--Dropdowns-->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/nzertf.js"></script>
-    </head>
 
-<!--NAVBAR-->
-    <!--
-    <div id="custom-bootstrap-menu" class="navbar navbar-default middie " role="navigation" >
-    <div class="container-fluid">
-     
-        <div class="collapse navbar-collapse navbar-menubuilder middie">
-            <ul class="nav navbar-nav middie">
-                <li><a href="/"><img src="img/nist.png" height="20"></a>
-                </li>
-                <li><a href="/products">Products</a>
-                </li>
-                <li><a href="/about-us">About Us</a>
-                </li>
-                <li><a href="/contact">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
--->
-    
-                   <div class="navbar navbar-default navbar-fixed-top" style="background-color:white">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" 
-                    data-toggle="collapse" 
-                    data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button> 
-            <a class="navbar-brand" href="#"><img src="img/nist.png" height="15">Engineering Laboratory</a>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link href="css/nzertf.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
 
-        </div>
-        <div class="collapse navbar-collapse parentMenu">
-            <ul class="nav navbar-nav">
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+    <!--graphs-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+    <script src="http://dygraphs.com/dygraph-combined.js"></script>
+    <!--Dropdowns-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/nzertf.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color:white">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/nist.png" height="15">Engineering Laboratory</a>
+
+            </div>
+            <div class="collapse navbar-collapse parentMenu">
+                <ul class="nav navbar-nav">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     About EL
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     Publications
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     Topic/Subject Areas
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     Product/Services
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     News/Multimedia
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     Programs/Projects
                 </a></li>
-                <li><a data-toggle="collapse" 
-                       data-target=".navbar-collapse1" href="#">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
                     Events
                 </a></li>
-            </ul>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse1 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home1</a></li>
+                    <li><a href="#about">About1</a></li>
+                    <li><a href="#contact">Contact1</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse2 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home2</a></li>
+                    <li><a href="#about">About2</a></li>
+                    <li><a href="#contact">Contact2</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse3 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home3</a></li>
+                    <li><a href="#about">About3</a></li>
+                    <li><a href="#contact">Contact3</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div class="collapse navbar-collapse1 childMenu">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home1</a></li>
-                <li><a href="#about">About1</a></li>
-                <li><a href="#contact">Contact1</a></li>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse2 childMenu">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home2</a></li>
-                <li><a href="#about">About2</a></li>
-                <li><a href="#contact">Contact2</a></li>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse3 childMenu">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home3</a></li>
-                <li><a href="#about">About3</a></li>
-                <li><a href="#contact">Contact3</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
     </div>
-</div>
-
-      
-    
+  </header>
+  <main>
     <!--BANNER SECTION-->
-    <section class="scroll" >
-         <div  class="scroll-overlay " >
-             <div class="row" style="text-align:center">
-                <div class="col-lg-12 col-md-12 col-sm-12" > 
+    <section class="scroll">
+        <div class="scroll-overlay ">
+            <div class="row" style="text-align:center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <h1 class="codie"><span style="font-size:180%"><br><br>The Future <br>of Home Energy Data<span class="blinking-cursor slightgrey">|</span></span> </h1>
                 </div>
-             </div>
-              <div class="row" style="text-align:center">
-                  <div class="col-lg-3 col-md-3 col-sm-0" > </div>
-                       
-                <div class="col-lg-6 col-md-6 col-sm-12" > 
+            </div>
+            <div class="row" style="text-align:center">
+                <div class="col-lg-3 col-md-3 col-sm-0"> </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <h4 class="codie slightgrey">The NIST Net Zero Facility makes advanced home efficiency research possible. <br>
                     </h4>
-                    
+
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-0" > </div>
-             </div>
-             
+                <div class="col-lg-3 col-md-3 col-sm-0"> </div>
+            </div>
+
             <div class="row" style="text-align:center">
                 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" size="30" align="left">               
+                    <hr width="10%" size="30" align="left">
                     <a style="color:white" href="#">
                         <h3 class="codie">Research ></h3>
                         <h4 class="slightgrey">Read about the latest net zero research  </h4>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie"> 
-                    <hr width="10%" height="30px"  align="left">
+                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
+                    <hr width="10%" height="30px" align="left">
                     <a style="color:white" href="#">
-                        <h3  class="codie">Data ></h3>
-                        <h4  class="slightgrey">Find research-grade <br>instrumented energy data</h4>
+                        <h3 class="codie">Data ></h3>
+                        <h4 class="slightgrey">Find research-grade <br>instrumented energy data</h4>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie"> 
-                    <hr width="10%" size="30"  align="left">
+                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
+                    <hr width="10%" size="30" align="left">
                     <a style="color:white" href="#">
-                        <h3  class="codie">Learn ></h3>
-                        <h4  class="slightgrey">Learn how to get started, now.</h4>
+                        <h3 class="codie">Learn ></h3>
+                        <h4 class="slightgrey">Learn how to get started, now.</h4>
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
-             </div>
-             
+            </div>
+
         </div>
     </section>
-    
+
     <!--ABOUT-->
-    <section class="scroll2" >
-         <div  class="" >
-          
+    <section class="scroll2">
+        <div class="">
+
             <div class="row" style="text-align:center">
                 <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"> </div>
-                
-                <div class="col-lg-7 col-md-5 col-sm-5 codie leftie" > 
-                    <br><br>
+
+                <div class="col-lg-7 col-md-5 col-sm-5 codie leftie">
+                    <br>
+                    <br>
                     <div id="div_g" style="width:100%; height:300px;color:#265994"></div>
                     <script type="text/javascript">
-                         $(document).ready(function () {
-                              var data = [];
-                              var t = new Date();
-                              for (var i = 10; i >= 0; i--) {
+                        $(document).ready(function() {
+                            var data = [];
+                            var t = new Date();
+                            for (var i = 10; i >= 0; i--) {
                                 var x = new Date(t.getTime() - i * 1000);
                                 data.push([x, Math.random()]);
-                              }
+                            }
 
-                              var g = new Dygraph(document.getElementById("div_g"), data,
-                                                  {
-                                                    drawPoints: true,
-                                                    showRoller: true,
-                                                    valueRange: [0.0, 1.2],
-                                                    labels: ['Time', 'EnergyValue'],
-                                                    
-                                                  });
-                              // It sucks that these things aren't objects, and we need to store state in window.
-                              window.intervalId = setInterval(function() {
-                                var x = new Date();  // current time
+                            var g = new Dygraph(document.getElementById("div_g"), data, {
+                                drawPoints: true,
+                                showRoller: true,
+                                valueRange: [0.0, 1.2],
+                                labels: ['Time', 'EnergyValue'],
+
+                            });
+                            // It sucks that these things aren't objects, and we need to store state in window.
+                            window.intervalId = setInterval(function() {
+                                var x = new Date(); // current time
                                 var y = Math.random();
                                 data.push([x, y]);
-                                  g.colorsMap_["EnergyValue"] = "#265994";
-                                g.updateOptions( { 'file': data } );
-                              }, 1000);
-                            }
-                        );
-                  </script>
+                                g.colorsMap_["EnergyValue"] = "#265994";
+                                g.updateOptions({
+                                    'file': data
+                                });
+                            }, 1000);
+                        });
+                    </script>
                 </div>
-                <div class="col-lg-3 col-md-5 col-sm-5 codie leftie slightgrey "> 
-                    <br><br>
+                <div class="col-lg-3 col-md-5 col-sm-5 codie leftie slightgrey ">
+                    <br>
+                    <br>
 
-                        <h4 ><span style="font-size:120%">The Net Zero House data can be used for everything from proving out energy simulation models to non-intrusive disaggregation models. </span></h4>
-                    
-                        <h3>Modal 1</h3>
-                        <h3>Modal 2</h3>
-                        <h3> Modal 3</h3>
-                  
+                    <h4><span style="font-size:120%">The Net Zero House data can be used for everything from proving out energy simulation models to non-intrusive disaggregation models. </span></h4>
+
+                    <h3>Modal 1</h3>
+                    <h3>Modal 2</h3>
+                    <h3> Modal 3</h3>
+
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 codie leftie"> 
-                    
+                <div class="col-lg-1 col-md-1 col-sm-1 codie leftie">
+
                 </div>
-                
-             </div>
-             
+
+            </div>
+
         </div>
     </section>
-    </html>
+  </main>
+</body>
+
+</html>
