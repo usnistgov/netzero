@@ -15,6 +15,59 @@ div.leftie {
 div.middie {
     text-align: center;
 }
+/* NAVIGATION */
+.navbar-fixed-top{
+  height: 70px;
+  background-color: white;
+}
+
+.navbar-brand{
+  padding-top: 10px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.navbar-nav{
+  float: right;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  font-size: 15px;
+}
 
 /*FIRST BANNER*/
     .scroll {
