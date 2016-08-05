@@ -12,3 +12,10 @@ $('.navbar-toggle').click(function () {
     //$(this).removeClass("in").addClass("collapse");
     $(".childMenu.in").removeClass("in").addClass("collapse");
 });
+
+
+// Scroll Spy for Side Navbar
+$('body').scrollspy({
+    target: '.sidenav-padding',
+    offset: 40
+});
