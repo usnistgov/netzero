@@ -18,7 +18,7 @@
 
 <body>
   <header>
-    <div class="navbar navbar-default navbar-fixed-top" style="background-color:white">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,32 +26,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="img/nist.png" height="15">Engineering Laboratory</a>
+                <a class="navbar-brand" href="#"><img src="img/nist.png" height="25">Engineering Laboratory</a>
 
             </div>
             <div class="collapse navbar-collapse parentMenu">
                 <ul class="nav navbar-nav">
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    About EL
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    Publications
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    Topic/Subject Areas
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    Product/Services
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    News/Multimedia
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    Programs/Projects
-                </a></li>
-                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">
-                    Events
-                </a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">Research</a></li>
+                    <li class="dropdown"><a class="dropbtn" href="#">Data  <span class="caret"></span></a>
+                       <div class="dropdown-content">
+                            <a href="#">Download Data</a>
+                            <a href="#">Data Dictionary</a>
+                            <a href="#">Log of Revisions</a>
+                            <a href="#">FAQ &amp;<br> Known Data Issues</a>
+                        </div> 
+                    </li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">Learn</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">About EL</a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse1 childMenu">
@@ -80,53 +70,70 @@
     </div>
   </header>
   <main>
-    <!--BANNER SECTION-->
-    <section class="scroll">
-        <div class="scroll-overlay ">
-            <div class="row" style="text-align:center">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h1 class="codie"><span style="font-size:180%"><br><br>The Future <br>of Home Energy Data<span class="blinking-cursor slightgrey">|</span></span> </h1>
-                </div>
-            </div>
-            <div class="row" style="text-align:center">
-                <div class="col-lg-3 col-md-3 col-sm-0"> </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h4 class="codie slightgrey">The NIST Net Zero Facility makes advanced home efficiency research possible. <br>
-                    </h4>
+    <div class="row content-row">
+        <!-- SIDE NAVBAR --> 
+        <nav class="col-xs-3 sidenav-padding">
+            <ul id="sidebar" class="nav nav-stacked fixed">
+                <li><a href="#RTutorial">R Tutorial</a>
+                   <ul class="nav nav-stacked">
+                       <li><a href="#RCode">Code</a>
+                            
+                       </li>
+                       <li><a href="#RInstructions">Instructions</a>
+                            
+                       </li>
+                   </ul> 
+                </li>
+                <li><a href="#PythonTutorial">Python Tutorial</a>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#PythonCode">Code</a></li>
+                        <li><a href="#PythonInstructions">Instructions</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-0"> </div>
-            </div>
 
-            <div class="row" style="text-align:center">
-                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" size="30" align="left">
-                    <a style="color:white" href="#">
-                        <h3 class="codie">Research ></h3>
-                        <h4 class="slightgrey">Read about the latest net zero research  </h4>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" height="30px" align="left">
-                    <a style="color:white" href="#">
-                        <h3 class="codie">Data ></h3>
-                        <h4 class="slightgrey">Find research-grade <br>instrumented energy data</h4>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" size="30" align="left">
-                    <a style="color:white" href="#">
-                        <h3 class="codie">Learn ></h3>
-                        <h4 class="slightgrey">Learn how to get started, now.</h4>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
-            </div>
+    <!--CONTENT SECTION-->
+        <div class="col-xs-8">
+            <section id="RTutorial" class="group">
+                <h3>R Tutorial</h3>
+                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
+                <div id="RCode" class="subgroup">
+                <h4>Code</h4>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
 
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                </div>
+                <div id="RInstructions" class="subgroup">
+                <h4>Instructions</h4>
+                    <p>Meditation actually thundercats, quinoa street art keytar church-key single-origin coffee kinfolk. Flannel bicycle rights direct trade art party, hammock polaroid helvetica ramps church-key XOXO shabby chic drinking vinegar. DIY humblebrag readymade, blog stumptown freegan sartorial.</p>
+                </div>
+            </section>
+
+            <section id="PythonTutorial" class="group">
+                <h3>Python Tutorial</h3>
+                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
+                <div id="PythonCode" class="subgroup">
+                    <h4>Code</h4>
+                      <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                </div>
+                <div id="PythonInstructions" class="subgroup">
+                    <h4>Instructions</h4>
+                        <p>Meditation actually thundercats, quinoa street art keytar church-key single-origin coffee kinfolk. Flannel bicycle rights direct trade art party, hammock polaroid helvetica ramps church-key XOXO shabby chic drinking vinegar. DIY humblebrag readymade, blog stumptown freegan sartorial.</p>
+                </div>
+            </section>
         </div>
-    </section>
+    </div>
   </main>
 </body>
 

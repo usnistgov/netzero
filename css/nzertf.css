@@ -124,15 +124,12 @@ li.dropdown {
     .group{
     /*  background: yellow;
      /* width: 200px;*/
-      height: 500px;
+     padding-bottom: 50px;
     }
 
     .group .subgroup {
-/*      background: orange;
-      width: 150px;
-      height: 200px;*/
-        padding-top: 60px;
-        margin-top: -60px;
+      padding-top: 60px;
+      margin-top: -60px;
     }
 
     .content-row {
@@ -152,10 +149,11 @@ li.dropdown {
     }
 
     .sidenav-padding .nav>li>a {
-      color: #999;
+      color: #777;
       padding: 4px 20px;
       font-size: 18px;
       font-weight: 400;
+      text-align: right;
     }
 
     .sidenav-padding .nav .nav>li>a {
@@ -169,11 +167,28 @@ li.dropdown {
       color: red;
     }
 
-/*    .content-section {
-      margin-top: 60px;
+    /* all links */
+    .sidenav-padding .nav>li>a {
+        /*add trasnparent border */
+        border-left: 2px solid transparent;
     }
-*/
+    /* active & hover links */
+    .sidenav-padding .nav>.active>a, 
+    .sidenav-padding .nav>li>a:hover, 
+    .sidenav-padding .nav>li>a:focus {
+        color: #563d7c;                 
+        text-decoration: none;          
+        background-color: transparent;  
+        border-right: 2px solid #563d7c; 
+    }
 
+  pre {
+   white-space: pre-wrap;       /* css-3 */
+   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;      /* Opera 4-6 */
+   white-space: -o-pre-wrap;    /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
 
 /*CUSTOM MENU*/
      .marginBottom-0 {margin-bottom:0;}
