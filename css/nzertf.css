@@ -1,6 +1,7 @@
 
 body {
     font-family: "HelveticaNeue-Light";
+    position: relative;
 }
 
 .codie {
@@ -134,12 +135,13 @@ li.dropdown {
 
     .content-row {
       margin-top: 60px;
+      position: relative;
     }
 
     .fixed {
       position: fixed;
       /*padding-top: 60px;*/
-      width: 300px;
+      width: 325px;
     }
 
     .sidenav-padding{
@@ -151,7 +153,7 @@ li.dropdown {
     .sidenav-padding .nav>li>a {
       color: #777;
       padding: 4px 20px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
       text-align: right;
     }
@@ -160,27 +162,14 @@ li.dropdown {
       padding-top: 4px;
       padding-bottom: 4px;
       padding-left: 30px;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .sidenav-padding .nav>.active>a {
-      color: red;
+      color: #563d7c;
     }
 
-    /* all links */
-    .sidenav-padding .nav>li>a {
-        /*add trasnparent border */
-        border-left: 2px solid transparent;
-    }
-    /* active & hover links */
-    .sidenav-padding .nav>.active>a, 
-    .sidenav-padding .nav>li>a:hover, 
-    .sidenav-padding .nav>li>a:focus {
-        color: #563d7c;                 
-        text-decoration: none;          
-        background-color: transparent;  
-        border-right: 2px solid #563d7c; 
-    }
+
 
   pre {
    white-space: pre-wrap;       /* css-3 */

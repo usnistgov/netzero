@@ -15,7 +15,8 @@ $('.navbar-toggle').click(function () {
 
 
 // Scroll Spy for Side Navbar
-$('body').scrollspy({
-    target: '.sidenav-padding',
-    offset: 40
-});
+$('body').scrollspy({ target: '.sidenav-padding' });
+
+// $('[data-spy="scroll"]').each(function () {
+//   var $spy = $(this).scrollspy('refresh')
+// });
