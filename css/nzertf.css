@@ -227,3 +227,35 @@ div.button_div {
 td.download_button a {
   color: white;
 }
+
+#download_data {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#data_dictionary {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#log_revisions {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#log_revisions_table {
+  margin-top: 50px;
+}
+
+#log_revisions_table th {
+  text-align: center;
+}
+
+#data_faq {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
