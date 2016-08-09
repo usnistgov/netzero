@@ -14,7 +14,7 @@ ul.nav-class {
 }
 
 .content_stuff {
-  height: 800px;
+  /*height: 1000px;*/
   overflow-y: scroll;
 }
 
