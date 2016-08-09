@@ -14,8 +14,13 @@ $('.navbar-toggle').click(function () {
 });
 
 
-// // Scroll Spy for Side Navbar
-$('body').scrollspy({ target: '#side-bar', offset: 90});
+// Scroll Spy for Side Navbar
+$(document).ready(function() {
+    $('body').scrollspy({ 
+    target: '#side-nav',
+    offset: 20 
+    });
+});
 
 // // Refresh Scrollspy
 // $('[data-spy="scroll"]').each(function () {
