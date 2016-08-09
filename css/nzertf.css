@@ -4,6 +4,20 @@ body {
     position: relative;
 }
 
+ul.nav-class {
+  position: fixed;
+}
+
+#side-nav > ul {
+  overflow-y: auto;
+  height: 100;
+}
+
+.content_stuff {
+  height: 800px;
+  overflow-y: scroll;
+}
+
 .codie {
     font-family: "Coda";
 }
@@ -169,6 +183,8 @@ li.dropdown {
       color: #563d7c;
     }
 
+
+.
 
 
   pre {
