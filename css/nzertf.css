@@ -4,6 +4,10 @@ body {
     position: relative;
 }
 
+ul.nav-class {
+  position: fixed;
+}
+
 #side-nav > ul {
   overflow-y: auto;
   height: 300;
@@ -137,8 +141,7 @@ li.dropdown {
     }
 
     .group .subgroup {
-   /*   padding-top: 60px;
-      margin-top: -60px;*/
+      padding-top: 15px;
     }
 
     .content-row {

@@ -15,7 +15,7 @@ $('.navbar-toggle').click(function () {
 
 
 // // Scroll Spy for Side Navbar
-// $('body').scrollspy({ target: '#side-bar', offset: 90});
+$('body').scrollspy({ target: '#side-bar', offset: 90});
 
 // // Refresh Scrollspy
 // $('[data-spy="scroll"]').each(function () {
