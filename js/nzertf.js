@@ -18,7 +18,7 @@ $('.navbar-toggle').click(function () {
 $(document).ready(function() {
 	$('body').scrollspy({ 
 	target: '#side-nav',
-	offset: 20 
+	offset: 0 
 	});
 });
 
