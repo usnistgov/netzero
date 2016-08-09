@@ -142,6 +142,7 @@ li.dropdown {
 
     .group .subgroup {
       padding-top: 15px;
+      overflow: hidden;
     }
 
     .content-row {
@@ -189,6 +190,7 @@ li.dropdown {
         font-weight: bold;
         text-decoration: none;          
         color: rgba(38,89,148,.9);  
+        background-color: white;
         border-right: 2px solid rgba(38,89,148,.9);
     }
 
@@ -198,16 +200,8 @@ li.dropdown {
         font-weight: bold;
         text-decoration: none;          
         color: rgba(38,89,148,.9);  
+        background-color: white;
         border-right: 2px solid rgba(38,89,148,.9);
-    }
-    /* hide all (inactive) nested list */
-    .sidenav-padding .nav ul.nav {
-      display: none;           
-    }
-
-    /* show active nested list */
-    .sidenav-padding .nav>.active>ul.nav {
-        display: block;           
     }
 
 
