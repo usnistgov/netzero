@@ -1,6 +1,21 @@
 
 body {
     font-family: "HelveticaNeue-Light";
+    position: relative;
+}
+
+ul.nav-class {
+  position: fixed;
+}
+
+#side-nav > ul {
+  overflow-y: auto;
+  height: 300;
+}
+
+.content_stuff {
+  /*height: 1000px;*/
+  overflow-y: scroll;
 }
 
 .codie {
@@ -119,7 +134,86 @@ li.dropdown {
       color:rgba(38,89,148,0);
       font-family:'Open Sans' sans-serif;
     }
-  
+
+/* SIDE BAR  */
+    .group{
+     padding-bottom: 50px;
+    }
+
+    .group .subgroup {
+      padding-top: 15px;
+      overflow: hidden;
+    }
+
+    .content-row {
+      margin-top: 70px;
+      position: relative;
+    }
+
+    .fixed {
+      position: fixed;
+      /*padding-top: 60px;*/
+      width: 325px;
+    }
+
+    .sidenav-padding{
+      padding-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidenav-padding .nav>li>a {
+      color: #777;
+      padding: 4px 20px;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: right;
+    }
+
+    .sidenav-padding .nav .nav>li>a {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 30px;
+      font-size: 14px;
+    }
+
+    /* all links */
+    .sidenav-padding .nav>li>a {
+    /*add trasnparent border */
+    border-left: 2px solid transparent;
+    }
+
+    /* active & hover links */
+    .sidenav-padding .nav>a, 
+    .sidenav-padding .nav>li>a:hover, 
+    .sidenav-padding .nav>li>a:focus {               
+        font-weight: bold;
+        text-decoration: none;          
+        color: rgba(38,89,148,.9);  
+        background-color: white;
+        border-right: 2px solid rgba(38,89,148,.9);
+    }
+
+    .sidenav-padding .nav>.active>a, 
+    .sidenav-padding .nav>.active>li>a:hover, 
+    .sidenav-padding .nav>.active>li>a:focus {               
+        font-weight: bold;
+        text-decoration: none;          
+        color: rgba(38,89,148,.9);  
+        background-color: white;
+        border-right: 2px solid rgba(38,89,148,.9);
+    }
+
+
+
+  pre {
+   white-space: pre-wrap;       /* css-3 */
+   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;      /* Opera 4-6 */
+   white-space: -o-pre-wrap;    /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+
 /*CUSTOM MENU*/
      .marginBottom-0 {margin-bottom:0;}
 

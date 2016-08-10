@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/nzertf.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
+
+    <!--graphs-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+    <script src="http://dygraphs.com/dygraph-combined.js"></script>
+    <!--Dropdowns-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/nzertf.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#side-nav">
+  <header>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/nist.png" height="25">Engineering Laboratory</a>
+
+            </div>
+            <div class="collapse navbar-collapse parentMenu">
+                <ul class="nav navbar-nav">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">Research</a></li>
+                    <li class="dropdown"><a class="dropbtn" href="#">Data  <span class="caret"></span></a>
+                       <div class="dropdown-content">
+                            <a href="#">Download Data</a>
+                            <a href="#">Data Dictionary</a>
+                            <a href="#">Log of Revisions</a>
+                            <a href="#">FAQ &amp;<br> Known Data Issues</a>
+                        </div> 
+                    </li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="learn.html">Learn</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">About EL</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse1 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home1</a></li>
+                    <li><a href="#about">About1</a></li>
+                    <li><a href="#contact">Contact1</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse2 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home2</a></li>
+                    <li><a href="#about">About2</a></li>
+                    <li><a href="#contact">Contact2</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse3 childMenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home3</a></li>
+                    <li><a href="#about">About3</a></li>
+                    <li><a href="#contact">Contact3</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+  </header>
+  <main>
+
+    <div class="row content-row">
+        <!-- SIDE NAVBAR --> 
+        <nav class="col-xs-3 sidenav-padding" id="side-nav">
+            <ul id="sidebar" class="nav nav-stacked fixed">
+                <li><a href="#Data-From-Subsystem">Work with data from a subsystem</a>
+                   <ul class="nav nav-stacked">
+                       <li><a href="#R-Tutorial-Subsystem">R Tutorial</a></li>
+                       <li><a href="#Python-Tutorial-Subsystem">Python Tutorial</a></li>
+                   </ul> 
+                </li>
+                <li><a href="#Data-By-Timestamp">Extract data by timestamp</a>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#R-Tutorial-Timestamp">R Tutorial</a></li>
+                        <li><a href="#Python-Tutorial-Timestamp">Python Tutorial</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Visualize-Power-Usage">Visualize aggregate power usage</a>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#R-Tutorial-Visualize">R Tutorial</a></li>
+                        <li><a href="#Python-Tutorial-Visualize">Python Tutorial</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+    <!--CONTENT SECTION-->
+        <div class="col-xs-8 content_stuff">
+            <section id="Data-From-Subsystem" class="group">
+                <h2>Work with data from a subsystem</h2>
+                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
+                <div id="R-Tutorial-Subsystem" class="subgroup">
+                <h3>R Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+                <div id="Python-Tutorial-Subsystem" class="subgroup">
+                <h3>Python Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+            </section>
+
+            <section id="Data-By-Timestamp" class="group">
+                <h2>Extract data by timestamp</h2>
+                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
+                <div id="R-Tutorial-Timestamp" class="subgroup">
+                    <h3>R Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+                <div id="Python-Tutorial-Timestamp" class="subgroup">
+                    <h3>Python Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+            </section>
+
+            <section id="Visualize-Power-Usage" class="group">
+                <h2>Visualize aggregate power usage</h2>
+                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
+                <div id="R-Tutorial-Visualize" class="subgroup">
+                    <h3>R Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+                <div id="Python-Tutorial-Visualize" class="subgroup">
+                    <h3>Python Tutorial</h3>
+                    <pre>
+A super awesome tutorial will go here omg it's so amazing
+
+Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+
+Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
+                <img src="http://placehold.it/950x350">
+                </div>
+            </section>
+            
+        </div>
+    </div>
+  </main>
+</body>
+
+</html>
