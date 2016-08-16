@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NIST NetZero Data Page</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/nzertf.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body data-spy="scroll" data-target="#side-nav">
+	<header>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/nist.png" height="25">Engineering Laboratory</a>
+
+                </div>
+                <div class="collapse navbar-collapse parentMenu">
+                    <ul class="nav navbar-nav">
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">Research</a></li>
+                        <li class="dropdown"><a class="dropbtn" href="#">Data  <span class="caret"></span></a>
+                           <div class="dropdown-content">
+                                <a href="#download_data">Download Data</a>
+                                <a href="#data_dictionary">Data Dictionary</a>
+                                <a href="#log_revisions">Log of Revisions</a>
+                                <a href="#data_faq">FAQ &amp;<br> Known Data Issues</a>
+                            </div> 
+                        </li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="learn.html">Learn</a></li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">About EL</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse1 childMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home1</a></li>
+                        <li><a href="#about">About1</a></li>
+                        <li><a href="#contact">Contact1</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse2 childMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home2</a></li>
+                        <li><a href="#about">About2</a></li>
+                        <li><a href="#contact">Contact2</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse3 childMenu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home3</a></li>
+                        <li><a href="#about">About3</a></li>
+                        <li><a href="#contact">Contact3</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </header>
+
+    <!-- THIS IS THE SIDEBAR -->
+    <div class="row content-row">
+    	<nav class="col-xs-3 sidenav-padding" id="side-nav">
+            <ul id="sidebar" class="nav nav-stacked nav-class">
+                <li><a href="#download_data">Download Data</a></li>
+                <li><a href="#data_dictionary">Data Dictionary</a></li>
+                <li><a href="#log_revisions">Log of Revisions</a></li>
+                <li><a href="#data_faq">FAQ/Known Data Issues</a></li>
+            </ul>
+        </nav>
+    
+
+    <!-- THIS IS THE CONTENT -->
+    	<div id="data_content" class="col-xs-8">
+	    	<div id="download_data">
+				<h2>Subsystem Data Downloads</h2>
+				
+				<table class="download_data_table">
+					<tr class="data_download_headers">
+						<th>Subsystem Abbreviation</th>
+						<th>Subsystem Definition</th>
+						<th>Subsystem Data Download Link</th>
+					</tr>
+
+					<tr>
+						<td>DHW</td>
+						<td>Domestic Hot Water</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a></td>
+					</tr>   		
+
+					<tr>
+						<td>SHW</td>
+						<td>Solar Hot Water</td>
+						<td class="download_button"><a href=" https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Loads</td>
+						<td>Electrical and Thermal Loads <br> by equipment and people</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Load</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>HVAC</td>
+						<td>Heating and Cooling System</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>IndEnv</td>
+						<td>Indoor Environment</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>PV</td>
+						<td>Photovoltaic</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>OutEnv</td>
+						<td>Outdoor Environment</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Ventilation</td>
+						<td>Ventilation</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Vent</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Lighting</td>
+						<td>Lighting</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Electrical</td>
+						<td>Electrical</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>ElecCurrent</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>ElecEnergy</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>ElecPower</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>ElecRPB</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>ElecTotal</td>
+						<td>No Definition Provided</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>Instr</td>
+						<td>Instrumentation</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv"><div class="button_div">Download</div></a></td>
+					</tr>
+
+					<tr>
+						<td>All Subsystems</td>
+						<td>All Subsystem Data</td>
+						<td class="download_button"><a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems"><div class="button_div">Download</div></a></td>
+					</tr>
+				</table>
+	    	</div>
+
+	    	<div id="data_dictionary">
+	    		
+	    		<h2>Data Dictionary</h2>
+				
+				<div class="row">
+					<div class="col-xs-4">
+		    			<a href="https://s3.amazonaws.com/net-zero/NZERTF-Data-Dictionary.docx"><img src="http://placebeyonce.com/250-350"></a>
+					</div>
+
+					<div class="col-xs-6">
+			    		<p>In 2012, the National Institute of Standards and Technology (NIST) completed construction of the Net-Zero Energy Residential Test Facility, a testbed designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality (Pettit et al. 2014).  After extensive instrumentation and planning, NIST began a one-year test period on July 1, 2013 to assess whether the building could achieve net-zero operation, meaning that the amount of energy consumed by the home over the course of a year would be less than that generated by the photovoltaic (PV) system located on the roof of the facility.  The house was operated in an all-electric configuration with a simulated family of four that carried out all activities that would be expected in a typical American household.</p>
+						
+						<p>NIST, in conjunction with the U.S. Department of Commerce Data Service, is making available data from the operation of the facility during these test phases.  The purpose of this document is to describe the configuration of the house along with the contents of each data channel that is reported.</p>
+						
+						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="#log_revisions">log of such instances</a> are maintained on the website where the data can be accessed.</p>
+
+						<a href="https://s3.amazonaws.com/net-zero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a>  
+						</p>
+		    		</div>
+				</div>
+	    	</div>
+
+	    	<div id="log_revisions">
+	    		<h2>Log of Revisions</h2>
+	    		<h4>(Updated on 07/26/2016</h4>
+
+	    		<table id="log_revisions_table">
+	    			
+	    			<tr>
+		    			<th>Date</th>
+		    			<th>Revision</th>
+		    		</tr>
+
+		    		<tr>
+		    			<td>May 2003</td>
+		    			<td>Power Outage due to thunderstorm</td>
+		    		</tr>
+
+		    		<tr>
+		    			<td>June 2005</td>
+		    			<td>Systems flooded by rats</td>
+		    		</tr>
+
+		    		<tr>
+		    			<td>April 2007</td>
+		    			<td>Wind blew away robots Dorothy and Todo</td>
+		    		</tr>
+
+		    		<tr>
+		    			<td>August 2008</td>
+		    			<td>Elphaba broke wooden flooring</td>
+		    		</tr>
+	    		</table>
+	    	</div>
+   		
+   			<div id="data_faq">
+   				<h2>FAQ/Known Data Issues</h2>
+
+   				<div class="panel-group" id="accordion" aria-multiselectable="true">
+   					<div class="panel panel-default">
+   						<div class="panel-heading" id="heading1">
+   							<h4 class="panel-title">
+   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What does subsystem mean?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+   							<div class="panel-body">
+   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading2">
+   							<h4 class="panel-title">
+   								<a href="#question2" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How did the machines act like humans?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+   							<div class="panel-body">
+   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading3">
+   							<h4 class="panel-title">
+   								<a href="#question3" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Who is Elphaba?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+   							<div class="panel-body">
+   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading4">
+   							<h4 class="panel-title">
+   								<a href="#question4" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why was robot Dorothy and Todo outside during the storm?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+   							<div class="panel-body">
+   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading5">
+   							<h4 class="panel-title">
+   								<a href="#question5" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What does subsystem mean?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+
+   			</div>
+   		</div>
+   	</div>
+
+      <!--graphs-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+    <script src="http://dygraphs.com/dygraph-combined.js"></script>
+    <!--Dropdowns-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/nzertf.js"></script>
+</body>
+</html>
