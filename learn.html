@@ -131,7 +131,7 @@ hvac <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv", h
                 <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
 <pre><code>names(hvac)</code></pre>
 
-<pre class="secondary-pre"><code>##  [1] "TimeStampGPSTime"                           
+<pre><code>##  [1] "TimeStampGPSTime"                           
 ##  [2] "DayOfWeek"                                  
 ##  [3] "TimeStampCount"                             
 ##  [4] "HVAC_HVACDeltaPPressureDiffacrossIndoorUnit"
@@ -165,7 +165,7 @@ hvac$TimeStampGPSTime <- strptime(hvac$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")
 # here is a sample of what that looks like: 
 hvac$TimeStampGPSTime[1:10]</code></pre>
 
-<pre class="secondary-pre"><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
+<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
 ##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
 ##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
 ##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
@@ -223,7 +223,7 @@ elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.c
 <pre><code>names(elec)[1:20]</code></pre>
 
         
-<pre class="secondary-pre">
+<pre>
 <code>##  [1] "TimeStampGPSTime"                     
 ##  [2] "DayOfWeek"                            
 ##  [3] "TimeStampCount"                       
@@ -257,7 +257,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
 
 <pre><code>elec$TimeStampGPSTime[1:10]</code></pre>
 
-<pre class="secondary-pre"><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
+<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
 ##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
 ##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
 ##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
