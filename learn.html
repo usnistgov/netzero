@@ -58,7 +58,7 @@
                     <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">About EL</a></li>
                 </ul>
             </div>
-            <div class="collapse navbar-collapse1 childMenu">
+           <!-- <div class="collapse navbar-collapse1 childMenu">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home1</a></li>
                     <li><a href="#about">About1</a></li>
@@ -79,7 +79,7 @@
                     <li><a href="#contact">Contact3</a></li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
+            /.nav-collapse -->
         </div>
     </div>
   </header>
@@ -98,7 +98,7 @@
                 <li><a href="#Data-By-Timestamp">Extract data by timestamp</a>
                     <ul class="nav nav-stacked">
                         <li><a href="#Data-By-Timestamp-A">Get the Data</a></li>
-                        <li><a href="#Data-By-Timestamp-Bp">Work with the Data</a></li>
+                        <li><a href="#Data-By-Timestamp-B">Work with the Data</a></li>
                     </ul>
                 </li>
                 <li><a href="#Visualize-Power-Usage">Visualize aggregate power usage</a>
@@ -172,7 +172,7 @@ hvac$TimeStampGPSTime[1:10]</code></pre>
 ##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
 
 
-            <p>Now we can use the TimeStampGPSTime variable to create a new categorical ‘season’ variable:</p>
+            <p>Now we can use the TimeStampGPSTime variable to create a new categorical &#39;season&#39; variable:</p>
 
 <pre><code># create a variable for seasons
 hvac$season <- "summer"
@@ -186,9 +186,9 @@ ggplot(hvac, aes(x = season, y = HVAC_HVACTempSupplyAir, fill = season)) +
   geom_violin(scale = "area") +
   ggtitle("HVAC Air Supply Temperature by Season")</code></pre>
     
-    <img src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" width="672">
 
-            <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the retun air:</p>
+            <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the return air:</p>
 
 <pre><code class="r"># Visualize supply and return air temperature 
 ggplot(hvac, aes(x = TimeStampCount)) +
@@ -198,7 +198,7 @@ ggplot(hvac, aes(x = TimeStampCount)) +
   facet_wrap( ~ season, ncol = 2) +
   ggtitle("Seasonal Supply and Return Air Temperatures in the HVAC Subsystem")</code></pre>
 
-    <img src="img/NIST-NetZero-HVAC-Subsystem.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672">
                 </div>
             </section>
 
@@ -268,7 +268,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
   geom_line(alpha = 0.4) +
   ggtitle("Refrigerator Channel Readings")</code></pre>
 
-            <img src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673">
 
                <p>Or look at refrigerator readings for that day in comparison to the rest of the week:</p>
 <pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-05 00:00:00' & elec$TimeStampGPSTime > '2015-09-28 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
@@ -276,7 +276,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
   geom_line(data = elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
   ggtitle("Refrigerator Channel Readings")</code></pre>
 
-            <img src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673">
 
                 </div>
             </section>
