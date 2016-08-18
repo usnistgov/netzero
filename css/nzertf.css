@@ -210,6 +210,12 @@ li.dropdown {
    white-space: -pre-wrap;      /* Opera 4-6 */
    white-space: -o-pre-wrap;    /* Opera 7 */
    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+   background-color: #eaeef3;
+  }
+
+  .image-padding{
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
 /*CUSTOM MENU*/

@@ -15,6 +15,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/nzertf.js"></script>
+    
+    <!-- Syntax Highlighting -->
+    <!-- Support for the following languages: -->
+    <!-- Apache, Bash, C#, C++, CSS, CoffeeScript, Device Tree, Diff, HTML, XML, HTTP, Ini, JSON, Java, JavaScript, Makefile, Markdown, Nginx, Objective-C, PHP, Perl, Python, Ruby, SQL, Fortran, Julia, Lisp, Lua, Mathematica, Matlab, Python-Profile, R, Scilab, Scala, Stata, Swift -->
+    <link rel="stylesheet" type="text/css" href="css/mono-blue.css"><!-- Style for highlighting Code: Default to Github -->
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><!-- Activate Code Highlighting -->
 </head>
 
 <body data-spy="scroll" data-target="#side-nav">
@@ -35,10 +42,10 @@
                     <li><a data-toggle="collapse" data-target=".navbar-collapse1" href="#">Research</a></li>
                     <li class="dropdown"><a class="dropbtn" href="#">Data  <span class="caret"></span></a>
                        <div class="dropdown-content">
-                            <a href="#">Download Data</a>
-                            <a href="#">Data Dictionary</a>
-                            <a href="#">Log of Revisions</a>
-                            <a href="#">FAQ &amp;<br> Known Data Issues</a>
+                            <a href="data.html#download_data">Download Data</a>
+                            <a href="data.html#data_dictionary">Data Dictionary</a>
+                            <a href="data.html#log_revisions">Log of Revisions</a>
+                            <a href="data.html#data_faq">FAQ &amp;<br> Known Data Issues</a>
                         </div> 
                     </li>
                     <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -84,14 +91,14 @@
             <ul id="sidebar" class="nav nav-stacked fixed">
                 <li><a href="#Data-From-Subsystem">Work with data from a subsystem</a>
                    <ul class="nav nav-stacked">
-                       <li><a href="#R-Tutorial-Subsystem">R Tutorial</a></li>
-                       <li><a href="#Python-Tutorial-Subsystem">Python Tutorial</a></li>
+                       <li><a href="#Data-From-Subsystem-A">Get the Data</a></li>
+                       <li><a href="#Data-From-Subsystem-B">Work with the Data</a></li>
                    </ul> 
                 </li>
                 <li><a href="#Data-By-Timestamp">Extract data by timestamp</a>
                     <ul class="nav nav-stacked">
-                        <li><a href="#R-Tutorial-Timestamp">R Tutorial</a></li>
-                        <li><a href="#Python-Tutorial-Timestamp">Python Tutorial</a></li>
+                        <li><a href="#Data-By-Timestamp-A">Get the Data</a></li>
+                        <li><a href="#Data-By-Timestamp-B">Work with the Data</a></li>
                     </ul>
                 </li>
                 <li><a href="#Visualize-Power-Usage">Visualize aggregate power usage</a>
@@ -107,52 +114,170 @@
     <!--CONTENT SECTION-->
         <div class="col-xs-8 content_stuff">
             <section id="Data-From-Subsystem" class="group">
-                <h2>Work with data from a subsystem</h2>
-                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
-                <div id="R-Tutorial-Subsystem" class="subgroup">
-                <h3>R Tutorial</h3>
-                    <pre>
-A super awesome tutorial will go here omg it's so amazing
+                <h1>Work with data from a subsystem</h1>
+                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like HVAC, Electrical, DHW. </p>
+                    <p> This tutorial walks through loading data from a particular subsystem.</p>
+ 
+        <div id="Data-From-Subsystem-A" class="subgroup">
 
-Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+                <h3>Get the data you need</h3>
+                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net Zero website and import it into R, or you can use the download link directly.</p>
+                <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
+<pre><code class="r"># load libraries
+library(ggplot2) # plotting library
 
-Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
-                <img src="http://placehold.it/950x350">
+# get data
+hvac <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
+<pre><code>names(hvac)</code></pre>
+
+<pre><code>##  [1] "TimeStampGPSTime"                           
+##  [2] "DayOfWeek"                                  
+##  [3] "TimeStampCount"                             
+##  [4] "HVAC_HVACDeltaPPressureDiffacrossIndoorUnit"
+##  [5] "HVAC_HVACDewpointReturnAir"                 
+##  [6] "HVAC_HVACDewpointSupplyAir"                 
+##  [7] "HVAC_HVACHeatPumpAirFlowRate"               
+##  [8] "HVAC_HVACHeatPumpLatentCapacity"            
+##  [9] "HVAC_HVACHeatPumpSensibleCapacity"          
+## [10] "HVAC_HVACHeatPumpTotalCapacity"             
+## [11] "HVAC_HVACSensibleHeatRatio"                 
+## [12] "HVAC_HVACTempReturnAir"                     
+## [13] "HVAC_HVACTempSupplyAir"                     
+## [14] "HVAC_HeatPumpIndoorEnergyTotal"             
+## [15] "HVAC_HeatPumpIndoorPowerTotal"              
+## [16] "HVAC_HeatPumpOutdoorEnergyTotal"            
+## [17] "HVAC_HeatPumpOutdoorPowerTotal"             
+## [18] "HVAC_HeatPumpEnergyIndoorunit"              
+## [19] "HVAC_HeatPumpEnergyOutdoorUnit"</code></pre>
+
+
                 </div>
-                <div id="Python-Tutorial-Subsystem" class="subgroup">
-                <h3>Python Tutorial</h3>
-                    <pre>
-A super awesome tutorial will go here omg it's so amazing
+                
+            <div id="Data-From-Subsystem-B" class="subgroup">
+                <h3>Working with the Data</h3>
+                    <p>Once you have your data, you can visualize the Supply and Return air temperatures by season.</p> 
+                    <p>First, convert TimeStampGPSTime into a date/time format using strptime():</p>
 
-Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+<pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
+hvac$TimeStampGPSTime <- strptime(hvac$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")
 
-Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
-                <img src="http://placehold.it/950x350">
+# here is a sample of what that looks like: 
+hvac$TimeStampGPSTime[1:10]</code></pre>
+
+<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
+##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
+##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
+##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
+##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
+
+
+            <p>Now we can use the TimeStampGPSTime variable to create a new categorical &#39;season&#39; variable:</p>
+
+<pre><code># create a variable for seasons
+hvac$season <- "summer"
+hvac$season[hvac$TimeStampGPSTime < '2015-03-20 12:30:00'] <- "spring"
+hvac$season[hvac$TimeStampGPSTime > '2015-09-22 10:21:00' & hvac$TimeStampGPSTime < '2015-12-21 05:44:00'] <- "fall"
+hvac$season[hvac$TimeStampGPSTime > '2015-12-21 05:44:00'] <- "winter"
+hvac$season <- as.factor(hvac$season)
+
+# now we can do things like group readings by season
+ggplot(hvac, aes(x = season, y = HVAC_HVACTempSupplyAir, fill = season)) +
+  geom_violin(scale = "area") +
+  ggtitle("HVAC Air Supply Temperature by Season")</code></pre>
+    
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" width="672">
+
+            <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the return air:</p>
+
+<pre><code class="r"># Visualize supply and return air temperature 
+ggplot(hvac, aes(x = TimeStampCount)) +
+  geom_point(aes(y = HVAC_HVACTempSupplyAir), colour = "blue", alpha = 0.10, size = 1) +
+  geom_point(aes(y = HVAC_HVACTempReturnAir), colour = "black", alpha = 0.10, size = 1) +
+  xlab("Time") +
+  facet_wrap( ~ season, ncol = 2) +
+  ggtitle("Seasonal Supply and Return Air Temperatures in the HVAC Subsystem")</code></pre>
+
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672">
                 </div>
             </section>
 
             <section id="Data-By-Timestamp" class="group">
-                <h2>Extract data by timestamp</h2>
-                    <p>XOXO kale chips quinoa slow-carb banh mi, truffaut master cleanse PBR&B. Gluten-free echo park meh direct trade banjo, normcore freegan. Synth literally pour-over, crucifix drinking vinegar craft beer pabst kinfolk. Neutra pork belly fingerstache organic letterpress, raw denim meh narwhal tumblr. Etsy selvage forage try-hard, cold-pressed wolf banjo drinking vinegar marfa gastropub everyday carry lomo affogato narwhal butcher. Ethical four loko direct trade bitters, meggings normcore bicycle rights kombucha heirloom hashtag kinfolk bushwick cornhole pitchfork. </p>
-                <div id="R-Tutorial-Timestamp" class="subgroup">
-                    <h3>R Tutorial</h3>
-                    <pre>
-A super awesome tutorial will go here omg it's so amazing
+                <h2>Extract data by Timestamp</h2>
+                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like elec, Electrical, DHW.</p>
+                    <p>This data also includes a few date/time variables like 'TimeStampGPSTime', which is the date and timestamp for each reading, 'DayOfWeek' and 'TimeStampCount'. DayOfWeek is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
+                    <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
+                <div id="Data-By-Timestamp-A" class="subgroup">
+                    <h3>Get the data you need</h3>
+                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the [Net Zero data portal](http://commercedataservice.github.io/NZERTF/) and import it into R, or you can use the download link directly.</p>
+                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the Electrical subsystem:</p>
 
-Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+<pre><code class="r"># load libraries
+library(ggplot2) # plotting library
 
-Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
-                <img src="http://placehold.it/950x350">
+# get data
+elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+
+        <p>Here are the first 20 variables included in the Electrical subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
+
+<pre><code>names(elec)[1:20]</code></pre>
+
+        
+<pre>
+<code>##  [1] "TimeStampGPSTime"                     
+##  [2] "DayOfWeek"                            
+##  [3] "TimeStampCount"                       
+##  [4] "ElecEnergy_RPB1PlugsBaseAHeliodyneHXs"
+##  [5] "ElecEnergy_RPB10PlugsOutdoorA"        
+##  [6] "ElecEnergy_RPB11PlugsOutsideEast"     
+##  [7] "ElecEnergy_RPB12PlugsOutdoorB"        
+##  [8] "ElecEnergy_RPB13PlugsDR"              
+##  [9] "ElecEnergy_RPB14PlugsBR4"             
+## [10] "ElecEnergy_RPB15PlugsEntryHall"       
+## [11] "ElecEnergy_RPB16PlugsLR"              
+## [12] "ElecEnergy_RPB17ClothesWasher"        
+## [13] "ElecEnergy_RPB18Dryer1of2"            
+## [14] "ElecEnergy_RPB19Dehumidifier"         
+## [15] "ElecEnergy_RPB2PlugsBaseB"            
+## [16] "ElecEnergy_RPB20Dryer2of2"            
+## [17] "ElecEnergy_RPB21HeatPump1of2"         
+## [18] "ElecEnergy_RPB22AHU21of2"             
+## [19] "ElecEnergy_RPB23HeatPump2of2"         
+## [20] "ElecEnergy_RPB24AHU22of2"</code></pre>
+
                 </div>
-                <div id="Python-Tutorial-Timestamp" class="subgroup">
-                    <h3>Python Tutorial</h3>
-                    <pre>
-A super awesome tutorial will go here omg it's so amazing
+                <div id="Data-By-Timestamp-B" class="subgroup">
+                    <h3>Filter and visualize the data</h3>
+                    <p>Before we can visualize this data by date or time, we need to convert TimeStampGPSTime into a date/time format using strptime().</p>
 
-Kale chips 8-bit try-hard pickled. Celiac pitchfork typewriter crucifix, franzen forage cred sustainable. Fingerstache taxidermy ugh, gochujang man bun keytar pug +1 ramps asymmetrical. Narwhal direct trade pour-over lo-fi, yuccie schlitz microdosing pabst keffiyeh actually chillwave. Thundercats pop-up intelligentsia yr deep v, chillwave man braid kinfolk raw denim umami slow-carb. Hella pabst small batch 3 wolf moon offal, put a bird on it tacos chartreuse viral. Cronut cornhole skateboard chillwave disrupt tilde.
+<pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
+elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</code></pre>
+                
+                <p>Here is a sample of what that looks like:</p>
 
-Seitan DIY helvetica, ramps chartreuse jean shorts fanny pack fashion axe cronut art party. Before they sold out chillwave VHS, stumptown mixtape tofu roof party chia mlkshk viral shoreditch food truck meggings squid. Messenger bag wayfarers bushwick swag. Fashion axe organic ethical, hella distillery VHS freegan letterpress try-hard man bun polaroid forage keytar cray migas. Hella taxidermy portland, chicharrones deep v keffiyeh waistcoat shabby chic. Skateboard celiac disrupt vice, gluten-free kale chips actually. 8-bit XOXO tofu roof party neutra.</pre>
-                <img src="http://placehold.it/950x350">
+<pre><code>elec$TimeStampGPSTime[1:10]</code></pre>
+
+<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
+##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
+##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
+##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
+##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
+
+            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on TimeStampGPSTime:</p>
+<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+  geom_line(alpha = 0.4) +
+  ggtitle("Refrigerator Channel Readings")</code></pre>
+
+            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673">
+
+               <p>Or look at refrigerator readings for that day in comparison to the rest of the week:</p>
+<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-05 00:00:00' & elec$TimeStampGPSTime > '2015-09-28 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+  geom_line(alpha = 0.4) +
+  geom_line(data = elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
+  ggtitle("Refrigerator Channel Readings")</code></pre>
+
+            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673">
+
                 </div>
             </section>
 
