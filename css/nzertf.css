@@ -245,10 +245,25 @@ div.button_div {
   margin-right: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
+  display: inline-block;
+  width: 60%
+}
+
+.clipboard_icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 td.download_button a {
   color: white;
+}
+
+div.S3_link_div {
+  display: none;
+}
+
+div.S3_link_div > h4 {
+  font-size: 12px;
 }
 
 #download_data {

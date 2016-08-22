@@ -63,11 +63,25 @@ function onScroll(event){
     });
 }
 
+// Data.html DataTable Settings
 $(document).ready( function() {
     $('#download_table').DataTable({
         "paging": false,
         "ordering": false,
-        autoWidth: false
+        "info": false
     });
-    console.log('DataTable is working');
+});
+
+$("i").click(function() {
+    var $input = $(this);
+    $div_id = $input.attr('id');
+    var div_finder = "div." + $div_id;
+    
+    if ( $(div_finder).css('display') == 'none' ) {
+        $(div_finder).css('display','block');
+    } else {
+        $(div_finder).css('display','none'); 
+    }
+
+    
 })
