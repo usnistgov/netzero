@@ -62,3 +62,12 @@ function onScroll(event){
         }
     });
 }
+
+$(document).ready( function() {
+    $('#download_table').DataTable({
+        "paging": false,
+        "ordering": false,
+        autoWidth: false
+    });
+    console.log('DataTable is working');
+})
