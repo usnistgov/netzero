@@ -93,6 +93,7 @@
 							<th>Subsystem Abbreviation</th>
 							<th>Subsystem Definition</th>
 							<th>Subsystem Data Download Link</th>
+							<th>Copy Link</th>
 						</tr>
 					</thead>
 
@@ -101,21 +102,29 @@
 							<td>DHW</td>
 							<td>Domestic Hot Water</td>
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="DHW"></i></div>
-								<div class="S3_link_div DHW"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv</h4></div>
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>								
 							</td>
-							
-						</tr>   		
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="DHW"></i></div>								
+							</td>							
+						</tr> 
+
+						<tr class="DHW link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv</td>
+						</tr>  		
 
 						<tr>
 							<td>SHW</td>
 							<td>Solar Hot Water</td>
 							<td class="download_button">
 								<a href=" https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a>
+							<td>
 								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="SHW"></i></div>
-								<div class="S3_link_div SHW"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv</h4></div>
 							</td>
+						</tr>
+
+						<tr class="SHW link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv</td>
 						</tr>
 
 						<tr>
@@ -123,19 +132,32 @@
 							<td>Electrical and Thermal Loads <br> by equipment and people</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Loads"></i></div>
-								<div class="S3_link_div Loads"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Loads"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Loads link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv</td>
 						</tr>
 
 						<tr>
 							<td>Load</td>
 							<td>No Definition Provided</td>
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><div class="button_div">Download</div></a>
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><div class="button_div">
+								Download</div></a>
+							</td>
+
+							<td>
 								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Load"></i></div>
 							</td>
-							<div class="S3_link_div Load"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv</h4></div>
+						</tr>
+
+						<tr class="Load link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv</td>
 						</tr>
 
 						<tr>
@@ -143,9 +165,15 @@
 							<td>Heating and Cooling System</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="HVAC"></i></div>
-								<div class="S3_link_div HVAC"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="HVAC"></i></div>
+							</td>
+						</tr>
+
+						<tr class="HVAC link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv</td>
 						</tr>
 
 						<tr>
@@ -153,9 +181,15 @@
 							<td>Indoor Environment</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="IndEnv"></i></div>
-								<div class="S3_link_div IndEnv"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="IndEnv"></i></div>
+							</td>
+						</tr>
+
+						<tr class="IndDev link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv</td>
 						</tr>
 
 						<tr>
@@ -163,9 +197,14 @@
 							<td>Photovoltaic</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="PV"></i></div>
-								<div class="S3_link_div PV"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="PV"></i></div>
+							</td>
+
+						<tr class="PV link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv</td>
 						</tr>
 
 						<tr>
@@ -173,9 +212,15 @@
 							<td>Outdoor Environment</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="OutEnv"></i></div>
-								<div class="S3_link_div OutEnv"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="OutEnv"></i></div>
+							</td>
+						</tr>
+
+						<tr class="OutEnv link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv</td>
 						</tr>
 
 						<tr>
@@ -183,9 +228,15 @@
 							<td>Ventilation</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Ventilation"></i></div>
-								<div class="S3_link_div Ventilation"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Ventilation"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Ventilation link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv</td>
 						</tr>
 
 						<tr>
@@ -193,9 +244,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Vent"></i></div>
-								<div class="S3_link_div Vent"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Vent"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Vent link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv</td>
 						</tr>
 
 						<tr>
@@ -203,9 +260,15 @@
 							<td>Lighting</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Lighting"></i></div>
-								<div class="S3_link_div Lighting"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Lighting"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Lighting link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv</td>
 						</tr>
 
 						<tr>
@@ -213,9 +276,15 @@
 							<td>Electrical</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Electrical"></i></div>
-								<div class="S3_link_div Electrical"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Electrical"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Electrical link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv</td>
 						</tr>
 
 						<tr>
@@ -223,9 +292,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecCurrent"></i></div>
-								<div class="S3_link_div ElecCurrent"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecCurrent"></i></div>
+							</td>
+						</tr>
+
+						<tr class="ElecCurrent link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv</td>
 						</tr>
 
 						<tr>
@@ -233,9 +308,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecEnergy"></i></div>
-								<div class="S3_link_div ElecEnergy"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecEnergy"></i></div>
+							</td>
+						</tr>
+
+						<tr class="ElecEnergy link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv</td>
 						</tr>
 
 						<tr>
@@ -243,9 +324,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecPower"></i></div>
-								<div class="S3_link_div ElecPower"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecPower"></i></div>
+							<td>
+						</tr>
+
+						<tr class="ElecPower link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv</td>
 						</tr>
 
 						<tr>
@@ -253,9 +340,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecRPB"></i></div>
-								<div class="S3_link_div ElecRPB"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecRPB"></i></div>
+							</td>
+						</tr>
+
+						<tr class="ElecRPB link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv</td>
 						</tr>
 
 						<tr>
@@ -263,9 +356,15 @@
 							<td>No Definition Provided</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecTotal"></i></div>
-								<div class="S3_link_div ElecTotal"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecTotal"></i></div>
+							</td>
+						</tr>
+
+						<tr class="ElecTotal link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv</td>
 						</tr>
 
 						<tr>
@@ -273,9 +372,15 @@
 							<td>Instrumentation</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Instr"></i></div>
-								<div class="S3_link_div Instr"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Instr"></i></div>
+							</td>
+						</tr>
+
+						<tr class="Instr link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv</td>
 						</tr>
 
 						<tr>
@@ -283,9 +388,15 @@
 							<td>All Subsystem Data</td>
 							<td class="download_button">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems"><div class="button_div">Download</div></a>
-								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="All-Subsystems"></i></div>
-								<div class="S3_link_div All-Subsystems"><h4>https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems.csv</h4></div>
 							</td>
+
+							<td>
+								<div class="clipboard_icon"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="All-Subsystems"></i></div>
+							</td>
+						</tr>
+
+						<tr class="All-Subsystems link_div">
+							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems.csv</td>
 						</tr>
 					</tbody>
 				</table>

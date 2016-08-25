@@ -72,13 +72,17 @@ $(document).ready( function() {
     });
 });
 
+
+
 $("i").click(function() {
     var $input = $(this);
     $div_id = $input.attr('id');
-    var div_finder = "div." + $div_id;
+    var div_finder = "tr." + $div_id;
+    var row_finder = "tr." + $div_id + "upper";
     
     if ( $(div_finder).css('display') == 'none' ) {
-        $(div_finder).css('display','block');
+        $(div_finder).css('display','table-row');
+        // $(row_finder).css('border-bottom', 'none')
     } else {
         $(div_finder).css('display','none'); 
     }

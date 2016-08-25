@@ -229,6 +229,9 @@ li.dropdown {
 
 
 /*Data Page CSS*/
+table {
+  width: 100%;
+}
 
 table.download_data_table th,td {
   padding: 15px;
@@ -258,13 +261,19 @@ td.download_button a {
   color: white;
 }
 
-div.S3_link_div {
+tr.link_div {
   display: none;
+  text-align: center;
+  font-weight: bold;
 }
 
-div.S3_link_div > h4 {
+/*div.S3_link_div {
+  display: none;
+}*/
+
+/*div.S3_link_div > h4 {
   font-size: 12px;
-}
+}*/
 
 #download_data {
   margin-bottom: 80px;
