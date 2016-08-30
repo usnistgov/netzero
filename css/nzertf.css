@@ -87,6 +87,28 @@ li.dropdown {
   font-size: 15px;
 }
 
+.navbar-collapse, .navbar-collapse.in {
+  background-color: white;
+  height: 70px;
+}
+
+.navbar-collapse>ul>li, .navbar-collapse.in>ul>li {
+  display: inline-block;
+}
+
+/*.navbar-collapse{
+  border: none;
+  border-bottom: 2px solid lightgrey;
+
+}*/
+
+.navbar-collapse.in {
+     overflow-y: visible; 
+}
+.navbar-toggle {
+  margin-top: 20px;
+}
+
 /*FIRST BANNER*/
     .scroll {
       /*Set a css background */
