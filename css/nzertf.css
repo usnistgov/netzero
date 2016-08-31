@@ -294,10 +294,10 @@ table {
   width: 100%;
 }
 
-table.download_data_table th,td {
+/*table.download_data_table th,td {
   padding: 15px;
   border-bottom: 1px solid black;
-}
+}*/
 
 td.download_button {
   text-align: center;
@@ -346,13 +346,13 @@ tr.link_div {
   margin-top: -50px;
 }
 
-#log_revisions_table {
+/*#log_revisions_table {
   margin-top: 50px;
-}
+}*/
 
-#log_revisions_table th {
+/*#log_revisions_table th {
   text-align: center;
-}
+}*/
 
 #data_faq {
   margin-bottom: 80px;
