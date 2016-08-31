@@ -316,6 +316,11 @@ div.button_div {
 .clipboard_icon {
   display: inline-block;
   vertical-align: middle;
+  color: black;
+}
+
+a.clipboard_icon:focus, a.clipboard_icon:hover {
+  color: black;
 }
 
 td.download_button a {
