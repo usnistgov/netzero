@@ -9,6 +9,7 @@
     <link href="css/cursor.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 </head>
 
 <body data-spy="scroll" data-target="#side-nav">
@@ -94,8 +95,8 @@
 						<tr class="data_download_headers">
 							<th>Subsystem Abbreviation</th>
 							<th>Subsystem Definition</th>
-							<th>Subsystem Data Download Link</th>
-							<th>Copy Link</th>
+							<th class="col_not_mobile">Subsystem Data Download Link</th>
+							<th >Copy Link</th>
 						</tr>
 					</thead>
 
@@ -103,20 +104,21 @@
 						<tr>
 							<td>DHW</td>
 							<td>Domestic Hot Water</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>								
 							</td>
 							<td>		
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>						
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-container="table" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>						
 							</td>							
 						</tr> 	
 
 						<tr>
 							<td>SHW</td>
 							<td>Solar Hot Water</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href=" https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a>
 							</td>
+							
 							<td>
 								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
@@ -125,7 +127,7 @@
 						<tr>
 							<td>Loads</td>
 							<td>Electrical and Thermal Loads <br> by equipment and people</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -137,7 +139,7 @@
 						<tr>
 							<td>Load</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><div class="button_div">
 								Download</div></a>
 							</td>
@@ -150,7 +152,7 @@
 						<tr>
 							<td>HVAC</td>
 							<td>Heating and Cooling System</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -162,7 +164,7 @@
 						<tr>
 							<td>IndEnv</td>
 							<td>Indoor Environment</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -174,7 +176,7 @@
 						<tr>
 							<td>PV</td>
 							<td>Photovoltaic</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -187,7 +189,7 @@
 						<tr>
 							<td>OutEnv</td>
 							<td>Outdoor Environment</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -199,7 +201,7 @@
 						<tr>
 							<td>Ventilation</td>
 							<td>Ventilation</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -211,7 +213,7 @@
 						<tr>
 							<td>Vent</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -223,7 +225,7 @@
 						<tr>
 							<td>Lighting</td>
 							<td>Lighting</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -235,7 +237,7 @@
 						<tr>
 							<td>Electrical</td>
 							<td>Electrical</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -247,7 +249,7 @@
 						<tr>
 							<td>ElecCurrent</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -259,7 +261,7 @@
 						<tr>
 							<td>ElecEnergy</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -271,19 +273,19 @@
 						<tr>
 							<td>ElecPower</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
 								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							<td>
+							</td>
 						</tr>
 
 						<tr>
 							<td>ElecRPB</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -295,7 +297,7 @@
 						<tr>
 							<td>ElecTotal</td>
 							<td>No Definition Provided</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -307,7 +309,7 @@
 						<tr>
 							<td>Instr</td>
 							<td>Instrumentation</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv"><div class="button_div">Download</div></a>
 							</td>
 
@@ -319,7 +321,7 @@
 						<tr>
 							<td>All Subsystems</td>
 							<td>All Subsystem Data</td>
-							<td class="download_button">
+							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems"><div class="button_div">Download</div></a>
 							</td>
 
@@ -463,6 +465,7 @@
    	<!-- DataTables -->
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
     <!--Dropdowns-->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
