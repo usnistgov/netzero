@@ -47,7 +47,7 @@ div.middie {
 
 .navbar-nav{
   float: right;
-  font-size: 18px;
+  /*font-size: 18px;*/
   padding-top: 10px;
 }
 
@@ -87,6 +87,12 @@ li.dropdown {
   font-size: 15px;
 }
 
+/* Collapsed Menu Media Query */
+@media only screen and (max-width: 767px) {
+  .navbar-nav>li>a{
+    font-size: 15px;
+  }
+}
 .navbar-collapse, .navbar-collapse.in {
   background-color: white;
   height: 70px;
@@ -108,6 +114,7 @@ li.dropdown {
 .navbar-toggle {
   margin-top: 20px;
 }
+
 
 /*FIRST BANNER*/
     .scroll {
@@ -231,7 +238,7 @@ li.dropdown {
     }
 
     /* collapsed sidebar styles */
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
       .row-offcanvas {
         position: relative;
         -webkit-transition: all 0.25s ease-out;
