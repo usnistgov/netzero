@@ -237,7 +237,7 @@ table {
   width: 100%;
 }
 
-table.download_data_table th,td {
+table.download_data_table th, td {
   padding: 15px;
   border-bottom: 1px solid black;
 }
@@ -298,8 +298,17 @@ tr.link_div {
   margin-top: 50px;
 }
 
-#log_revisions_table th {
-  text-align: center;
+#log_revisions_table > th {
+  text-align: left;
+}
+
+#log_revisions_table td {
+  padding: 15px;
+  border: 1px solid black;
+}
+
+#log_revisions_table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 #data_faq {
