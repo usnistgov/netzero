@@ -104,7 +104,10 @@ li.dropdown {
 /* Collapsed Menu Media Query */
 @media only screen and (max-width: 767px) {
   .navbar-nav>li>a{
-    font-size: 15px;
+    font-size: 12px;
+  }
+  .dropdown-content>a{
+    font-size: 12px;
   }
 }
 .navbar-collapse, .navbar-collapse.in {
