@@ -287,7 +287,10 @@ li.dropdown {
       }
     }
 
-
+  .subgroup>img{
+    width: 100%;
+    height: auto;
+  }
 
   pre {
    white-space: pre-wrap;       /* css-3 */
