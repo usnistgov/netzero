@@ -321,15 +321,6 @@ table {
   width: 100%;
 }
 
-<<<<<<< HEAD
-/*table.download_data_table th,td {
-=======
-table.download_data_table th, td {
->>>>>>> fae380e0dd6a7684f6d72be3db7892807f624679
-  padding: 15px;
-  border-bottom: 1px solid black;
-}*/
-
 td.download_button {
   text-align: center;
 }
@@ -341,7 +332,8 @@ div.button_div {
   padding-top: 8px;
   padding-bottom: 8px;
   display: inline-block;
-  width: 60%
+  width: 60%;
+  text-align: center;
 }
 
 .clipboard_icon {
@@ -388,15 +380,6 @@ tr.link_div {
   margin-top: -50px;
 }
 
-/*#log_revisions_table {
-  margin-top: 50px;
-}*/
-
-<<<<<<< HEAD
-/*#log_revisions_table th {
-  text-align: center;
-}*/
-=======
 #log_revisions_table > th {
   text-align: left;
 }
@@ -409,7 +392,6 @@ tr.link_div {
 #log_revisions_table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
->>>>>>> fae380e0dd6a7684f6d72be3db7892807f624679
 
 #data_faq {
   margin-bottom: 80px;
