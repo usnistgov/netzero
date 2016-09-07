@@ -124,7 +124,7 @@
 library(ggplot2) # plotting library
 
 # get data
-hvac <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
                 <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
 <pre><code>names(hvac)</code></pre>
 
@@ -213,7 +213,7 @@ ggplot(hvac, aes(x = TimeStampCount)) +
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
 
         <p>Here are the first 20 variables included in the Electrical subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
 
@@ -292,7 +292,7 @@ library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
 
                 <p>There are 545 channels in the Electrical subsystem, however a subset of those channels measure total electrical readings, which is what we are interested in.</p>
 
