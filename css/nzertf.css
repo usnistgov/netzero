@@ -315,6 +315,24 @@ li.dropdown {
 .dropdown-submenu:hover>a:after{border-left-color:#555;}
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
+#Data-From-Subsystem {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#Data-By-Timestamp {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#Analyze-Aggregate-Readings {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
 
 /*Data Page CSS*/
 table {
