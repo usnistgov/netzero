@@ -120,7 +120,7 @@
         <div id="Data-From-Subsystem-A" class="subgroup">
 
                 <h3>Get the data you need</h3>
-                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net-Zero website and import it into R, or you can use the download link directly.</p>
+                <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net-Zero website and import it into R, or you can use the download link directly.</p>
                 <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
 <pre><code class="r"># load libraries
 library(ggplot2) # plotting library
@@ -203,12 +203,12 @@ ggplot(hvac, aes(x = TimeStampCount)) +
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>Data from the Net-Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like elec, Electrical, DHW.</p>
+                    <p>Data from the Net-Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like Electrical and DHW.</p>
                     <p>This data also includes a few date/time variables like 'TimeStampGPSTime', which is the date and timestamp for each reading, 'DayOfWeek' and 'TimeStampCount'. DayOfWeek is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="http://commercedataservice.github.io/NZERTF/"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
+                    <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="http://commercedataservice.github.io/NZERTF/"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
                     <p>This is how you can analyze the channels (i.e. instrumentation data) in the Electrical subsystem:</p>
 
 <pre><code class="r"># load libraries
