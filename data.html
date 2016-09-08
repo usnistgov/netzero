@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NIST NetZero - Data Page</title>
-	<meta name="description" content="NIST NetZero data page to find open data and datasets">
+	<title>NIST Net-Zero - Data Page</title>
+	<meta name="description" content="NIST Net-Zero data page to find open data and datasets">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
     <link href="css/nzertf.css" rel="stylesheet">
@@ -214,7 +214,7 @@
 							<td>Electrical</td>
 							<td class="col_not_mobile">1.5 GB</td>
 							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
@@ -255,10 +255,11 @@
 						
 						<p>NIST, in conjunction with the U.S. Department of Commerce Data Service, is making available data from the operation of the facility during these test phases.  The purpose of this document is to describe the configuration of the house along with the contents of each data channel that is reported.</p>
 						
-						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">log of such instances</a> are maintained on the website where the data can be accessed.</p>
+						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">log of such instances</a> are maintained on the website where the data can be accessed.</p>
 
-						<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a>  
-						</p>
+						<p><a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a></p>
+
+						<p>For a complete list of variables in the dataset please download <a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv">the Metadata CSV file</a>. The Metadata CSV also includes information on the subsystem and where possible: the measurement location, units for measurement, and the min/max values.</p>  
 		    		</div>
 				</div>
 	    	</div>
@@ -267,7 +268,7 @@
 	    		<h2>Known Data Gaps and Issues</h2>
 	    		<h4>February 1, 2015 through January 31, 2015</h4>
 	    		<br>
-	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  General, Solar, Ventilation, Indoor Air Quality (IAQ), Heat Pump, and Domestic Hot Water (DHW). For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">download the complete Log</a>. Some of the key issues are as follows: </p>
+	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  General, Solar, Ventilation, Indoor Air Quality (IAQ), Heat Pump, and Domestic Hot Water (DHW). For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
 
 	    		<table id="log_revisions_table">
 
@@ -280,14 +281,14 @@
 
 		    		<tr>	
 		    			<td>
-		    				At the beginning of the year-long data collection period, some short term tests were conducted to evaluate the flow measurement in the Heat Recovery Ventilator and to assess the transient response of the facility. These dates are noted in the &quot;General,&quot; &quot;Ventilation,&quot; and &quot;Heat Pump&quot; columns. 
+		    				At the beginning of the year-long data collection period, some short term tests were conducted to evaluate the flow measurement in the Heat Recovery Ventilator and to assess the transient response of the facility. These dates are noted in the General, Ventilation, and Heat Pump columns. 
 						</td>
 
 		    		</tr>
 
 		    		<tr>
 		    			<td>
-		    				Snow cover of the solar panels is recorded in the &quot;General and Solar PV Comments&quot; column.
+		    				Snow cover of the solar panels is recorded in the General and Solar PV Comments column.
 		    			</td>
 		    		</tr>
 
@@ -309,11 +310,6 @@
 		    			</td>
 		    		</tr>
 	    		</table>
-	    		<br>
-
-	    		<p>
-	    			For a more comprehensive list of data log known issues - please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">download the complete data log.</a>
-	    		</p>
 	    	</div>
    		
    			<div id="data_faq">
@@ -323,7 +319,7 @@
    					<div class="panel panel-default">
    						<div class="panel-heading" id="heading1">
    							<h4 class="panel-title">
-   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">So, what is the Net Zero house?
+   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">So, what is the Net-Zero house?
    								</a>
    							</h4>
    						</div>
@@ -341,7 +337,7 @@
    						</div>
    						<div id="question2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
    							<div class="panel-body">
-   								Each data channel reading is associated with a particular subsystem, such as ventilation or electrical.
+   								Each data channel reading is associated with a particular subsystem, such as Ventilation or Electrical.
    							</div>
    						</div>
 
@@ -353,7 +349,7 @@
    						</div>
    						<div id="question3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
    							<div class="panel-body">
-   								These are the variables of data collected in the net zero house. For example, one channel is Vent_HRVTempSupplyOut, which is the instantaneous dry bulb temperature in the supply duct outlet from the heat recovery ventilator(outdoor air being brought into the house) in the Vent subsystem. Some variables store on/off status, such as Vent_DryerOn, which has a value of 0 or 1.
+   								These are the variables of data collected in the Net-Zero house. For example, one channel is Vent_HRVTempSupplyOut, which is the instantaneous dry bulb temperature in the supply duct outlet from the heat recovery ventilator(outdoor air being brought into the house) in the Vent subsystem. Some variables store on/off status, such as Vent_DryerOn, which has a value of 0 or 1.
    							</div>
    						</div>
 
@@ -401,7 +397,7 @@
    						</div>
    						<div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Check out the <a href="learn.html">Learn page</a> on our website for some tutorials on working with the Net Zero data.
+   								Check out the <a href="learn.html">Learn page</a> on our website for some tutorials on working with the Net-Zero data.
    							</div>
    						</div>
 
@@ -413,7 +409,7 @@
    						</div>
    						<div id="question8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								There are a few timestamp variables, including minute-level readings with date/time (EST), the day of the week, and a timestamp count (1 to n). Variables that store readings from the net zero house follow the nomenclature subsystem_channel. Where the subsystem and description of the channel are separated with an underscore. For example, Load_RefrigeratorTemp is the temperature in the refrigerator in the Load subsystem.
+   								There are a few timestamp variables, including minute-level readings with date/time (EST), the day of the week, and a timestamp count (1 to n). Variables that store readings from the Net-Zero house follow the nomenclature subsystem_channel. Where the subsystem and description of the channel are separated with an underscore. For example, Load_RefrigeratorTemp is the temperature in the refrigerator in the Load subsystem.
    							</div>
    						</div>
 
