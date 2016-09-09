@@ -4,8 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <title>NIST NetZero - Learn More</title>
-    <meta name="description" content="NIST NetZero learn page to get tutorials on data usage">
+    <title>NIST Net-Zero - Learn More</title>
+    <meta name="description" content="NIST Net-Zero learn page to get tutorials on data usage">
     <link href="css/nzertf.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
@@ -114,13 +114,13 @@
         <div class="col-xs-12 col-sm-9 content_stuff">
             <section id="Data-From-Subsystem" class="group">
                 <h1>Work with data from a subsystem</h1>
-                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like HVAC, Electrical, DHW. </p>
+                    <p>Data from the Net-Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like <i>HVAC</i>, <i>Electrical</i>, <i>DHW</i>. </p>
                     <p> This tutorial walks through loading data from a particular subsystem.</p>
  
         <div id="Data-From-Subsystem-A" class="subgroup">
 
                 <h3>Get the data you need</h3>
-                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net Zero website and import it into R, or you can use the download link directly.</p>
+                <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net-Zero website and import it into R, or you can use the download link directly.</p>
                 <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
 <pre><code class="r"># load libraries
 library(ggplot2) # plotting library
@@ -156,7 +156,7 @@ hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv
             <div id="Data-From-Subsystem-B" class="subgroup">
                 <h3>Working with the Data</h3>
                     <p>Once you have your data, you can visualize the Supply and Return air temperatures by season.</p> 
-                    <p>First, convert TimeStampGPSTime into a date/time format using strptime():</p>
+                    <p>First, convert <i>TimeStampGPSTime</i> into a date/time format using strptime():</p>
 
 <pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
 hvac$TimeStampGPSTime <- strptime(hvac$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")
@@ -171,7 +171,7 @@ hvac$TimeStampGPSTime[1:10]</code></pre>
 ##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
 
 
-            <p>Now we can use the TimeStampGPSTime variable to create a new categorical &#39;season&#39; variable:</p>
+            <p>Now we can use the <i>TimeStampGPSTime</i> variable to create a new categorical &#39;season&#39; variable:</p>
 
 <pre><code># create a variable for seasons
 hvac$season <- "summer"
@@ -203,13 +203,13 @@ ggplot(hvac, aes(x = TimeStampCount)) +
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like elec, Electrical, DHW.</p>
-                    <p>This data also includes a few date/time variables like 'TimeStampGPSTime', which is the date and timestamp for each reading, 'DayOfWeek' and 'TimeStampCount'. DayOfWeek is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
+                    <p>Data from the Net-Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like <i>Electrical</i> and <i>DHW</i>.</p>
+                    <p>This data also includes a few date/time variables like <i>'TimeStampGPSTime'</i>, which is the date and timestamp for each reading, <i>'DayOfWeek'</i> and <i>'TimeStampCount'</i>. <i>DayOfWeek</i> is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="http://commercedataservice.github.io/NZERTF/"> Net Zero data portal</a> and import it into R, or you can use the download link directly.</p>
-                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the Electrical subsystem:</p>
+                    <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
+                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem:</p>
 
 <pre><code class="r"># load libraries
 library(ggplot2) # plotting library
@@ -217,7 +217,7 @@ library(ggplot2) # plotting library
 # get data
 elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
 
-        <p>Here are the first 20 variables included in the Electrical subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
+        <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_SpecificChannel</i>.</p>
 
 <pre><code>names(elec)[1:20]</code></pre>
 
@@ -247,7 +247,7 @@ elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/ElecEner
                 </div>
                 <div id="Data-By-Timestamp-B" class="subgroup">
                     <h3>Filter and visualize the data</h3>
-                    <p>Before we can visualize this data by date or time, we need to convert TimeStampGPSTime into a date/time format using strptime().</p>
+                    <p>Before we can visualize this data by date or time, we need to convert <i>TimeStampGPSTime</i> into a date/time format using strptime().</p>
 
 <pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
 elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</code></pre>
@@ -262,7 +262,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
 ##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
 ##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
 
-            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on TimeStampGPSTime:</p>
+            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>TimeStampGPSTime</i>:</p>
 <pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
   geom_line(alpha = 0.4) +
   ggtitle("Refrigerator Channel Readings")</code></pre>
@@ -284,10 +284,10 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
                 <h2>Analyzing Aggregated Readings</h2>
                     <p>Channels provide data at the instrumentation-level, however it is possible to analyze aggregate readings at the subsystem level.</p>
 
-                    <p>This tutorial walks through analyzing aggregate/total instantaneous readings for channels in the Electrical subsystem</p>
+                    <p>This tutorial walks through analyzing aggregate/total instantaneous readings for channels in the <i>Electrical</i> subsystem</p>
                 <div id="Analyze-Aggregate-Readings-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>First, we can use the download link from the Data page to import the data for the Electrical Subsystem:</p>
+                    <p>First, we can use the download link from the Data page to import the data for the <i>Electrical</i> Subsystem:</p>
 
 <pre><code class="r"># load libraries
 library(ggplot2) # plotting library
@@ -296,7 +296,7 @@ library(reshape2) # library for reshaping data easily
 # get data
 elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
 
-                <p>There are 545 channels in the Electrical subsystem, however a subset of those channels measure total electrical readings, which is what we are interested in.</p>
+                <p>There are 545 channels in the <i>Electrical</i> subsystem, however a subset of those channels measure total electrical readings, which is what we are interested in.</p>
 
 <pre><code class="r"># Row and column count for Electrical channel data
 dim(elec)</code></pre>
@@ -337,7 +337,7 @@ totals</code></pre>
                     <h3>Working with the data</h3>
                         <p>Now that we know which variables contain total readings from this subsystem we can take a closer look.</p>
 
-                        <p>First, convert TimeStampGPSTime into a date/time format using strptime():</p>
+                        <p>First, convert <i>TimeStampGPSTime</i> into a date/time format using strptime():</p>
 
 <pre><code># subset data to Totals only and any timestamp variables we need
 elec <- elec[,c("Timestamp", "TimeStamp_Count", "DayOfWeek", totals)]
