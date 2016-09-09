@@ -224,79 +224,106 @@ ggplot(hvac, aes(x = Timestamp)) +
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>Data from the Net-Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like <i>Electrical</i> and <i>DHW</i>.</p>
-                    <p>This data also includes a few date/time variables like <i>'TimeStampGPSTime'</i>, which is the date and timestamp for each reading, <i>'DayOfWeek'</i> and <i>'TimeStampCount'</i>. <i>DayOfWeek</i> is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
+                    <p>The Net Zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
+                    <br>
+                    <br>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
                     <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
                     <p>This is how you can analyze the channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem:</p>
 
-<pre><code class="r"># load libraries
+<pre><code class="r">
+# load libraries
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+</code></pre>
 
-        <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_SpecificChannel</i>.</p>
+        <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_Channel</i>.</p>
 
-<pre><code>names(elec)[1:20]</code></pre>
+<pre><code>
+names(elec)[1:20]
+</code></pre>
 
         
-<pre>
-<code>##  [1] "TimeStampGPSTime"                     
-##  [2] "DayOfWeek"                            
-##  [3] "TimeStampCount"                       
-##  [4] "ElecEnergy_RPB1PlugsBaseAHeliodyneHXs"
-##  [5] "ElecEnergy_RPB10PlugsOutdoorA"        
-##  [6] "ElecEnergy_RPB11PlugsOutsideEast"     
-##  [7] "ElecEnergy_RPB12PlugsOutdoorB"        
-##  [8] "ElecEnergy_RPB13PlugsDR"              
-##  [9] "ElecEnergy_RPB14PlugsBR4"             
-## [10] "ElecEnergy_RPB15PlugsEntryHall"       
-## [11] "ElecEnergy_RPB16PlugsLR"              
-## [12] "ElecEnergy_RPB17ClothesWasher"        
-## [13] "ElecEnergy_RPB18Dryer1of2"            
-## [14] "ElecEnergy_RPB19Dehumidifier"         
-## [15] "ElecEnergy_RPB2PlugsBaseB"            
-## [16] "ElecEnergy_RPB20Dryer2of2"            
-## [17] "ElecEnergy_RPB21HeatPump1of2"         
-## [18] "ElecEnergy_RPB22AHU21of2"             
-## [19] "ElecEnergy_RPB23HeatPump2of2"         
-## [20] "ElecEnergy_RPB24AHU22of2"</code></pre>
+<pre><code>
+##  [1] "Timestamp"                            
+##  [2] "TimeStamp_Count"                      
+##  [3] "TimeStamp_SchedulerTime"              
+##  [4] "TimeStamp_SystemTime"                 
+##  [5] "DayOfWeek"                            
+##  [6] "Elec_EnergyRPB1PlugsBaseAHeliodyneHXs"
+##  [7] "Elec_EnergyRPB13PlugsDR"              
+##  [8] "Elec_EnergyRPB14PlugsBR4"             
+##  [9] "Elec_EnergyRPB15PlugsEntryHall"       
+## [10] "Elec_EnergyRPB16PlugsLR"              
+## [11] "Elec_EnergyRPB17ClothesWasher"        
+## [12] "Elec_EnergyRPB18Dryer1of2"            
+## [13] "Elec_EnergyRPB19Dehumidifier"         
+## [14] "Elec_EnergyRPB2PlugsBaseB"            
+## [15] "Elec_EnergyRPB20Dryer2of2"            
+## [16] "Elec_EnergyRPB21HeatPump1of2"         
+## [17] "Elec_EnergyRPB22AHU21of2"             
+## [18] "Elec_EnergyRPB23HeatPump2of2"         
+## [19] "Elec_EnergyRPB24AHU22of2"             
+## [20] "Elec_EnergyRPB25HRV"
+</code></pre>
 
                 </div>
                 <div id="Data-By-Timestamp-B" class="subgroup">
                     <h3>Filter and visualize the data</h3>
-                    <p>Before we can visualize this data by date or time, we need to convert <i>TimeStampGPSTime</i> into a date/time format using strptime().</p>
+                    <p>Before we can visualize this data by date or time, we need to convert <i>Timestamp</i> into a date/time format using strptime().</p>
 
-<pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
-elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</code></pre>
+<pre><code>
+# converts Timestamp variable into date/time format (POSIXlt)
+elec$Timestamp <- strptime(elec$Timestamp, "%Y-%m-%d %H:%M:%S")
+</code></pre>
                 
                 <p>Here is a sample of what that looks like:</p>
 
-<pre><code>elec$TimeStampGPSTime[1:10]</code></pre>
+<pre><code>
+elec$Timestamp[1:10]
+</code></pre>
 
-<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
-##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
-##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
-##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
-##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
+<pre><code>
+##  [1] "2015-02-01 00:00:00 CST" "2015-02-01 00:01:00 CST"
+##  [3] "2015-02-01 00:02:00 CST" "2015-02-01 00:03:00 CST"
+##  [5] "2015-02-01 00:04:00 CST" "2015-02-01 00:05:00 CST"
+##  [7] "2015-02-01 00:06:00 CST" "2015-02-01 00:07:00 CST"
+##  [9] "2015-02-01 00:08:00 CST" "2015-02-01 00:09:00 CST"
+</code></pre>
 
-            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>TimeStampGPSTime</i>:</p>
-<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>Timestamp</i> and using the <i>Elec_PowerRPBA8Refrigerator</i> variable (<i>Power - RP BA-8 Refrigerator</i> in the data dictionary).</p>
+
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_PowerRPBA8Refrigerator)) +
   geom_line(alpha = 0.4) +
-  ggtitle("Refrigerator Channel Readings")</code></pre>
+  ggtitle("Instantaneous Power Consumption by Refrigerator")
+</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673" alt="Refrigerator channel readings by day visualization">
+            <img class="image-padding" src="img/NIST-NetZero-Instan-Consump-Refrig.png" width="673" alt="Refrigerator instantaneous consupmption by refrigerator visualization">
 
-               <p>Or look at refrigerator readings for that day in comparison to the rest of the week:</p>
-<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-05 00:00:00' & elec$TimeStampGPSTime > '2015-09-28 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+               <p>Alternatively, to look at the cumulative energy consumption for that day (which resets once a day), we could visualize the <i>Elec_EnergyRPBA8Refrigerator</i> variable.</p>
+
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_EnergyRPBA8Refrigerator)) +
   geom_line(alpha = 0.4) +
-  geom_line(data = elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
-  ggtitle("Refrigerator Channel Readings")</code></pre>
+  ggtitle("Cumulative Power Consumption by Refrigerator")
+</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673" alt="Refrigerator Channel readings by week visualization">
+            <img class="image-padding" src="img/NIST-NetZero-Cumul-Power-Refrig.png" width="673" alt="Refrigerator Channel cumulative power by day visualization">
+
+            <p>Visualizing instantaneous power consumption by the refrigerator for that day in comparison to the rest of hte week would allow us to identify any spikes in power consumption.</p>
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-05 00:00:00' & elec$Timestamp > '2015-09-28 00:00:00',], aes(x = Timestamp , y = Elec_PowerRPBA8Refrigerator)) +
+  geom_point(alpha = 0.4) +
+  geom_point(data = elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
+  ggtitle("Refrigerator Channel Readings")   
+</code></pre>
+
+            <img class="image-padding" src="img/NIST-NetZero-Refrig-Channel-Readings.png" width="673" alt="Refrigerator Channel Readings visualization">
 
                 </div>
             </section>
@@ -394,6 +421,13 @@ data <- melt(data, value.name = "channel")</code></pre>
             <img class="image-padding" src="img/NIST-NetZero-Total-Occupant-Energy.png" width="673" alt="Total Occupant Energy">
 
                 </div>
+
+                <div>
+                    
+                </div>>
+
+
+
             </section>
             
             <hr \>
