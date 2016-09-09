@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/nist.png" height="25">Engineering Laboratory</a>
+                <a class="navbar-brand" href="index.html"><img src="img/nist.png" alt="NIST logo" height="25">Engineering Laboratory</a>
 
             </div>
             <div class="collapse navbar-collapse parentMenu">
@@ -185,7 +185,7 @@ ggplot(hvac, aes(x = season, y = HVAC_HVACTempSupplyAir, fill = season)) +
   geom_violin(scale = "area") +
   ggtitle("HVAC Air Supply Temperature by Season")</code></pre>
     
-    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" alt="HVAC temporature by season visualization" width="672">
 
             <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the return air:</p>
 
@@ -197,7 +197,7 @@ ggplot(hvac, aes(x = TimeStampCount)) +
   facet_wrap( ~ season, ncol = 2) +
   ggtitle("Seasonal Supply and Return Air Temperatures in the HVAC Subsystem")</code></pre>
 
-    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672" alt="HVAC subsystem visualization">
                 </div>
             </section>
 
@@ -267,7 +267,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
   geom_line(alpha = 0.4) +
   ggtitle("Refrigerator Channel Readings")</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673" alt="Refrigerator channel readings by day visualization">
 
                <p>Or look at refrigerator readings for that day in comparison to the rest of the week:</p>
 <pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-05 00:00:00' & elec$TimeStampGPSTime > '2015-09-28 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
@@ -275,7 +275,7 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
   geom_line(data = elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
   ggtitle("Refrigerator Channel Readings")</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673" alt="Refrigerator Channel readings by week visualization">
 
                 </div>
             </section>
@@ -362,7 +362,7 @@ data <- melt(data, value.name = "channel")</code></pre>
   geom_line() +
   ggtitle("Total readings from Electrical Subsystem") +
   theme(legend.position="top")</code></pre>
-                <img class="image-padding" src="img/NIST-NetZero-Total-Readings-from-Electrical-Subsystem.png" width="673">
+                <img class="image-padding" src="img/NIST-NetZero-Total-Readings-from-Electrical-Subsystem.png" width="673" alt="Total Readings from Electrical Subsystem visualization">
 
                 <p>Once you know which readings you are most interested in, you can filter for those:</p>
 
@@ -370,7 +370,7 @@ data <- melt(data, value.name = "channel")</code></pre>
   geom_line() +
   ggtitle("Total Occupant Energy and Power Readings from Electrical Subsystem")</code></pre>
             
-            <img class="image-padding" src="img/NIST-NetZero-Total-Occupant-Energy.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Total-Occupant-Energy.png" width="673" alt="Total Occupant Energy visualization">
 
                 </div>
             </section>
