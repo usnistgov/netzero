@@ -337,94 +337,70 @@ ggplot(elec[elec$Timestamp < '2015-10-05 00:00:00' & elec$Timestamp > '2015-09-2
                     <h3>Get the data you need</h3>
                     <p>First, we can use the download link from the Data page to import the data for the <i>Electrical</i> Subsystem:</p>
 
-<pre><code class="r"># load libraries
+<pre><code class="r">
+# load libraries
 library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
-
-                <p>There are 545 channels in the <i>Electrical</i> subsystem, however a subset of those channels measure total electrical readings, which is what we are interested in.</p>
-
-<pre><code class="r"># Row and column count for Electrical channel data
-dim(elec)</code></pre>
-
-<pre><code>## [1] 524161    545</code></pre>
-
-<pre><code># List of channels that contain total readings
-totals <- names(elec)[grep("Elec_Total", names(elec))]
-totals</code></pre>
-
-<pre><code>##  [1] "Elec_TotalApplianceEnergy"          
-##  [2] "Elec_TotalAppliancePower"           
-##  [3] "Elec_TotalDHWEnergy"                
-##  [4] "Elec_TotalDHWPower"                 
-##  [5] "Elec_TotalGenerationEnergy"         
-##  [6] "Elec_TotalGenerationPower"          
-##  [7] "Elec_TotalHVACEnergy"               
-##  [8] "Elec_TotalHVACPower"                
-##  [9] "Elec_TotalLightingEnergy"           
-## [10] "Elec_TotalLightingPower"            
-## [11] "Elec_TotalNZERTFEnergyExportCT"     
-## [12] "Elec_TotalNZERTFEnergyExportSumCirc"
-## [13] "Elec_TotalNZERTFEnergyImportCT"     
-## [14] "Elec_TotalNZERTFEnergyImportSumCirc"
-## [15] "Elec_TotalNZERTFEnergyLoadSumCirc"  
-## [16] "Elec_TotalNZERTFPowerExportCT"      
-## [17] "Elec_TotalNZERTFPowerExportSumCirc" 
-## [18] "Elec_TotalNZERTFPowerImportCT"      
-## [19] "Elec_TotalNZERTFPowerImportSumCirc" 
-## [20] "Elec_TotalNZERTFPowerLoadSumCirc"   
-## [21] "Elec_TotalOccupantEnergy"           
-## [22] "Elec_TotalOccupantPower"            
-## [23] "Elec_TotalPlugLoadEnergy"           
-## [24] "Elec_TotalPlugLoadPower"</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+</code></pre>
 
                 </div>
                 <div id="Analyze-Aggregate-Readings-B" class="subgroup">
                     <h3>Working with the data</h3>
-                        <p>Now that we know which variables contain total readings from this subsystem we can take a closer look.</p>
+                        <p>There are 158 channels in the Electrical subsystem, however it is possible to aggregate those instantaneous power consumption readings.</p>
 
-                        <p>First, convert <i>TimeStampGPSTime</i> into a date/time format using strptime():</p>
+<pre><code class="r">
+# Row and column count for Electrical channel data
+dim(elec)
+</code></pre>
 
-<pre><code># subset data to Totals only and any timestamp variables we need
-elec <- elec[,c("Timestamp", "TimeStamp_Count", "DayOfWeek", totals)]
+<pre><code>
+## [1] 524161    163
+</code></pre>
 
-# converts Timestamp variable into date/time format (POSIXlt)
-elec$Timestamp <- strptime(elec$Timestamp, "%Y-%m-%d %H:%M:%S", tz = "EST")</code></pre>
+<pre><code class="r">
+# create an object that only has instantaneous power readings
+elec_power <- elec[,c("Timestamp", names(elec)[grep("_Power", names(elec))])]
 
-                        <p>Then decide which timestamps you are interested in. Remember that we have a reading for each minute of the year, so for this tutorial we are going to pull readings from 12pm EST on the first of each month:</p>
+# using the data dictionary or metadata files, this object could be narrowed down to power consumption in one room or for a specific appliance
+# the 'total' variable below is a sum of all electrical power consumption channels
+elec_power$total <- rowSums(elec_power[,2:ncol(elec_power)])
 
-<pre><code># extract readings from the first of each month at noon
-data <- elec[elec$Timestamp %in% (elec$Timestamp[elec$Timestamp$mday == 01 & elec$Timestamp$hour == 12 & elec$Timestamp$min == 00 & elec$Timestamp$sec == 00]),]
-data$TimeStamp_Count <- as.factor(1:nrow(data))
-data$Timestamp <- NULL
-data$DayOfWeek <- NULL
-data <- melt(data, value.name = "channel")</code></pre>
+# ggplot(elec_power[,c("Timestamp", "total")], aes(x = Timestamp, y = total)) +
+   geom_point(aes(colour = strftime(elec_power$Timestamp, format = "%m")), alpha = 0.4) +
+   geom_smooth() +
+   theme(legend.position="none") +
+   ggtitle("Total Instantaneous Power Consumption Readings")
+</code></pre>
 
-<pre><code>## Using TimeStamp_Count as id variables</code></pre>
-
-                        <p>Now let&#39;s take a look at how these readings compare:</p>
-
-<pre><code>ggplot(data, aes(x = TimeStamp_Count, y = channel, group = variable, colour = variable)) +
-  geom_line() +
-  ggtitle("Total readings from Electrical Subsystem") +
-  theme(legend.position="top")</code></pre>
-                <img class="image-padding" src="img/NIST-NetZero-Total-Readings-from-Electrical-Subsystem.png" width="673" alt="Total Readings from Electrical Subsystem visualization">
-
-                <p>Once you know which readings you are most interested in, you can filter for those:</p>
-
-<pre><code>ggplot(data[data$variable %in% c("Elec_TotalOccupantEnergy", "Elec_TotalOccupantPower"),], aes(x = TimeStamp_Count, y = channel, group = variable, colour = variable)) +
-  geom_line() +
-  ggtitle("Total Occupant Energy and Power Readings from Electrical Subsystem")</code></pre>
-            
-            <img class="image-padding" src="img/NIST-NetZero-Total-Occupant-Energy.png" width="673" alt="Total Occupant Energy">
+                <img class="image-padding" src="img/NIST-NetZero=Instan-Power-Consump.png" width="673" alt="Total Instantaneous Power Consumption Readings visualization">
 
                 </div>
 
-                <div>
-                    
-                </div>>
+
+
+                <div id="csv_to_json" class="subgroup">
+                    <h3>From CSV to JSON</h3>
+                    <p>When you download the files from the <a href="#data.html#download_data">Download table</a> it will be as a CSV file. If you are interested in building a project using JavaScript, NodeJS, or anything that is more suited to JSON file structures - you will need to covert them from CSVs to JSON. In our work we have recommended using the <a href="https://www.npmjs.com/package/csvtojson">CSVtoJSON Converter</a> module that you can download from npm. Once you have downloaded the npm module you can use the following code as a template to convert the raw CSV to a JSON file. (We do not recommend this tutorial for converting the 'All Subsystems' CSV). </p>
+<pre><code>
+var Converter = require('csvtojson').Converter;
+var converter = new Converter({
+    constructResult: false, ## if you are using a large file it does not hold the data to memory
+    toArrayString: true ## pipes the data to an array
+});
+
+var readStream = require('fs').createReadStream('../All-Subsystems.csv'); ## relative path to where the downloaded CSV is in your repo
+var writeStream = require('fs').createWriteStream('../output.json'); ## relative path to where you would like the JSON file to be made
+
+readStream.pipe(converter).pipe(writeStream);
+</code></pre>
+                    <p>Please see the documentation <a href="https://www.npmjs.com/package/csvtojson">(link)</a> for all options that are available to you. In addition, if you are curious about <a href="https://nodejs.org/api/fs.html#fs_file_system">File Streams</a> in Node feel free to take a look at its documentation as well.</p>
+                    <br>
+
+
+                </div>
 
 
 
