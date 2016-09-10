@@ -385,7 +385,7 @@ elec_power$total <- rowSums(elec_power[,2:ncol(elec_power)])
 
                 <div id="csv_to_json" class="subgroup">
                     <h3>From CSV to JSON</h3>
-                    <p>When you download the files from the <a href="#data.html#download_data">Download table</a> it will be as a CSV file. If you are interested in building a project using JavaScript, NodeJS, or anything that is more suited to JSON file structures - you will need to covert them from CSVs to JSON. In our work we have recommended using the <a href="https://www.npmjs.com/package/csvtojson">CSVtoJSON Converter</a> module that you can download from npm. Once you have downloaded the npm module you can use the following code as a template to convert the raw CSV to a JSON file. (We do not recommend this tutorial for converting the 'All Subsystems' CSV). </p>
+                    <p>When you download the files from the <a href="data.html#download_data">Download table</a> it will be as a CSV file. If you are interested in building a project using JavaScript, NodeJS, or anything that is more suited to JSON file structures - you will need to covert them from CSVs to JSON. In our work we have recommended using the <a href="https://www.npmjs.com/package/csvtojson">CSVtoJSON Converter</a> module that you can download from npm. Once you have downloaded the npm module you can use the following code as a template to convert the raw CSV to a JSON file. (We do not recommend this tutorial for converting the 'All Subsystems' CSV). </p>
 <pre><code>
 var Converter = require('csvtojson').Converter;
 var converter = new Converter({
