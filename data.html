@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NIST NetZero Data Page</title>
+	<title>NIST Net-Zero - Data Page</title>
+	<meta name="description" content="NIST Net-Zero data page to find open data and datasets">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
     <link href="css/nzertf.css" rel="stylesheet">
@@ -32,8 +34,8 @@
                            <div class="dropdown-content">
                                 <a href="#download_data">Download Data</a>
                                 <a href="#data_dictionary">Data Dictionary</a>
-                                <a href="#log_revisions">Log of Revisions</a>
-                                <a href="#data_faq">FAQ &amp;<br> Known Data Issues</a>
+                                <a href="#log_revisions">Known Data Gaps and Issues</a>
+                                <a href="#data_faq">FAQ</a>
                             </div> 
                         </li>
 	                    <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -79,23 +81,32 @@
             <ul id="sidebar" class="nav nav-stacked fixed">
                 <li><a href="#download_data">Download Data</a></li>
                 <li><a href="#data_dictionary">Data Dictionary</a></li>
-                <li><a href="#log_revisions">Log of Revisions</a></li>
-                <li><a href="#data_faq">FAQ/Known Data Issues</a></li>
+                <li><a href="#log_revisions">Known Data Gaps and Issues</a></li>
+                <li><a href="#data_faq">FAQ</a></li>
+                <li><a href="#data_citation">Citation</a></li>
             </ul>
         </nav>
     
 
     <!-- CONTENT SECTION -->
     	<div id="data_content" class="col-xs-12 col-sm-9">
+	    	<br>
+	    	<div>
+	    		<p> NIST Engineering Lab’s Net Zero Energy Residential Test Facility data captures diverse measurements from a high precision lab home that produces as much energy over the course of a year as it uses. It is an extraordinary facility that has sensors and instrumentation on nearly every facet, from energy consumption to comfort. This high resolution, high precision data has allowed NIST and researchers in the home energy and sustainability field to investigate the performance of efficient homes and have formed a basis for conducting home efficiency simulations that allow engineers to better understand how to construct better, energy efficient homes. There are nearly 400 channels of data across 11 subsystems. That means 400 opportunities to find meaningful energy use patterns and create prototypes of home energy monitoring tools and analytics. </p>
+	    		<br>
+	    		<p> This data is <strong> open and free</strong>. Help us track and preserve net zero's impact and value through <a href="#data_citation">citation:</p></a>
+	    	</div>
+
 	    	<div id="download_data">
 				<h2>Subsystem Data Downloads</h2>
 				
 				<table class="table table-striped download_data_table" id="download_table">
 					<thead>
 						<tr class="data_download_headers">
-							<th>Subsystem Abbreviation</th>
-							<th>Subsystem Definition</th>
-							<th class="col_not_mobile">Subsystem Data Download Link</th>
+							<th>Subsystem <br> Abbreviation</th>
+							<th>Subsystem <br> Definition</th>
+							<th class="col_not_mobile">File Size</th>
+							<th class="col_not_mobile">Subsystem Data <br>Download Link</th>
 							<th >Copy Link</th>
 						</tr>
 					</thead>
@@ -104,71 +115,78 @@
 						<tr>
 							<td>DHW</td>
 							<td>Domestic Hot Water</td>
+							<td class="col_not_mobile">290.8 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>								
 							</td>
 							<td>		
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-container="table" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>						
-							</td>							
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-container="table" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>						
+							</td>
+							
 						</tr> 	
 
 						<tr>
 							<td>SHW</td>
 							<td>Solar Hot Water</td>
+							<td class="col_not_mobile">50.8 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href=" https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a>
 							</td>
 							
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Load</td>
 							<td>Electrical and Thermal Loads <br> by equipment and people</td>
+							<td class="col_not_mobile">240.3 MB</td>
 							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Loads.csv"><div class="button_div">Download</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>HVAC</td>
 							<td>Heating and Cooling System</td>
+							<td class="col_not_mobile">89.2 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>IndEnv</td>
 							<td>Indoor Environment</td>
+							<td class="col_not_mobile">269.3 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>PV</td>
 							<td>Photovoltaic</td>
+							<td class="col_not_mobile">217.4 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
@@ -176,48 +194,65 @@
 						<tr>
 							<td>OutEnv</td>
 							<td>Outdoor Environment</td>
+							<td class="col_not_mobile">28.7 MB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Vent</td>
 							<td>Ventilation</td>
+							<td class="col_not_mobile">133.3 MB</td>
 							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Ventilation.csv"><div class="button_div">Download</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Elec</td>
 							<td>Electrical</td>
+							<td class="col_not_mobile">567.1 MB</td>
 							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>Metadata</td>
+							<td>Subsystem Info, Measurement Location, <br> Measurement Units, and the Min/Max Values</td>
+							<td class="col_not_mobile">49.5 KB</td>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><div class="button_div">Download</div></a>
+							</td>
+
+							<td>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>All Subsystems</td>
 							<td>All Subsystem Data</td>
+							<td class="col_not_mobile">1.7 GB</td>
 							<td class="download_button col_not_mobile">
 								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><div class="button_div">Download</div></a>
 							</td>
 
 							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
 							</td>
 						</tr>
 
@@ -231,7 +266,7 @@
 				
 				<div class="row">
 					<div class="hidden-xs col-md-4 col-lg-4">
-		    			<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx"><img src="./img/NIST-LEED.jpeg"></a>
+		    			<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx"><img src="./img/NIST-LEED.jpeg" alt="Net-Zero house in Gaithersburg, MD"></a>
 					</div>
 
 <!-- 					Photo is credited to : http://www.everydaygreendc.com/wp-content/uploads/2012/11/NIST-LEED-Homes-Platinum.jpeg
@@ -241,10 +276,11 @@
 						
 						<p>NIST, in conjunction with the U.S. Department of Commerce Data Service, is making available data from the operation of the facility during these test phases.  The purpose of this document is to describe the configuration of the house along with the contents of each data channel that is reported.</p>
 						
-						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">log of such instances</a> are maintained on the website where the data can be accessed.</p>
+						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">log of such instances</a> are maintained on the website where the data can be accessed.</p>
 
-						<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a>  
-						</p>
+						<p><a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a></p>
+
+						<p>For a complete list of variables in the dataset please download <a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv">the Metadata CSV file</a>. The Metadata CSV also includes information on the subsystem and where possible: the measurement location, units for measurement, and the min/max values.</p>  
 		    		</div>
 				</div>
 	    	</div>
@@ -253,7 +289,7 @@
 	    		<h2>Known Data Gaps and Issues</h2>
 	    		<h4>February 1, 2015 through January 31, 2015</h4>
 	    		<br>
-	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  General, Solar, Ventilation, Indoor Air Quality (IAQ), Heat Pump, and Domestic Hot Water (DHW). For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">download the complete Log</a>. Some of the key issues are as follows: </p>
+	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>. For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
 
 	    		<table id="log_revisions_table">
 
@@ -266,14 +302,14 @@
 
 		    		<tr>	
 		    			<td>
-		    				At the beginning of the year-long data collection period, some short term tests were conducted to evaluate the flow measurement in the Heat Recovery Ventilator and to assess the transient response of the facility. These dates are noted in the “General,” “Ventilation,” and “Heat Pump” columns. 
+		    				At the beginning of the year-long data collection period, some short term tests were conducted to evaluate the flow measurement in the Heat Recovery Ventilator and to assess the transient response of the facility. These dates are noted in the <i>General</i>, <i>Ventilation</i>, and <i>Heat Pump</i> columns. 
 						</td>
 
 		    		</tr>
 
 		    		<tr>
 		    			<td>
-		    				Snow cover of the solar panels is recorded in the “General and Solar PV Comments” column.
+		    				Snow cover of the solar panels is recorded in the <i>General</i> and <i>Solar PV</i> Comments column.
 		    			</td>
 		    		</tr>
 
@@ -295,11 +331,6 @@
 		    			</td>
 		    		</tr>
 	    		</table>
-	    		<br>
-
-	    		<p>
-	    			For a more comprehensive list of data log known issues - please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xlsx">download the complete data log.</a>
-	    		</p>
 	    	</div>
    		
    			<div id="data_faq">
@@ -309,13 +340,13 @@
    					<div class="panel panel-default">
    						<div class="panel-heading" id="heading1">
    							<h4 class="panel-title">
-   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">So, what is the Net Zero house?
+   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">So, what is the Net-Zero Energy Residential Test Facility?
    								</a>
    							</h4>
    						</div>
    						<div id="question1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
    							<div class="panel-body">
-   								The Net-Zero Energy Residential Test Facility is a testbed designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality. Check out <a href="https://www.youtube.com/watch?v=xSzu83fyQaQ&feature=youtu.be">this video</a>.
+   								The Net-Zero Energy Residential Test Facility is a testbed on the campus of the National Institute of Standards of Technology in Gaithersburg, MD designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality. Check out <a href="https://www.youtube.com/watch?v=xSzu83fyQaQ&feature=youtu.be">this video</a>.
    							</div>
    						</div>
 
@@ -327,7 +358,46 @@
    						</div>
    						<div id="question2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
    							<div class="panel-body">
-   								Each data channel reading is associated with a particular subsystem, such as ventilation or electrical.
+   								A subsystem describes a key set of equipment and sensors that either provide an expected service to occupants of a home (e.g., heating, cooling, hot water, lighting, etc.), monitor particular conditions in and around the house, or enable the conduct of experiments.  The NZERTF data set is split into the following subsystems:
+   								<br> 
+   								<br>
+   								<ul>
+   									<li>
+   										<p><i>DHW</i>:  Domestic Hot Water – system to make and deliver hot water in the facility, including flow rates and temperature of those end uses.  Also describes the back-up water heater and the use of cold water.</p>
+   									</li>
+
+   									<li>
+   										<p><i>SHW</i>:  Solar Hot Water – solar water heating system.</p>
+   									</li>
+
+   									<li>
+   										<p><i>HVAC</i>:  Space Heating and Cooling System (the “V” stands for ventilation, but that function has its own subsystem).</p>
+   									</li>
+
+   									<li>
+   										<p><i>Load</i>:  Electrical and Thermal Loads that simulate the presence and actions of the virtual occupants in the home.</p>
+   									</li>
+
+   									<li>
+   										<p><i>IndEnv</i>:  Indoor Environment – Measurement system that captures temperatures and relative humidities throughout the home.  </p>
+   									</li>
+   									
+   									<li>
+   										<p><i>PV</i>: Photovoltaic system, including the array and inverters. </p>
+   									</li>
+
+   									<li>
+   										<p><i>OutEnv</i>:  Outdoor Environment – Measurement system that captures ambient temperature, solar radiation, and wind conditions at the NZERTF.</p>
+   									</li>
+
+   									<li>
+   										<p><i>Vent</i>:  Ventilation – system to deliver outdoor air into the house and to simultaneously exhaust stale indoor air from the home. </p>
+   									</li>
+
+   									<li>
+   										<p><i>Elec</i>:  Electrical – system to monitor each electrical circuit in the home.</p>
+   									</li>
+   								</ul>
    							</div>
    						</div>
 
@@ -339,7 +409,7 @@
    						</div>
    						<div id="question3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
    							<div class="panel-body">
-   								These are the variables of data collected in the net zero house. For example, one channel is Vent_HRVTempSupplyOut, which is the instantaneous dry bulb temperature in the supply duct outlet from the heat recovery ventilator(outdoor air being brought into the house) in the Vent subsystem. Some variables store on/off status, such as Vent_DryerOn, which has a value of 0 or 1.
+   								A channel is a data stream from a single sensor.  
    							</div>
    						</div>
 
@@ -351,7 +421,7 @@
    						</div>
    						<div id="question4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
    							<div class="panel-body">
-   								Currently only data from the second year of operation is available on this website (Feb 1, 2015 to Jan 31, 2016), data from the first year will be made available soon.
+   								To date, there have been two complete years of data collection.  The data presented in the database are for the second year, which started on February 1, 2015.  The first year of data collection occurred between July 1, 2013 and June 30, 2014.  NIST is releasing the second year first because there are a larger number of operational anomalies in the first year’s data.  It is expected that the first year data will be released at a later date.  
    							</div>
    						</div>
 
@@ -363,19 +433,19 @@
    						</div>
    						<div id="question5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Refer to the <a href="#data_dictionary">Data Dictionary</a> provided above.
+   								NIST maintains a website with links to all publications emerging from the project at <a href="https://www.nist.gov/el/net-zero-energy-residential-test-facility">https://www.nist.gov/el/net-zero-energy-residential-test-facility</a>  Among this information, details on the instrumentation are provided by Davis, et al (2014): <a href="https://www.nist.gov/node/560101?pub_id=917208">https://www.nist.gov/node/560101?pub_id=917208</a>.  Additionally, the <a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Data Dictionary document</a> on the database website provides the building characteristics in accordance with the Department of Energy’s Building Energy Performance Taxonomy, Version 2.1. 
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading6">
    							<h4 class="panel-title">
-   								<a href="#question6" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Where can I get a description of the channels and what units they are in?
+   								<a href="#question6" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Where can I get a description of the channels?
    								</a>
    							</h4>
    						</div>
    						<div id="question6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Refer to Appendix 2 of the <a href="#data_dictionary">Data Dictionary</a> provided above.
+   								The <a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Data Dictionary</a> document on the database website provides a description of each data channel.  This data dictionary also includes the primary subsystem to which the channel belongs, the location of each sensor, and the units of the values provided by each channel.  
    							</div>
    						</div>
 
@@ -387,7 +457,7 @@
    						</div>
    						<div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Check out the <a href="learn.html">Learn page</a> on our website for some tutorials on working with the Net Zero data.
+   								The full year of data for each subsystem can be downloaded from this website in CSV format by clicking the “Download” button next to the subsystem of interest.  
    							</div>
    						</div>
 
@@ -399,14 +469,118 @@
    						</div>
    						<div id="question8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								There are a few timestamp variables, including minute-level readings with date/time (EST), the day of the week, and a timestamp count (1 to n). Variables that store readings from the net zero house follow the nomenclature subsystem_channel. Where the subsystem and description of the channel are separated with an underscore. For example, Load_RefrigeratorTemp is the temperature in the refrigerator in the Load subsystem.
+   								The dataset includes a wide assortment of variables collected on a minutely basis that describe the energy and thermal comfort performance of the home along with the experimental conditions.  Among these variables are: 
+   								<br> 
+   								<br>
+   								<ul>
+   									<li>
+   										<p>Temperatures and relative humidity in different rooms of the house. </p>
+   									</li>
+
+   									<li>
+   										<p>Temperature, wind conditions, and solar insolation on the main roof and porch roof of the house.</p>
+   									</li>
+
+   									<li>
+   										<p>Electrical power and accumulated energy over the course of the day for each circuit in the house.  Circuits have been arranged so energy consumption by particular devices can be easily identified.</p>
+   									</li>
+
+   									<li>
+   										<p>Temperatures in and out of the heat pump unit and heat recovery ventilator.</p>
+   									</li>
+
+   									<li>
+   										<p>Flags that indicate what appliance, plug load, faucet, or virtual occupant is active at any minute of the day.</p>
+   									</li>
+   									
+   									<li>
+   										<p>Temperatures of water at fixtures and the water heaters.  </p>
+   									</li>
+
+   									<li>
+   										<p>Flow rate and cumulative water consumption at particular fixtures.</p>
+   									</li>
+
+   									<li>
+   										<p>Energy production of the photovoltaic system.</p>
+   									</li>
+   								</ul>
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading9">
+   							<h4 class="panel-title">
+   								<a href="#question9" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How do I validate my data download?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								Use <a href="https://s3.amazonaws.com/net-zero/2015-data-files/hashes.csv">this file</a> of hashes for integrity checking.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading10">
+   							<h4 class="panel-title">
+   								<a href="#question10" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why doesn’t every day have 1440 minutes of data?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								The data acquisition system was set up to perform a reset at midnight of each day for stability purposes.  This reset could last several minutes, so data points are often missing around midnight.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading11">
+   							<h4 class="panel-title">
+   								<a href="#question11" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why are there spikes/gaps in the data?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								With any experiment, occasional glitches in data acquisition result in data points that may not properly capture conditions.  Key gaps in data acquisition, problems with particular equipment, or temporary modifications to the standard operating schedule are noted in the “Known Data Gaps” section of the website.  
+   								<br>
+   								<br>
+								The data are being released without filtering.  Users are encouraged to apply their own criteria for removing data from the data set that are thought to be extraneous.  
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading12">
+   							<h4 class="panel-title">
+   								<a href="#question12" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How do I know what activities are being emulated at a particular time in the house? 
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+								The publication by Omar and Bushby (2013) <a href="https://www.nist.gov/node/575761?pub_id=914650">https://www.nist.gov/node/575761?pub_id=914650</a>  describes the emulation of the virtual family in the home during the year.  The 4-person family follows a weekly schedule throughout the year.  
+								<br>
+								<br>
+								The status of particular devices is available in the <i>Loads</i> subsystem of the dataset.  Channels that begin with the word “Status?” flag whether particular devices are on or off at a particular minute.  
+  
    							</div>
    						</div>
 
    					</div>
    				</div>
-
    			</div>
+
+   			<div id="data_citation">
+   				<h2>NIST Net-Zero Citation</h2>
+   				<br>
+   				<p id="data_citation_text">Fanney, A.H., Healy, W., Dougherty, B., Payne, W.V., Ullah, T., Ng, L, Omar, F. (2016). Net Zero Energy Residential Test Facility Instrumented Data – Year 2. NIST Engineering Lab. https://pages.nist.gov/netzero</p>
+   				<button onclick="copyToClipboard('data_citation_text')">Copy Citation</button>
+   			</div>
+
+   			<hr \>
+			<section class="footer">
+			
+				<br>
+				<a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+			
+			</section>
    		</div>
    	</div>
 
@@ -418,5 +592,6 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/nzertf.js"></script>
+    <script type="text/javascript" src="js/data_page.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NIST NetZero Learn Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>NIST Net-Zero - Learn More</title>
+    <meta name="description" content="NIST Net-Zero learn page to get tutorials on data usage">
     <link href="css/nzertf.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
@@ -32,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/nist.png" height="25">Engineering Laboratory</a>
+                <a class="navbar-brand" href="index.html"><img src="img/nist.png" alt="NIST logo" height="25">Engineering Laboratory</a>
 
             </div>
             <div class="collapse navbar-collapse parentMenu">
@@ -42,8 +44,8 @@
                        <div class="dropdown-content">
                             <a href="data.html#download_data">Download Data</a>
                             <a href="data.html#data_dictionary">Data Dictionary</a>
-                            <a href="data.html#log_revisions">Log of Revisions</a>
-                            <a href="data.html#data_faq">FAQ &amp;<br> Known Data Issues</a>
+                            <a href="data.html#log_revisions">Known Data Gaps and Issues</a>
+                            <a href="data.html#data_faq">FAQ</a>
                         </div> 
                     </li>
                     <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -105,6 +107,8 @@
                         <li><a href="#Analyze-Aggregate-Readings-B">Work with the Data</a></li>
                     </ul>
                 </li>
+                <li><a href="#csv_to_json">Convert CSV to JSON</a>   
+                </li>
             </ul>
         </nav>
 
@@ -113,41 +117,56 @@
         <div class="col-xs-12 col-sm-9 content_stuff">
             <section id="Data-From-Subsystem" class="group">
                 <h1>Work with data from a subsystem</h1>
-                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like HVAC, Electrical, DHW. </p>
+                    <p>Data from the Net Zero house includes 400+ variables that include readings from instrumentation around the house in one minute increments. Each of these variables, also called channels in NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems:
+                    <br>
+                    <br>
+                    <i>DHW - Domestic Hot Water</i> <i>SHW - Solar Hot Water</i> <i>Load - Electrical and Thermal Loads by equipment and people</i> <i>HVAC - Heating and Cooling System</i> <i>IndEnv - Indoor Environment</i> <i>PV - Photovoltaic</i> <i>OutEnv - Outdoor Environment</i> <i>Vent - Ventilation</i> <i>Elec - Electrical</i> 
+                    </p>
+
                     <p> This tutorial walks through loading data from a particular subsystem.</p>
  
         <div id="Data-From-Subsystem-A" class="subgroup">
 
                 <h3>Get the data you need</h3>
-                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net Zero website and import it into R, or you can use the download link directly.</p>
+                <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net-Zero website and import it into R, or you can use the download link directly.</p>
                 <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
-<pre><code class="r"># load libraries
+<pre><code class="r">
+# load libraries
 library(ggplot2) # plotting library
 
 # get data
-hvac <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
-                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
-<pre><code>names(hvac)</code></pre>
+hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+</code></pre>
+                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_Channel.</p>
 
-<pre><code>##  [1] "TimeStampGPSTime"                           
-##  [2] "DayOfWeek"                                  
-##  [3] "TimeStampCount"                             
-##  [4] "HVAC_HVACDeltaPPressureDiffacrossIndoorUnit"
-##  [5] "HVAC_HVACDewpointReturnAir"                 
-##  [6] "HVAC_HVACDewpointSupplyAir"                 
-##  [7] "HVAC_HVACHeatPumpAirFlowRate"               
-##  [8] "HVAC_HVACHeatPumpLatentCapacity"            
-##  [9] "HVAC_HVACHeatPumpSensibleCapacity"          
-## [10] "HVAC_HVACHeatPumpTotalCapacity"             
-## [11] "HVAC_HVACSensibleHeatRatio"                 
-## [12] "HVAC_HVACTempReturnAir"                     
-## [13] "HVAC_HVACTempSupplyAir"                     
-## [14] "HVAC_HeatPumpIndoorEnergyTotal"             
-## [15] "HVAC_HeatPumpIndoorPowerTotal"              
-## [16] "HVAC_HeatPumpOutdoorEnergyTotal"            
-## [17] "HVAC_HeatPumpOutdoorPowerTotal"             
-## [18] "HVAC_HeatPumpEnergyIndoorunit"              
-## [19] "HVAC_HeatPumpEnergyOutdoorUnit"</code></pre>
+<pre><code>
+names(hvac)
+</code></pre>
+
+<pre><code>
+##  [1] "Timestamp"                                  
+##  [2] "TimeStamp_Count"                            
+##  [3] "TimeStamp_SchedulerTime"                    
+##  [4] "TimeStamp_SystemTime"                       
+##  [5] "DayOfWeek"                                  
+##  [6] "HVAC_HVACDeltaPPressureDiffacrossIndoorUnit"
+##  [7] "HVAC_HVACDewpointReturnAir"                 
+##  [8] "HVAC_HVACDewpointSupplyAir"                 
+##  [9] "HVAC_HVACTempReturnAir"                     
+## [10] "HVAC_HVACTempSupplyAir"                     
+## [11] "HVAC_HeatPumpIndoorEnergyTotal"             
+## [12] "HVAC_HeatPumpIndoorPowerTotal"              
+## [13] "HVAC_HeatPumpOutdoorEnergyTotal"            
+## [14] "HVAC_HeatPumpOutdoorPowerTotal"             
+## [15] "HVAC_HeatPumpEnergyIndoorunit"              
+## [16] "HVAC_HeatPumpEnergyOutdoorUnit"             
+## [17] "HVAC_X1421IDUnitPowerDemandW"               
+## [18] "HVAC_X1422ODUnitPowerDemandW"               
+## [19] "HVAC_X1423UltraAire70HPowerW"               
+## [20] "HVAC_UltraAire70HInletAirAvgTempF"          
+## [21] "HVAC_UltraAire70HExitAirAvgTempF"           
+## [22] "HVAC_UltraAire70HAirflowCFM"
+</code></pre>
 
 
                 </div>
@@ -155,126 +174,159 @@ hvac <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv", h
             <div id="Data-From-Subsystem-B" class="subgroup">
                 <h3>Working with the Data</h3>
                     <p>Once you have your data, you can visualize the Supply and Return air temperatures by season.</p> 
-                    <p>First, convert TimeStampGPSTime into a date/time format using strptime():</p>
+                    <p>First, convert <i>Timestamp</i> into a date/time format using strptime():</p>
 
-<pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
-hvac$TimeStampGPSTime <- strptime(hvac$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")
+<pre><code>
+# converts Timestamp variable into date/time format (POSIXlt)
+hvac$Timestamp <- strptime(hvac$Timestamp, "%Y-%m-%d %H:%M:%S")
 
-# here is a sample of what that looks like: 
-hvac$TimeStampGPSTime[1:10]</code></pre>
+# quick check of the values in the Timestamp variable
+hvac$Timestamp[1:10]
+</code></pre>
 
-<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
-##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
-##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
-##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
-##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
+<pre><code>
+##  [1] "2015-02-01 00:00:00 CST" "2015-02-01 00:01:00 CST"
+##  [3] "2015-02-01 00:02:00 CST" "2015-02-01 00:03:00 CST"
+##  [5] "2015-02-01 00:04:00 CST" "2015-02-01 00:05:00 CST"
+##  [7] "2015-02-01 00:06:00 CST" "2015-02-01 00:07:00 CST"
+##  [9] "2015-02-01 00:08:00 CST" "2015-02-01 00:09:00 CST"
+</code></pre>
 
 
-            <p>Now we can use the TimeStampGPSTime variable to create a new categorical &#39;season&#39; variable:</p>
+            <p>Now we can use the <i>Timestamp</i> variable to create a new categorical &#39;season&#39; variable:</p>
 
-<pre><code># create a variable for seasons
+<pre><code>
 hvac$season <- "summer"
-hvac$season[hvac$TimeStampGPSTime < '2015-03-20 12:30:00'] <- "spring"
-hvac$season[hvac$TimeStampGPSTime > '2015-09-22 10:21:00' & hvac$TimeStampGPSTime < '2015-12-21 05:44:00'] <- "fall"
-hvac$season[hvac$TimeStampGPSTime > '2015-12-21 05:44:00'] <- "winter"
-hvac$season <- as.factor(hvac$season)
+hvac$season[hvac$Timestamp < '2015-03-20 12:30:00'] <- "spring"
+hvac$season[hvac$Timestamp > '2015-09-22 10:21:00' & hvac$Timestamp < '2015-12-21 05:44:00'] <- "fall"
+hvac$season[hvac$Timestamp > '2015-12-21 05:44:00'] <- "winter"
+hvac$season <- ordered(hvac$season, levels = c("spring", "summer", "fall", "winter"))
 
 # now we can do things like group readings by season
 ggplot(hvac, aes(x = season, y = HVAC_HVACTempSupplyAir, fill = season)) +
   geom_violin(scale = "area") +
-  ggtitle("HVAC Air Supply Temperature by Season")</code></pre>
+  ggtitle("HVAC Air Supply Temperature by Season")
+</code></pre>
     
-    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" alt="HVAC temporature by season visualization" width="672">
 
             <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the return air:</p>
 
-<pre><code class="r"># Visualize supply and return air temperature 
-ggplot(hvac, aes(x = TimeStampCount)) +
-  geom_point(aes(y = HVAC_HVACTempSupplyAir), colour = "blue", alpha = 0.10, size = 1) +
-  geom_point(aes(y = HVAC_HVACTempReturnAir), colour = "black", alpha = 0.10, size = 1) +
+<pre><code class="r">
+# Visualize supply and return air temperature  
+ggplot(hvac, aes(x = Timestamp)) +
+  geom_point(aes(y = HVAC_HVACTempSupplyAir, colour = season), alpha = 0.10, size = 1) +
+  geom_point(aes(y = HVAC_HVACTempReturnAir), colour = "grey", alpha = 0.10, size = 1) +
   xlab("Time") +
-  facet_wrap( ~ season, ncol = 2) +
-  ggtitle("Seasonal Supply and Return Air Temperatures in the HVAC Subsystem")</code></pre>
+  ggtitle("Seasonal Air Vent Supply and Return Temperatures in the HVAC Subsystem")
+</code></pre>
 
-    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672">
+    <img class="image-padding" src="img/NIST-NetZero-HVAC-Subsystem.png" width="672" alt="HVAC subsystem visualization">
                 </div>
             </section>
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>Data from the Net Zero house includes measurements from various instruments around the house in one minute increments. Each variable, also called channels in  NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems like elec, Electrical, DHW.</p>
-                    <p>This data also includes a few date/time variables like 'TimeStampGPSTime', which is the date and timestamp for each reading, 'DayOfWeek' and 'TimeStampCount'. DayOfWeek is useful since computer controlled devices located in the house simulate the usage of a four-member family based on the day of the week.</p>
+                    <p>The Net Zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
+                    <br>
+                    <br>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="http://commercedataservice.github.io/NZERTF/"> Net Zero data portal</a> and import it into R, or you can use the download link directly.</p>
-                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the Electrical subsystem:</p>
+                    <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
+                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem:</p>
 
-<pre><code class="r"># load libraries
+<pre><code class="r">
+# load libraries
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+</code></pre>
 
-        <p>Here are the first 20 variables included in the Electrical subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_SpecificChannel.</p>
+        <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_Channel</i>.</p>
 
-<pre><code>names(elec)[1:20]</code></pre>
+<pre><code>
+names(elec)[1:20]
+</code></pre>
 
         
-<pre>
-<code>##  [1] "TimeStampGPSTime"                     
-##  [2] "DayOfWeek"                            
-##  [3] "TimeStampCount"                       
-##  [4] "ElecEnergy_RPB1PlugsBaseAHeliodyneHXs"
-##  [5] "ElecEnergy_RPB10PlugsOutdoorA"        
-##  [6] "ElecEnergy_RPB11PlugsOutsideEast"     
-##  [7] "ElecEnergy_RPB12PlugsOutdoorB"        
-##  [8] "ElecEnergy_RPB13PlugsDR"              
-##  [9] "ElecEnergy_RPB14PlugsBR4"             
-## [10] "ElecEnergy_RPB15PlugsEntryHall"       
-## [11] "ElecEnergy_RPB16PlugsLR"              
-## [12] "ElecEnergy_RPB17ClothesWasher"        
-## [13] "ElecEnergy_RPB18Dryer1of2"            
-## [14] "ElecEnergy_RPB19Dehumidifier"         
-## [15] "ElecEnergy_RPB2PlugsBaseB"            
-## [16] "ElecEnergy_RPB20Dryer2of2"            
-## [17] "ElecEnergy_RPB21HeatPump1of2"         
-## [18] "ElecEnergy_RPB22AHU21of2"             
-## [19] "ElecEnergy_RPB23HeatPump2of2"         
-## [20] "ElecEnergy_RPB24AHU22of2"</code></pre>
+<pre><code>
+##  [1] "Timestamp"                            
+##  [2] "TimeStamp_Count"                      
+##  [3] "TimeStamp_SchedulerTime"              
+##  [4] "TimeStamp_SystemTime"                 
+##  [5] "DayOfWeek"                            
+##  [6] "Elec_EnergyRPB1PlugsBaseAHeliodyneHXs"
+##  [7] "Elec_EnergyRPB13PlugsDR"              
+##  [8] "Elec_EnergyRPB14PlugsBR4"             
+##  [9] "Elec_EnergyRPB15PlugsEntryHall"       
+## [10] "Elec_EnergyRPB16PlugsLR"              
+## [11] "Elec_EnergyRPB17ClothesWasher"        
+## [12] "Elec_EnergyRPB18Dryer1of2"            
+## [13] "Elec_EnergyRPB19Dehumidifier"         
+## [14] "Elec_EnergyRPB2PlugsBaseB"            
+## [15] "Elec_EnergyRPB20Dryer2of2"            
+## [16] "Elec_EnergyRPB21HeatPump1of2"         
+## [17] "Elec_EnergyRPB22AHU21of2"             
+## [18] "Elec_EnergyRPB23HeatPump2of2"         
+## [19] "Elec_EnergyRPB24AHU22of2"             
+## [20] "Elec_EnergyRPB25HRV"
+</code></pre>
 
                 </div>
                 <div id="Data-By-Timestamp-B" class="subgroup">
                     <h3>Filter and visualize the data</h3>
-                    <p>Before we can visualize this data by date or time, we need to convert TimeStampGPSTime into a date/time format using strptime().</p>
+                    <p>Before we can visualize this data by date or time, we need to convert <i>Timestamp</i> into a date/time format using strptime().</p>
 
-<pre><code># converts TimeStampGPSTime variable into date/time format (POSIXlt)
-elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</code></pre>
+<pre><code>
+# converts Timestamp variable into date/time format (POSIXlt)
+elec$Timestamp <- strptime(elec$Timestamp, "%Y-%m-%d %H:%M:%S")
+</code></pre>
                 
                 <p>Here is a sample of what that looks like:</p>
 
-<pre><code>elec$TimeStampGPSTime[1:10]</code></pre>
+<pre><code>
+elec$Timestamp[1:10]
+</code></pre>
 
-<pre><code>##  [1] "1904-01-01 00:00:00 EST" "2015-02-01 05:02:50 EST"
-##  [3] "2015-02-01 05:03:50 EST" "2015-02-01 05:04:50 EST"
-##  [5] "2015-02-01 05:05:50 EST" "2015-02-01 05:06:50 EST"
-##  [7] "2015-02-01 05:07:50 EST" "2015-02-01 05:08:50 EST"
-##  [9] "2015-02-01 05:09:50 EST" "2015-02-01 05:10:50 EST"</code></pre>
+<pre><code>
+##  [1] "2015-02-01 00:00:00 CST" "2015-02-01 00:01:00 CST"
+##  [3] "2015-02-01 00:02:00 CST" "2015-02-01 00:03:00 CST"
+##  [5] "2015-02-01 00:04:00 CST" "2015-02-01 00:05:00 CST"
+##  [7] "2015-02-01 00:06:00 CST" "2015-02-01 00:07:00 CST"
+##  [9] "2015-02-01 00:08:00 CST" "2015-02-01 00:09:00 CST"
+</code></pre>
 
-            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on TimeStampGPSTime:</p>
-<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>Timestamp</i> and using the <i>Elec_PowerRPBA8Refrigerator</i> variable (<i>Power - RP BA-8 Refrigerator</i> in the data dictionary).</p>
+
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_PowerRPBA8Refrigerator)) +
   geom_line(alpha = 0.4) +
-  ggtitle("Refrigerator Channel Readings")</code></pre>
+  ggtitle("Instantaneous Power Consumption by Refrigerator")
+</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refigerator-Channel-Readings-Day.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Instan-Consump-Refrig.png" width="673" alt="Refrigerator instantaneous consupmption by refrigerator visualization">
 
-               <p>Or look at refrigerator readings for that day in comparison to the rest of the week:</p>
-<pre><code>ggplot(elec[elec$TimeStampGPSTime < '2015-10-05 00:00:00' & elec$TimeStampGPSTime > '2015-09-28 00:00:00',], aes(x = TimeStampGPSTime, y = ElecEnergy_RPBA8Refrigerator)) +
+               <p>Alternatively, to look at the cumulative energy consumption for that day (which resets once a day), we could visualize the <i>Elec_EnergyRPBA8Refrigerator</i> variable.</p>
+
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_EnergyRPBA8Refrigerator)) +
   geom_line(alpha = 0.4) +
-  geom_line(data = elec[elec$TimeStampGPSTime < '2015-10-02 00:00:00' & elec$TimeStampGPSTime > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
-  ggtitle("Refrigerator Channel Readings")</code></pre>
+  ggtitle("Cumulative Power Consumption by Refrigerator")
+</code></pre>
 
-            <img class="image-padding" src="img/NIST-NetZero-Refrigerator-Channel-Readings-Week.png" width="673">
+            <img class="image-padding" src="img/NIST-NetZero-Cumul-Power-Refrig.png" width="673" alt="Refrigerator Channel cumulative power by day visualization">
+
+            <p>Visualizing instantaneous power consumption by the refrigerator for that day in comparison to the rest of hte week would allow us to identify any spikes in power consumption.</p>
+<pre><code>
+ggplot(elec[elec$Timestamp < '2015-10-05 00:00:00' & elec$Timestamp > '2015-09-28 00:00:00',], aes(x = Timestamp , y = Elec_PowerRPBA8Refrigerator)) +
+  geom_point(alpha = 0.4) +
+  geom_point(data = elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
+  ggtitle("Refrigerator Channel Readings")   
+</code></pre>
+
+            <img class="image-padding" src="img/NIST-NetZero-Refrig-Channel-Readings.png" width="673" alt="Refrigerator Channel Readings visualization">
 
                 </div>
             </section>
@@ -283,98 +335,89 @@ elec$TimeStampGPSTime <- strptime(elec$TimeStampGPSTime, "%Y-%m-%d %H:%M:%S")</c
                 <h2>Analyzing Aggregated Readings</h2>
                     <p>Channels provide data at the instrumentation-level, however it is possible to analyze aggregate readings at the subsystem level.</p>
 
-                    <p>This tutorial walks through analyzing aggregate/total instantaneous readings for channels in the Electrical subsystem</p>
+                    <p>This tutorial walks through analyzing aggregate/total instantaneous readings for channels in the <i>Electrical</i> subsystem</p>
                 <div id="Analyze-Aggregate-Readings-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>First, we can use the download link from the Data page to import the data for the Electrical Subsystem:</p>
+                    <p>First, we can use the download link from the Data page to import the data for the <i>Electrical</i> Subsystem:</p>
 
-<pre><code class="r"># load libraries
+<pre><code class="r">
+# load libraries
 library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/net-zero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))</code></pre>
-
-                <p>There are 545 channels in the Electrical subsystem, however a subset of those channels measure total electrical readings, which is what we are interested in.</p>
-
-<pre><code class="r"># Row and column count for Electrical channel data
-dim(elec)</code></pre>
-
-<pre><code>## [1] 524161    545</code></pre>
-
-<pre><code># List of channels that contain total readings
-totals <- names(elec)[grep("Elec_Total", names(elec))]
-totals</code></pre>
-
-<pre><code>##  [1] "Elec_TotalApplianceEnergy"          
-##  [2] "Elec_TotalAppliancePower"           
-##  [3] "Elec_TotalDHWEnergy"                
-##  [4] "Elec_TotalDHWPower"                 
-##  [5] "Elec_TotalGenerationEnergy"         
-##  [6] "Elec_TotalGenerationPower"          
-##  [7] "Elec_TotalHVACEnergy"               
-##  [8] "Elec_TotalHVACPower"                
-##  [9] "Elec_TotalLightingEnergy"           
-## [10] "Elec_TotalLightingPower"            
-## [11] "Elec_TotalNZERTFEnergyExportCT"     
-## [12] "Elec_TotalNZERTFEnergyExportSumCirc"
-## [13] "Elec_TotalNZERTFEnergyImportCT"     
-## [14] "Elec_TotalNZERTFEnergyImportSumCirc"
-## [15] "Elec_TotalNZERTFEnergyLoadSumCirc"  
-## [16] "Elec_TotalNZERTFPowerExportCT"      
-## [17] "Elec_TotalNZERTFPowerExportSumCirc" 
-## [18] "Elec_TotalNZERTFPowerImportCT"      
-## [19] "Elec_TotalNZERTFPowerImportSumCirc" 
-## [20] "Elec_TotalNZERTFPowerLoadSumCirc"   
-## [21] "Elec_TotalOccupantEnergy"           
-## [22] "Elec_TotalOccupantPower"            
-## [23] "Elec_TotalPlugLoadEnergy"           
-## [24] "Elec_TotalPlugLoadPower"</code></pre>
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+</code></pre>
 
                 </div>
                 <div id="Analyze-Aggregate-Readings-B" class="subgroup">
                     <h3>Working with the data</h3>
-                        <p>Now that we know which variables contain total readings from this subsystem we can take a closer look.</p>
+                        <p>There are 158 channels in the Electrical subsystem, however it is possible to aggregate those instantaneous power consumption readings.</p>
 
-                        <p>First, convert TimeStampGPSTime into a date/time format using strptime():</p>
+<pre><code class="r">
+# Row and column count for Electrical channel data
+dim(elec)
+</code></pre>
 
-<pre><code># subset data to Totals only and any timestamp variables we need
-elec <- elec[,c("Timestamp", "TimeStamp_Count", "DayOfWeek", totals)]
+<pre><code>
+## [1] 524161    163
+</code></pre>
 
-# converts Timestamp variable into date/time format (POSIXlt)
-elec$Timestamp <- strptime(elec$Timestamp, "%Y-%m-%d %H:%M:%S", tz = "EST")</code></pre>
+<pre><code class="r">
+# create an object that only has instantaneous power readings
+elec_power <- elec[,c("Timestamp", names(elec)[grep("_Power", names(elec))])]
 
-                        <p>Then decide which timestamps you are interested in. Remember that we have a reading for each minute of the year, so for this tutorial we are going to pull readings from 12pm EST on the first of each month:</p>
+# using the data dictionary or metadata files, this object could be narrowed down to power consumption in one room or for a specific appliance
+# the 'total' variable below is a sum of all electrical power consumption channels
+elec_power$total <- rowSums(elec_power[,2:ncol(elec_power)])
 
-<pre><code># extract readings from the first of each month at noon
-data <- elec[elec$Timestamp %in% (elec$Timestamp[elec$Timestamp$mday == 01 & elec$Timestamp$hour == 12 & elec$Timestamp$min == 00 & elec$Timestamp$sec == 00]),]
-data$TimeStamp_Count <- as.factor(1:nrow(data))
-data$Timestamp <- NULL
-data$DayOfWeek <- NULL
-data <- melt(data, value.name = "channel")</code></pre>
+# ggplot(elec_power[,c("Timestamp", "total")], aes(x = Timestamp, y = total)) +
+   geom_point(aes(colour = strftime(elec_power$Timestamp, format = "%m")), alpha = 0.4) +
+   geom_smooth() +
+   theme(legend.position="none") +
+   ggtitle("Total Instantaneous Power Consumption Readings")
+</code></pre>
 
-<pre><code>## Using TimeStamp_Count as id variables</code></pre>
-
-                        <p>Now let&#39;s take a look at how these readings compare:</p>
-
-<pre><code>ggplot(data, aes(x = TimeStamp_Count, y = channel, group = variable, colour = variable)) +
-  geom_line() +
-  ggtitle("Total readings from Electrical Subsystem") +
-  theme(legend.position="top")</code></pre>
-                <img class="image-padding" src="img/NIST-NetZero-Total-Readings-from-Electrical-Subsystem.png" width="673">
-
-                <p>Once you know which readings you are most interested in, you can filter for those:</p>
-
-<pre><code>ggplot(data[data$variable %in% c("Elec_TotalOccupantEnergy", "Elec_TotalOccupantPower"),], aes(x = TimeStamp_Count, y = channel, group = variable, colour = variable)) +
-  geom_line() +
-  ggtitle("Total Occupant Energy and Power Readings from Electrical Subsystem")</code></pre>
-            
-            <img class="image-padding" src="img/NIST-NetZero-Total-Occupant-Energy.png" width="673">
+                <img class="image-padding" src="img/NIST-NetZero=Instan-Power-Consump.png" width="673" alt="Total Instantaneous Power Consumption Readings visualization">
 
                 </div>
+
+
+
+                <div id="csv_to_json" class="subgroup">
+                    <h3>From CSV to JSON</h3>
+                    <p>When you download the files from the <a href="data.html#download_data">Download table</a> it will be as a CSV file. If you are interested in building a project using JavaScript, NodeJS, or anything that is more suited to JSON file structures - you will need to covert them from CSVs to JSON. In our work we have recommended using the <a href="https://www.npmjs.com/package/csvtojson">CSVtoJSON Converter</a> module that you can download from npm. Once you have downloaded the npm module you can use the following code as a template to convert the raw CSV to a JSON file. (We do not recommend this tutorial for converting the 'All Subsystems' CSV file because of its size). </p>
+<pre><code>
+var Converter = require('csvtojson').Converter;
+var converter = new Converter({
+    constructResult: false, ## if you are using a large file it does not hold the data to memory
+    toArrayString: true ## pipes the data to an array
+});
+
+var readStream = require('fs').createReadStream('../All-Subsystems.csv'); ## relative path to where the downloaded CSV is in your repo
+var writeStream = require('fs').createWriteStream('../output.json'); ## relative path to where you would like the JSON file to be made
+
+readStream.pipe(converter).pipe(writeStream);
+</code></pre>
+                    <p>Please see the documentation <a href="https://www.npmjs.com/package/csvtojson">(link)</a> for all options that are available to you. In addition, if you are curious about <a href="https://nodejs.org/api/fs.html#fs_file_system">File Streams</a> in Node feel free to take a look at its documentation as well.</p>
+                    <br>
+
+
+                </div>
+
+
+
             </section>
             
+            <hr \>
+            
+            <section class="footer">
+            <br>
+                <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+            </section>
         </div>
+
+
     </div>
 </div>
 </body>
