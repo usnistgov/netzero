@@ -365,10 +365,20 @@ td.download_button a {
   color: white;
 }
 
+/*Data Page Mobile CSS*/
 @media screen and (max-width: 679px) {
   .col_not_mobile {
     display: none;
   }
+
+  div.button_div.mobile_grey_out {
+    background-color: grey;
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+
 }
 
 tr.link_div {
