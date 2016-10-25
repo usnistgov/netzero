@@ -47,9 +47,18 @@ function copyToClipboard(elementId) {
 var title = $('#download_data h2');
 var daily_agg_button = $('.btn_daily_agg');
 var hourly_read_button = $('.btn_hour_read');
+var link = $('.download_button').children('a');
 
 daily_agg_button.click( function() {
-    title.text('Subsystem Data Downloads (Daily Aggregate)');
+    title.text('Subsystem Data Downloads (Daily Aggregate)');  
+    link.each( function() {
+        var item = $(this);
+        var originalValue = item.attr('href');
+        var changedValue = originalValue.replace(/DHW/i, 'HelloItsMe');
+        item.attr('href', changedValue);
+        // console.log($(this).attr('href'));
+      });
+
 });
 
 hourly_read_button.click( function() {
