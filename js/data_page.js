@@ -56,7 +56,6 @@ daily_agg_button.click( function() {
         var originalValue = item.attr('href');
         var changedValue = originalValue.replace(/DHW/i, 'HelloItsMe');
         item.attr('href', changedValue);
-        // console.log($(this).attr('href'));
       });
 
 });
