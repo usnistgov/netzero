@@ -43,3 +43,16 @@ function copyToClipboard(elementId) {
 }
 
 
+// Toggle buttons underneath title
+var title = $('#download_data h2');
+var daily_agg_button = $('.btn_daily_agg');
+var hourly_read_button = $('.btn_hour_read');
+
+daily_agg_button.click( function() {
+    title.text('Subsystem Data Downloads (Daily Aggregate)');
+});
+
+hourly_read_button.click( function() {
+    title.text('Subsystem Data Downloads (Hourly Readings)');
+});
+

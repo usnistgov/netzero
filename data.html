@@ -48,27 +48,6 @@
                         <li><a href="https://www.nist.gov/el" target="_blank">About EL</a></li>
                     </ul>
                 </div>
-               <div class="collapse navbar-collapse1 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home1</a></li>
-                        <li><a href="#about">About1</a></li>
-                        <li><a href="#contact">Contact1</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse2 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home2</a></li>
-                        <li><a href="#about">About2</a></li>
-                        <li><a href="#contact">Contact2</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse3 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home3</a></li>
-                        <li><a href="#about">About3</a></li>
-                        <li><a href="#contact">Contact3</a></li>
-                    </ul>
-                </div>
                 <!-- /.nav-collapse -->
             </div>
         </div>
@@ -98,7 +77,9 @@
 	    	</div>
 
 	    	<div id="download_data">
-				<h2>Subsystem Data Downloads</h2>
+				<h2>Subsystem Data Downloads (Daily Aggregate)</h2>
+				<button type="button" class="btn btn-primary btn_daily_agg">Daily Aggregate</button>
+				<button type="button" class="btn btn-primary btn_hour_read">Hourly Readings</button>
 				
 				<table class="table table-striped download_data_table" id="download_table">
 					<thead>
@@ -106,8 +87,8 @@
 							<th>Subsystem Abbreviation</th>
 							<th>Subsystem Definition</th>
 							<th class="col_not_mobile">File Size</th>
-							<th>Subsystem Data <br>Download (CSV)</th>
-							<th class="col_not_mobile">Subsystem Data <br>Download (JSON)</th>
+							<th>Data Download (CSV)</th>
+							<th class="col_not_mobile">Data Download (JSON)</th>
 						</tr>
 					</thead>
 
@@ -143,11 +124,11 @@
 							<td>Electrical and Thermal Loads <br> by equipment and people</td>
 							<td class="col_not_mobile">240.3 MB</td>
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -155,12 +136,12 @@
 							<td>HVAC</td>
 							<td>Heating and Cooling System</td>
 							<td class="col_not_mobile">89.2 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -168,12 +149,12 @@
 							<td>IndEnv</td>
 							<td>Indoor Environment</td>
 							<td class="col_not_mobile">269.3 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -181,12 +162,12 @@
 							<td>PV</td>
 							<td>Photovoltaic</td>
 							<td class="col_not_mobile">217.4 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -195,12 +176,12 @@
 							<td>OutEnv</td>
 							<td>Outdoor Environment</td>
 							<td class="col_not_mobile">28.7 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -208,12 +189,12 @@
 							<td>Vent</td>
 							<td>Ventilation</td>
 							<td class="col_not_mobile">133.3 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -221,25 +202,25 @@
 							<td>Elec</td>
 							<td>Electrical</td>
 							<td class="col_not_mobile">567.1 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Metadata</td>
-							<td>Subsystem Info, Measurement Location, <br> Measurement Units, and the Min/Max Values</td>
+							<td>Subsystem Info, Measurement Location & Units, Min/Max Values</td>
 							<td class="col_not_mobile">49.5 KB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
@@ -247,12 +228,12 @@
 							<td>All Subsystems</td>
 							<td>All Subsystem Data</td>
 							<td class="col_not_mobile">1.7 GB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><div class="button_div">Download</div></a>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
+							<td class="download_button col_not_mobile">
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><div class="button_div">JSON</div></a>
 							</td>
 						</tr>
 
