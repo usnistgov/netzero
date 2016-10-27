@@ -46,28 +46,28 @@ function copyToClipboard(elementId) {
 
 var data_file_sizes = {
   "All Subsystems" : {
-    minute_size_CSV: "1.6 GB",
     hour_size_CSV: "31.9 MB",
-    minute_size_JSON: "6.6 GB",
-    hour_size_JSON: "117.9 MB"
+    hour_size_JSON: "117.9 MB",
+    minute_size_CSV: "1.6 GB",
+    minute_size_JSON: "6.6 GB"
   },
   DHW : {
-    minute_size_CSV: "291 MB",
     hour_size_CSV: "5.5 MB",
-    minute_size_JSON: "1003.6 MB",
-    hour_size_JSON: "17.2 MB"
+    hour_size_JSON: "17.2 MB",
+    minute_size_CSV: "291 MB",
+    minute_size_JSON: "1003.6 MB"
   },
   SHW: {
-    minute_size_CSV: "51.9 MB",
     hour_size_CSV: "830.3 KB",
-    minute_size_JSON: "176.2 MB",
-    hour_size_JSON: "2.6 MB"
+    hour_size_JSON: "2.6 MB",
+    minute_size_CSV: "52 MB",
+    minute_size_JSON: "176.2 MB"
   },
   Elec: {
-    minute_size_CSV: "500.5 MB",
     hour_size_CSV: "9 MB",
-    minute_size_JSON: "176.2 MB",
-    hour_size_JSON: "2.3 GB"    
+    hour_size_JSON: "40.9 MB",
+    minute_size_CSV: "500.5 MB",
+    minute_size_JSON: "2.3 GB"
   },
   HVAC: {
     hour_size_CSV:"1.3 MB",
@@ -90,8 +90,8 @@ var data_file_sizes = {
   Metadata: {
     hour_size_CSV:"67.1 KB",
     hour_size_JSON:"115.1 KB",
-    minute_size_CSV: "63 KB",
-    minute_size_JSON: "103.1 KB"    
+    minute_size_CSV: "67.1 KB",
+    minute_size_JSON: "115.1 KB"    
   },
   Misc: {
     hour_size_CSV:"221.8 KB",
@@ -100,21 +100,21 @@ var data_file_sizes = {
     minute_size_JSON: "78.7 MB" 
   },
   OutEnv: {
-    hour_size_CSV:"221.8 KB",
-    hour_size_JSON:"793.4 KB",
-    minute_size_CSV: "32.1 MB",
-    minute_size_JSON: "78.7 MB"    
-  },
-  PV: {
     hour_size_CSV:"539.3 KB",
     hour_size_JSON:"1.3 MB",
     minute_size_CSV: "29.1 MB",
-    minute_size_JSON: "92.6 MB"     
+    minute_size_JSON: "92.6 MB"    
+  },
+  PV: {
+    hour_size_CSV:"4.1 MB",
+    hour_size_JSON:"10.1 MB",
+    minute_size_CSV: "217.7 MB",
+    minute_size_JSON: "594.3 MB"     
   },
   SHW: {
     hour_size_CSV:"830.3 KB",
     hour_size_JSON:"2.6 MB",
-    minute_size_CSV: "51.9 MB",
+    minute_size_CSV: "52 MB",
     minute_size_JSON: "176.2 MB" 
   },
   Vent: {
@@ -126,7 +126,7 @@ var data_file_sizes = {
 };
 
 
-// Toggle buttons underneath title
+// Toggle Buttons Functionality
 var $title = $('#download_data h2');
 var $CSV_button = $('.btn_CSV');
 var $JSON_button = $('.btn_JSON');
