@@ -55,7 +55,7 @@ var data_file_sizes = {
     hour_size_CSV: "5.5 MB",
     hour_size_JSON: "17.2 MB",
     minute_size_CSV: "291 MB",
-    minute_size_JSON: "1003.6 MB"
+    minute_size_JSON: "1 GB"
   },
   SHW: {
     hour_size_CSV: "830.3 KB",
