@@ -44,14 +44,16 @@ function copyToClipboard(elementId) {
 
 
 // Toggle buttons underneath title
-var title = $('#download_data h2');
-var daily_agg_button = $('.btn_daily_agg');
-var hourly_read_button = $('.btn_hour_read');
-var link = $('.download_button').children('a');
+var $title = $('#download_data h2');
+var $CSV_button = $('.btn_CSV');
+var $JSON_button = $('.btn_JSON');
+var $link = $('.download_button').children('a');
+var $download_button_div = $('.button_div');
 
-daily_agg_button.click( function() {
-    title.text('Subsystem Data Downloads (Daily Aggregate)');  
-    link.each( function() {
+$CSV_button.click( function() {
+    $title.text('Subsystem Data Downloads (CSV)');
+    $download_button_div.text('CSV');
+    $link.each( function() {
         var item = $(this);
         var originalValue = item.attr('href');
         var changedValue = originalValue.replace(/DHW/i, 'HelloItsMe');
@@ -60,7 +62,9 @@ daily_agg_button.click( function() {
 
 });
 
-hourly_read_button.click( function() {
-    title.text('Subsystem Data Downloads (Hourly Readings)');
+$JSON_button.click( function() {
+    $title.text('Subsystem Data Downloads (JSON)');
+    $download_button_div.text('JSON');
+
 });
 
