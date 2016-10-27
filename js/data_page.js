@@ -45,28 +45,85 @@ function copyToClipboard(elementId) {
 // Data Links and File Size JSON
 
 var data_AWS_links = {
-  All_Datasets : {
-    minute_link_CSV: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.csv",
-    minute_size_CSV: "1.72 GB",
-    hour_link_CSV: "https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv",
-    hour_size_CSV: "33.5 MB",
-    minute_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.json",
-    minute_size_JSON: "7.16 GB",
-    hour_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-hour.json",
+  "All Subsystems" : {
+    minute_size_CSV: "1.6 GB",
+    hour_size_CSV: "31.9 MB",
+    minute_size_JSON: "6.6 GB",
     hour_size_JSON: "117.9 MB"
   },
   DHW : {
-    minute_link_CSV: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.csv",
     minute_size_CSV: "291 MB",
-    hour_link_CSV: "https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv",
     hour_size_CSV: "5.5 MB",
-    minute_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.json",
     minute_size_JSON: "1003.6 MB",
-    hour_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-hour.json",
     hour_size_JSON: "17.2 MB"
-  } 
-
-}
+  },
+  SHW: {
+    minute_size_CSV: "51.9 MB",
+    hour_size_CSV: "830.3 KB",
+    minute_size_JSON: "176.2 MB",
+    hour_size_JSON: "2.6 MB"
+  },
+  Elec: {
+    minute_size_CSV: "500.5 MB",
+    hour_size_CSV: "9 MB",
+    minute_size_JSON: "176.2 MB",
+    hour_size_JSON: "2.3 GB"    
+  },
+  HVAC: {
+    hour_size_CSV:"1.3 MB",
+    hour_size_JSON:"3.8 MB",
+    minute_size_CSV: "64.3 MB",
+    minute_size_JSON: "230.8 MB"
+  },
+  IndEnv: {
+    hour_size_CSV:"5.1 MB",
+    hour_size_JSON:"12.6 MB",
+    minute_size_CSV: "269.5 MB",
+    minute_size_JSON: "737.9 MB"    
+  },
+  Load: {
+    hour_size_CSV:"4.6 MB",
+    hour_size_JSON:"25.6 MB",
+    minute_size_CSV: "241 MB",
+    minute_size_JSON: "1.4 GB"    
+  },
+  Metadata: {
+    hour_size_CSV:"67.1 KB",
+    hour_size_JSON:"115.1 KB",
+    minute_size_CSV: "63 KB",
+    minute_size_JSON: "103.1 KB"    
+  },
+  Misc: {
+    hour_size_CSV:"221.8 KB",
+    hour_size_JSON:"793.4 KB",
+    minute_size_CSV: "32.1 MB",
+    minute_size_JSON: "78.7 MB" 
+  },
+  OutEnv: {
+    hour_size_CSV:"221.8 KB",
+    hour_size_JSON:"793.4 KB",
+    minute_size_CSV: "32.1 MB",
+    minute_size_JSON: "78.7 MB"    
+  },
+  PV: {
+    hour_size_CSV:"539.3 KB",
+    hour_size_JSON:"1.3 MB",
+    minute_size_CSV: "29.1 MB",
+    minute_size_JSON: "92.6 MB"     
+  },
+  SHW: {
+    hour_size_CSV:"830.3 KB",
+    hour_size_JSON:"2.6 MB",
+    minute_size_CSV: "51.9 MB",
+    minute_size_JSON: "176.2 MB" 
+  },
+  Vent: {
+    hour_size_CSV:"1.9 MB",
+    hour_size_JSON:"5.4 MB",
+    minute_size_CSV: "109.4 MB",
+    minute_size_JSON: "331.6 MB" 
+  }
+};
 
 
 // Toggle buttons underneath title
@@ -75,6 +132,9 @@ var $CSV_button = $('.btn_CSV');
 var $JSON_button = $('.btn_JSON');
 var $link = $('.download_button').children('a');
 var $download_button_div = $('.button_div');
+var $minute_file_size = $('.minute_file_size_td');
+var $hour_file_size = $('.hour_file_size_td');
+var $each_tr = $('#download_data table tbody tr');
 
 
 $CSV_button.click( function() {
@@ -85,8 +145,18 @@ $CSV_button.click( function() {
         var originalValue = item.attr('href');
         var changedValue = originalValue.replace(/json/i, 'csv');
         item.attr('href', changedValue);
-      });
+    });
 
+    $each_tr.each( function() {
+        var $eachRow = $(this);
+        var $subsystemName = $eachRow.children('td:nth-child(1)').text();
+        for (var key in data_AWS_links) {
+          if (key == $subsystemName) {
+              $eachRow.find('.minute_file_size_td').text(data_AWS_links[key]['minute_size_CSV'])
+              $eachRow.find('.hour_file_size_td').text(data_AWS_links[key]['hour_size_CSV'])
+          }
+        };
+    });
 });
 
 $JSON_button.click( function() {
@@ -99,5 +169,15 @@ $JSON_button.click( function() {
         item.attr('href', changedValue);
       });
 
+    $each_tr.each( function() {
+        var $eachRow = $(this);
+        var $subsystemName = $eachRow.children('td:nth-child(1)').text();
+        for (var key in data_AWS_links) {
+          if (key == $subsystemName) {
+              $eachRow.find('.minute_file_size_td').text(data_AWS_links[key]['minute_size_JSON'])
+              $eachRow.find('.hour_file_size_td').text(data_AWS_links[key]['hour_size_JSON'])
+          }
+        };
+    });
 });
 
