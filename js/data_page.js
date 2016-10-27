@@ -44,7 +44,7 @@ function copyToClipboard(elementId) {
 
 // Data Links and File Size JSON
 
-var data_AWS_links = {
+var data_file_sizes = {
   "All Subsystems" : {
     minute_size_CSV: "1.6 GB",
     hour_size_CSV: "31.9 MB",
@@ -138,8 +138,19 @@ var $each_tr = $('#download_data table tbody tr');
 
 
 $CSV_button.click( function() {
+    //changes title of chart
     $title.text('Subsystem Data Downloads (CSV)');
+
+    // changes text on download buttons
     $download_button_div.text('CSV');
+
+    // checks 'active' class and adds it if it is not there
+    if (!$CSV_button.hasClass('active')) {
+        $CSV_button.addClass('active');
+        $JSON_button.removeClass('active');
+    }
+
+    // changes link names to .csv from .json
     $link.each( function() {
         var item = $(this);
         var originalValue = item.attr('href');
@@ -147,21 +158,29 @@ $CSV_button.click( function() {
         item.attr('href', changedValue);
     });
 
+    // changes file sizes based on button clicked
     $each_tr.each( function() {
         var $eachRow = $(this);
         var $subsystemName = $eachRow.children('td:nth-child(1)').text();
-        for (var key in data_AWS_links) {
+        for (var key in data_file_sizes) {
           if (key == $subsystemName) {
-              $eachRow.find('.minute_file_size_td').text(data_AWS_links[key]['minute_size_CSV'])
-              $eachRow.find('.hour_file_size_td').text(data_AWS_links[key]['hour_size_CSV'])
+              $eachRow.find('.minute_file_size_td').text(data_file_sizes[key]['minute_size_CSV'])
+              $eachRow.find('.hour_file_size_td').text(data_file_sizes[key]['hour_size_CSV'])
           }
         };
     });
+
 });
 
 $JSON_button.click( function() {
     $title.text('Subsystem Data Downloads (JSON)');
     $download_button_div.text('JSON');
+    
+    if (!$JSON_button.hasClass('active')) {
+        $JSON_button.addClass('active');
+        $CSV_button.removeClass('active');
+    }
+
     $link.each( function() {
         var item = $(this);
         var originalValue = item.attr('href');
@@ -172,10 +191,10 @@ $JSON_button.click( function() {
     $each_tr.each( function() {
         var $eachRow = $(this);
         var $subsystemName = $eachRow.children('td:nth-child(1)').text();
-        for (var key in data_AWS_links) {
+        for (var key in data_file_sizes) {
           if (key == $subsystemName) {
-              $eachRow.find('.minute_file_size_td').text(data_AWS_links[key]['minute_size_JSON'])
-              $eachRow.find('.hour_file_size_td').text(data_AWS_links[key]['hour_size_JSON'])
+              $eachRow.find('.minute_file_size_td').text(data_file_sizes[key]['minute_size_JSON'])
+              $eachRow.find('.hour_file_size_td').text(data_file_sizes[key]['hour_size_JSON'])
           }
         };
     });
