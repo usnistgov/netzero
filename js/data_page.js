@@ -42,6 +42,32 @@ function copyToClipboard(elementId) {
 
 }
 
+// Data Links and File Size JSON
+
+var data_AWS_links = {
+  All_Datasets : {
+    minute_link_CSV: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.csv",
+    minute_size_CSV: "1.72 GB",
+    hour_link_CSV: "https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv",
+    hour_size_CSV: "33.5 MB",
+    minute_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.json",
+    minute_size_JSON: "7.16 GB",
+    hour_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-hour.json",
+    hour_size_JSON: "117.9 MB"
+  },
+  DHW : {
+    minute_link_CSV: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.csv",
+    minute_size_CSV: "291 MB",
+    hour_link_CSV: "https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv",
+    hour_size_CSV: "5.5 MB",
+    minute_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.json",
+    minute_size_JSON: "1003.6 MB",
+    hour_link_JSON: "https://s3.amazonaws.com/net-zero/2015-data-files/DHW-hour.json",
+    hour_size_JSON: "17.2 MB"
+  } 
+
+}
+
 
 // Toggle buttons underneath title
 var $title = $('#download_data h2');
@@ -50,13 +76,14 @@ var $JSON_button = $('.btn_JSON');
 var $link = $('.download_button').children('a');
 var $download_button_div = $('.button_div');
 
+
 $CSV_button.click( function() {
     $title.text('Subsystem Data Downloads (CSV)');
     $download_button_div.text('CSV');
     $link.each( function() {
         var item = $(this);
         var originalValue = item.attr('href');
-        var changedValue = originalValue.replace(/DHW/i, 'HelloItsMe');
+        var changedValue = originalValue.replace(/json/i, 'csv');
         item.attr('href', changedValue);
       });
 
@@ -65,6 +92,12 @@ $CSV_button.click( function() {
 $JSON_button.click( function() {
     $title.text('Subsystem Data Downloads (JSON)');
     $download_button_div.text('JSON');
+    $link.each( function() {
+        var item = $(this);
+        var originalValue = item.attr('href');
+        var changedValue = originalValue.replace(/csv/i, 'json');
+        item.attr('href', changedValue);
+      });
 
 });
 
