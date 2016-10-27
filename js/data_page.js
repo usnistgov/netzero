@@ -144,6 +144,9 @@ $CSV_button.click( function() {
     // changes text on download buttons
     $download_button_div.text('CSV');
 
+    // changes the color of the download buttons
+    $download_button_div.css('background-color', '#337ab7');
+
     // checks 'active' class and adds it if it is not there
     if (!$CSV_button.hasClass('active')) {
         $CSV_button.addClass('active');
@@ -173,9 +176,13 @@ $CSV_button.click( function() {
 });
 
 $JSON_button.click( function() {
+    
     $title.text('Subsystem Data Downloads (JSON)');
+    
     $download_button_div.text('JSON');
     
+    $download_button_div.css('background-color', '#1A3D5C');
+
     if (!$JSON_button.hasClass('active')) {
         $JSON_button.addClass('active');
         $CSV_button.removeClass('active');
