@@ -32,10 +32,11 @@
                         <li><a href="http://www.nist.gov/el/nzertf/rrr.cfm" target="blank">Research</a></li>
                         <li class="dropdown"><a class="dropbtn" href="data.html">Data  <span class="caret"></span></a>
                            <div class="dropdown-content">
-                                <a href="#download_data">Download Data</a>
                                 <a href="#data_dictionary">Data Dictionary</a>
                                 <a href="#log_revisions">Known Data Gaps and Issues</a>
+                                <a href="#download_data">Download Data</a>
                                 <a href="#data_faq">FAQ</a>
+                                <a href="#data_citation">Citation</a>
                             </div> 
                         </li>
 	                    <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -48,27 +49,6 @@
                         <li><a href="https://www.nist.gov/el" target="_blank">About EL</a></li>
                     </ul>
                 </div>
-               <div class="collapse navbar-collapse1 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home1</a></li>
-                        <li><a href="#about">About1</a></li>
-                        <li><a href="#contact">Contact1</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse2 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home2</a></li>
-                        <li><a href="#about">About2</a></li>
-                        <li><a href="#contact">Contact2</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse3 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home3</a></li>
-                        <li><a href="#about">About3</a></li>
-                        <li><a href="#contact">Contact3</a></li>
-                    </ul>
-                </div>
                 <!-- /.nav-collapse -->
             </div>
         </div>
@@ -79,9 +59,9 @@
     <!-- SIDE NAVBAR -->
         <nav class="col-xs-6 col-sm-3 sidebar-offcanvas sidenav-padding" id="side-nav">
             <ul id="sidebar" class="nav nav-stacked fixed">
-                <li><a href="#download_data">Download Data</a></li>
                 <li><a href="#data_dictionary">Data Dictionary</a></li>
                 <li><a href="#log_revisions">Known Data Gaps and Issues</a></li>
+                <li><a href="#download_data">Download Data</a></li>
                 <li><a href="#data_faq">FAQ</a></li>
                 <li><a href="#data_citation">Citation</a></li>
             </ul>
@@ -97,169 +77,6 @@
 	    		<p> This data is <strong> open and free</strong>. Help us track and preserve net zero's impact and value through <a href="#data_citation">citation:</p></a>
 	    	</div>
 
-	    	<div id="download_data">
-				<h2>Subsystem Data Downloads</h2>
-				
-				<table class="table table-striped download_data_table" id="download_table">
-					<thead>
-						<tr class="data_download_headers">
-							<th>Subsystem <br> Abbreviation</th>
-							<th>Subsystem <br> Definition</th>
-							<th class="col_not_mobile">File Size</th>
-							<th class="col_not_mobile">Subsystem Data <br>Download Link</th>
-							<th >Copy Link</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>DHW</td>
-							<td>Domestic Hot Water</td>
-							<td class="col_not_mobile">290.8 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>								
-							</td>
-							<td>		
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-container="table" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>						
-							</td>
-							
-						</tr> 	
-
-						<tr>
-							<td>SHW</td>
-							<td>Solar Hot Water</td>
-							<td class="col_not_mobile">50.8 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href=" https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a>
-							</td>
-							
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Load</td>
-							<td>Electrical and Thermal Loads <br> by equipment and people</td>
-							<td class="col_not_mobile">240.3 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>HVAC</td>
-							<td>Heating and Cooling System</td>
-							<td class="col_not_mobile">89.2 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>IndEnv</td>
-							<td>Indoor Environment</td>
-							<td class="col_not_mobile">269.3 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>PV</td>
-							<td>Photovoltaic</td>
-							<td class="col_not_mobile">217.4 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-
-						<tr>
-							<td>OutEnv</td>
-							<td>Outdoor Environment</td>
-							<td class="col_not_mobile">28.7 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Vent</td>
-							<td>Ventilation</td>
-							<td class="col_not_mobile">133.3 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Elec</td>
-							<td>Electrical</td>
-							<td class="col_not_mobile">567.1 MB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Metadata</td>
-							<td>Subsystem Info, Measurement Location, <br> Measurement Units, and the Min/Max Values</td>
-							<td class="col_not_mobile">49.5 KB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>All Subsystems</td>
-							<td>All Subsystem Data</td>
-							<td class="col_not_mobile">1.7 GB</td>
-							<td class="download_button col_not_mobile">
-								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<a tabindex="0" class="clipboard_icon" role="button" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true"></i></a>
-							</td>
-						</tr>
-
-					</tbody>
-				</table>
-	    	</div>
-
 	    	<div id="data_dictionary">
 	    		
 	    		<h2>Data Dictionary</h2>
@@ -269,7 +86,7 @@
 		    			<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx"><img src="./img/NIST-LEED.jpeg" alt="Net-Zero house in Gaithersburg, MD"></a>
 					</div>
 
-<!-- 					Photo is credited to : http://www.everydaygreendc.com/wp-content/uploads/2012/11/NIST-LEED-Homes-Platinum.jpeg
+<!-- Photo is credited to : http://www.everydaygreendc.com/wp-content/uploads/2012/11/NIST-LEED-Homes-Platinum.jpeg
  -->
 					<div class="col-xs-12 col-md-8 col-lg-8">
 			    		<p>In 2012, the National Institute of Standards and Technology (NIST) completed construction of the Net-Zero Energy Residential Test Facility, a testbed designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality (Pettit et al. 2014).  After extensive instrumentation and planning, NIST began a one-year test period on July 1, 2013 to assess whether the building could achieve net-zero operation, meaning that the amount of energy consumed by the home over the course of a year would be less than that generated by the photovoltaic (PV) system located on the roof of the facility.  The house was operated in an all-electric configuration with a simulated family of four that carried out all activities that would be expected in a typical American household.</p>
@@ -284,6 +101,7 @@
 		    		</div>
 				</div>
 	    	</div>
+
 
 	    	<div id="log_revisions">
 	    		<h2>Known Data Gaps and Issues</h2>
@@ -331,6 +149,270 @@
 		    			</td>
 		    		</tr>
 	    		</table>
+	    	</div>
+
+	    	<div id="download_data">
+				<h2>Subsystem Data Downloads (CSV)</h2>
+				<button type="button" class=" active btn btn-primary btn_CSV">CSV</button>
+				<button type="button" class="btn btn-primary btn_JSON">JSON</button>
+				
+				<table class="table table-striped download_data_table" id="download_table">
+					<thead>
+						<tr class="data_download_headers">
+							<th>Subsystem Abbreviation</th>
+							<th>Subsystem Definition</th>
+							<th>Data Download (Minute Readings)</th>
+							<th class="col_not_mobile">File Size</th>
+							<th class="col_not_mobile">Data Download (Hourly Aggregate)</th>
+							<th class="col_not_mobile">File Size</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<!-- DHW -->
+						<tr>
+							<td>DHW</td>
+
+							<td>Domestic Hot Water</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">291 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">5.5 MB</td>
+							
+						</tr> 	
+
+						<!-- SHW -->
+						<tr>
+							<td>SHW</td>
+
+							<td>Solar Hot Water</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/SHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">52 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">830.3 KB</td>
+							
+						</tr> 
+
+						<!-- Load -->
+						<tr>
+							<td>Load</td>
+
+							<td>Electrical and Thermal Loads <br> by equipment and people</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">241 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour">4.6 MB</td>
+							
+						</tr> 
+
+						<!-- HVAC -->
+						<tr>
+							<td>HVAC</td>
+
+							<td>Heating and Cooling System</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">64.3 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">1.3 MB</td>
+							
+						</tr>
+
+						<!-- IndEnv -->
+						<tr>
+							<td>IndEnv</td>
+
+							<td>Indoor Environment</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">269.5 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">5.1 MB</td>
+							
+						</tr>
+
+						<!-- PV -->
+						<tr>
+							<td>PV</td>
+
+							<td>Photovoltaic</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">217.7 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">4.1 MB</td>
+							
+						</tr>
+
+						<!-- OutEnv -->
+						<tr>
+							<td>OutEnv</td>
+
+							<td>Outdoor Environment</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">29.1 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">539.3 KB</td>
+							
+						</tr>
+
+						<!-- Vent -->
+						<tr>
+							<td>Vent</td>
+
+							<td>Ventilation</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">109.4 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">1.9 MB</td>
+							
+						</tr>
+
+						<!-- Elec -->
+						<tr>
+							<td>Elec</td>
+
+							<td>Electrical</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Elec-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">500.5 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">9 MB</td>
+							
+						</tr>
+
+						<!-- Misc -->
+						<tr>
+							<td>Misc</td>
+
+							<td>Miscellaneous</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Misc-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">32.1 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Misc-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">221.8 KB</td>
+							
+						</tr>
+
+						<!-- Metadata -->
+						<tr>
+							<td>Metadata</td>
+
+							<td>Subsystem Info, Measurement Location & Units, Min/Max Values</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">67.1 KB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">67.1 KB</td>
+							
+						</tr>
+
+						<!-- All Subsystems -->
+						<tr>
+							<td>All Subsystems</td>
+
+							<td>All Subsystem Data</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">1.6 GB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">31.9 MB</td>
+							
+						</tr>
+						<!-- <tr>
+						</tr> -->
+
+					</tbody>
+				</table>
 	    	</div>
    		
    			<div id="data_faq">
