@@ -56,3 +56,7 @@ JSON:
 	SHW - https://s3.amazonaws.com/net-zero/2015-data-files/SHW-hour.json 
 	Vent - https://s3.amazonaws.com/net-zero/2015-data-files/Vent-hour.json 
 	All Subsystems - https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-hour.json
+
+OTHER DOCS:
+	Log Document - https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls
+	Data Dictionary - https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx
