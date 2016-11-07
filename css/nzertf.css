@@ -8,9 +8,9 @@ body {
     position: relative;
 }
 
-.content_stuff {
+/*.content_stuff {
   overflow-y: scroll;
-}
+}*/
 
 .home-page{
   font-family: "Coda";
@@ -225,6 +225,17 @@ li.dropdown {
       font-size: 14px;
     }
 
+
+    .sidenav-padding .nav-stacked.sub-section li a {
+      color: darkgrey;
+    }
+
+    .sidenav-padding .nav-stacked.sub-section li a.active,
+    .sidenav-padding .nav-stacked.sub-section li a:hover,
+    .sidenav-padding .nav-stacked.sub-section li a:focus {
+      color: rgba(38,89,148,.9);
+    } 
+
     /* all links in side bar*/
     .sidenav-padding .nav>li>a {
     /*add trasnparent border */
@@ -365,10 +376,20 @@ td.download_button a {
   color: white;
 }
 
+/*Data Page Mobile CSS*/
 @media screen and (max-width: 679px) {
   .col_not_mobile {
     display: none;
   }
+
+  div.button_div.mobile_grey_out {
+    background-color: grey;
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+
 }
 
 tr.link_div {

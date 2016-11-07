@@ -56,9 +56,11 @@ function onScroll(event){
         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
             $('#sidebar ul li a').removeClass("active");
             currLink.addClass("active");
+            // currLink.css('color', '');
         }
         else{
             currLink.removeClass("active");
+            // currLink.css('color', 'darkgrey');
         }
     });
 }
