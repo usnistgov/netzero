@@ -2,8 +2,10 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>NIST NetZero Homepage</title>
+    <title>NIST Net-Zero Homepage</title>
+    <meta name="description" content="NIST Net-Zero homepage">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     
     <link href="css/cursor.css" rel="stylesheet" type="text/css">
@@ -29,10 +31,11 @@
                     <li><a href="http://www.nist.gov/el/nzertf/rrr.cfm" target="blank">Research</a></li>
                     <li class="dropdown"><a class="dropbtn" href="data.html">Data  <span class="caret"></span></a>
                        <div class="dropdown-content">
-                            <a href="data.html#download_data">Download Data</a>
                             <a href="data.html#data_dictionary">Data Dictionary</a>
-                            <a href="data.html#log_revisions">Log of Revisions</a>
-                            <a href="data.html#data_faq">FAQ &amp;<br> Known Data Issues</a>
+                            <a href="data.html#log_revisions">Known Data Gaps and Issues</a>
+                            <a href="data.html#download_data">Download Data</a>
+                            <a href="data.html#data_faq">FAQ</a>
+                            <a href="data.html#data_citation">Citation</a>
                         </div> 
                     </li>
                     <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -40,9 +43,10 @@
                             <a href="learn.html#Data-From-Subsystem">Work with Data from a Subsystem</a>
                             <a href="learn.html#Data-By-Timestamp">Extract Data by Timestamp</a>
                             <a href="learn.html#Visualize-Power-Usage">Visualize Aggregate Power Usage</a>
+                            <a href="learn.html#csv_to_json">Convert CSV to JSON</a>
                         </div>
                     </li> 
-                    <li><a href="#">About EL</a></li>
+                    <li><a href="https://www.nist.gov/el" target="_blank">About EL</a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse1 childMenu">
@@ -71,58 +75,66 @@
     </div>
   </header>
     <!--BANNER SECTION-->
+    <div class="home-page">
     <section class="scroll">
-        <div class="scroll-overlay ">
-            <div class="row" style="text-align:center">
+        <div class="scroll-overlay">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h1 class="codie"><span style="font-size:180%"><br><br>The Future <br>of Home Energy Data<span class="blinking-cursor slightgrey">|</span></span> </h1>
+                    <h1><br><br>The Future of <br>Home Energy Data<span class="blinking-cursor slightgrey">|</span></h1>
                 </div>
             </div>
-            <div class="row" style="text-align:center">
+            <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-0"> </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h4 class="codie slightgrey">The NIST Net Zero Facility makes advanced home efficiency research possible. <br>
+                    <h4 class="slightgrey">The NIST Net-Zero Facility makes advanced home efficiency research possible.
                     </h4>
 
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-0"> </div>
             </div>
 
-            <div class="row" style="text-align:center">
+            <div class="row" id="home-page-links">
                 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" size="30" align="left">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
                     <a style="color:white" href="http://www.nist.gov/el/nzertf/rrr.cfm" target="blank">
-                        <h3 class="codie">Research ></h3>
-                        <h4 class="slightgrey">Read about the latest net zero research  </h4>
+                        <h3>Research</h3>
+                        <h4 class="slightgrey">Read about the latest Net-Zero research </h4>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" height="30px" align="left">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
                     <a style="color:white" href="data.html">
-                        <h3 class="codie">Data ></h3>
-                        <h4 class="slightgrey">Find research-grade <br>instrumented energy data</h4>
+                        <h3>Data</h3>
+                        <h4 class="slightgrey">Find research-grade instrumented energy data</h4>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 codie leftie">
-                    <hr width="10%" size="30" align="left">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
                     <a style="color:white" href="learn.html">
-                        <h3 class="codie">Learn ></h3>
+                        <h3>Learn</h3>
                         <h4 class="slightgrey">Learn how to get started, now.</h4>
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"> </div>
             </div>
 
+            <div class="row">
+                    
+            
+            <section class="footer" style="padding-top: 40px">
+            <br>
+                <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy" class="slightgrey">Privacy Policy</a> | <a class="slightgrey" target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a class="slightgrey" target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a class="slightgrey" target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+            </section>
+            </div>
+
         </div>
-    </section>
+
+    </section> 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/nzertf.js"></script>
-
+</div>
 </body>
 
 </html>

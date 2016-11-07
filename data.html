@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>NIST NetZero Data Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NIST Net-Zero - Data Page</title>
+	<meta name="description" content="NIST Net-Zero data page to find open data and datasets">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
     <link href="css/nzertf.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 </head>
 
 <body data-spy="scroll" data-target="#side-nav">
@@ -28,10 +32,11 @@
                         <li><a href="http://www.nist.gov/el/nzertf/rrr.cfm" target="blank">Research</a></li>
                         <li class="dropdown"><a class="dropbtn" href="data.html">Data  <span class="caret"></span></a>
                            <div class="dropdown-content">
-                                <a href="#download_data">Download Data</a>
                                 <a href="#data_dictionary">Data Dictionary</a>
-                                <a href="#log_revisions">Log of Revisions</a>
-                                <a href="#data_faq">FAQ &amp;<br> Known Data Issues</a>
+                                <a href="#log_revisions">Known Data Gaps and Issues</a>
+                                <a href="#download_data">Download Data</a>
+                                <a href="#data_faq">FAQ</a>
+                                <a href="#data_citation">Citation</a>
                             </div> 
                         </li>
 	                    <li class="dropdown"><a class="dropbtn" href="learn.html">Learn  <span class="caret"></span></a>
@@ -39,30 +44,10 @@
 	                            <a href="learn.html#Data-From-Subsystem">Work with Data from a Subsystem</a>
 	                            <a href="learn.html#Data-By-Timestamp">Extract Data by Timestamp</a>
 	                            <a href="learn.html#Visualize-Power-Usage">Visualize Aggregate Power Usage</a>
+	                            <a href="learn.html#csv_to_json">Convert CSV to JSON</a>
 	                        </div>
 	                    </li> 
-                        <li><a href="#">About EL</a></li>
-                    </ul>
-                </div>
-               <div class="collapse navbar-collapse1 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home1</a></li>
-                        <li><a href="#about">About1</a></li>
-                        <li><a href="#contact">Contact1</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse2 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home2</a></li>
-                        <li><a href="#about">About2</a></li>
-                        <li><a href="#contact">Contact2</a></li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse3 childMenu">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home3</a></li>
-                        <li><a href="#about">About3</a></li>
-                        <li><a href="#contact">Contact3</a></li>
+                        <li><a href="https://www.nist.gov/el" target="_blank">About EL</a></li>
                     </ul>
                 </div>
                 <!-- /.nav-collapse -->
@@ -70,270 +55,27 @@
         </div>
     </header>
 
-    <!-- THIS IS THE SIDEBAR -->
-    <div class="row content-row">
-    	<nav class="col-xs-3 sidenav-padding" id="side-nav">
-            <ul id="sidebar" class="nav nav-stacked nav-class">
-                <li><a href="#download_data">Download Data</a></li>
+<div class="container">
+    <div class="row content-row row-offcanvas row-offcanvas-left">
+    <!-- SIDE NAVBAR -->
+        <nav class="col-xs-6 col-sm-3 sidebar-offcanvas sidenav-padding" id="side-nav">
+            <ul id="sidebar" class="nav nav-stacked fixed">
                 <li><a href="#data_dictionary">Data Dictionary</a></li>
-                <li><a href="#log_revisions">Log of Revisions</a></li>
-                <li><a href="#data_faq">FAQ/Known Data Issues</a></li>
+                <li><a href="#log_revisions">Known Data Gaps and Issues</a></li>
+                <li><a href="#download_data">Download Data</a></li>
+                <li><a href="#data_faq">FAQ</a></li>
+                <li><a href="#data_citation">Citation</a></li>
             </ul>
         </nav>
     
 
-    <!-- THIS IS THE CONTENT -->
-    	<div id="data_content" class="col-xs-8">
-	    	<div id="download_data">
-				<h2>Subsystem Data Downloads</h2>
-				
-				<table class="download_data_table" id="download_table">
-					<thead>
-						<tr class="data_download_headers">
-							<th>Subsystem Abbreviation</th>
-							<th>Subsystem Definition</th>
-							<th>Subsystem Data Download Link</th>
-							<th>Copy Link</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>DHW</td>
-							<td>Domestic Hot Water</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><div class="button_div">Download</div></a>								
-							</td>
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="DHW"></i></div>								
-							</td>							
-						</tr> 
-
-<!-- 						<tr class="DHW link_div">
-							<td colspan="4">https://s3.amazonaws.com/net-zero/2015-data-files/DHW.csv</td>
-							<td style="display:none"></td>
-							<td style="display:none"></td>
-							<td style="display:none"></td>
-						</tr>   -->		
-
-						<tr>
-							<td>SHW</td>
-							<td>Solar Hot Water</td>
-							<td class="download_button">
-								<a href=" https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><div class="button_div">Download</div></a>
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/SHW.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="SHW"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Loads</td>
-							<td>Electrical and Thermal Loads <br> by equipment and people</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Loads.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Loads"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Load</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><div class="button_div">
-								Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Load.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Load"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>HVAC</td>
-							<td>Heating and Cooling System</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="HVAC"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>IndEnv</td>
-							<td>Indoor Environment</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="IndEnv"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>PV</td>
-							<td>Photovoltaic</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/PV.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="PV"></i></div>
-							</td>
-						</tr>
-
-
-						<tr>
-							<td>OutEnv</td>
-							<td>Outdoor Environment</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="OutEnv"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Ventilation</td>
-							<td>Ventilation</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Ventilation.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Ventilation"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Vent</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Vent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Vent"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Lighting</td>
-							<td>Lighting</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Lighting.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Lighting"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Electrical</td>
-							<td>Electrical</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Electrical.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Electrical"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>ElecCurrent</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecCurrent.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecCurrent"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>ElecEnergy</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecEnergy.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecEnergy"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>ElecPower</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecPower.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecPower"></i></div>
-							<td>
-						</tr>
-
-						<tr>
-							<td>ElecRPB</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecRPB.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecRPB"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>ElecTotal</td>
-							<td>No Definition Provided</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/ElecTotal.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="ElecTotal"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Instr</td>
-							<td>Instrumentation</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/Instr.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="Instr"></i></div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>All Subsystems</td>
-							<td>All Subsystem Data</td>
-							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems"><div class="button_div">Download</div></a>
-							</td>
-
-							<td>
-								<div class="clipboard_icon" data-toggle="popover" data-placement="left" data-content="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems.csv"><i class="fa fa-clipboard fa-2x" aria-hidden="true" id="All-Subsystems"></i></div>
-							</td>
-						</tr>
-
-					</tbody>
-				</table>
+    <!-- CONTENT SECTION -->
+    	<div id="data_content" class="col-xs-12 col-sm-9">
+	    	<br>
+	    	<div>
+	    		<p> NIST Engineering Lab’s Net Zero Energy Residential Test Facility data captures diverse measurements from a high precision lab home that produces as much energy over the course of a year as it uses. It is an extraordinary facility that has sensors and instrumentation on nearly every facet, from energy consumption to comfort. This high resolution, high precision data has allowed NIST and researchers in the home energy and sustainability field to investigate the performance of efficient homes and have formed a basis for conducting home efficiency simulations that allow engineers to better understand how to construct better, energy efficient homes. There are nearly 400 channels of data across 11 subsystems. That means 400 opportunities to find meaningful energy use patterns and create prototypes of home energy monitoring tools and analytics. </p>
+	    		<br>
+	    		<p> This data is <strong> open and free</strong>. Help us track and preserve net zero's impact and value through <a href="#data_citation">citation:</p></a>
 	    	</div>
 
 	    	<div id="data_dictionary">
@@ -341,135 +83,616 @@
 	    		<h2>Data Dictionary</h2>
 				
 				<div class="row">
-					<div class="col-xs-4">
-		    			<a href="https://s3.amazonaws.com/net-zero/NZERTF-Data-Dictionary.docx"><img src="./img/NIST-LEED.jpeg"></a>
+					<div class="hidden-xs col-md-4 col-lg-4">
+		    			<a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx"><img src="./img/NIST-LEED.jpeg" alt="Net-Zero house in Gaithersburg, MD"></a>
 					</div>
 
-<!-- 					Photo is credited to : http://www.everydaygreendc.com/wp-content/uploads/2012/11/NIST-LEED-Homes-Platinum.jpeg
+<!-- Photo is credited to : http://www.everydaygreendc.com/wp-content/uploads/2012/11/NIST-LEED-Homes-Platinum.jpeg
  -->
-					<div class="col-xs-6">
+					<div class="col-xs-12 col-md-8 col-lg-8">
 			    		<p>In 2012, the National Institute of Standards and Technology (NIST) completed construction of the Net-Zero Energy Residential Test Facility, a testbed designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality (Pettit et al. 2014).  After extensive instrumentation and planning, NIST began a one-year test period on July 1, 2013 to assess whether the building could achieve net-zero operation, meaning that the amount of energy consumed by the home over the course of a year would be less than that generated by the photovoltaic (PV) system located on the roof of the facility.  The house was operated in an all-electric configuration with a simulated family of four that carried out all activities that would be expected in a typical American household.</p>
 						
 						<p>NIST, in conjunction with the U.S. Department of Commerce Data Service, is making available data from the operation of the facility during these test phases.  The purpose of this document is to describe the configuration of the house along with the contents of each data channel that is reported.</p>
 						
-						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="#log_revisions">log of such instances</a> are maintained on the website where the data can be accessed.</p>
+						<p>Data were recorded on a minutely basis from a range of sensors that monitored electricity usage, equipment performance, indoor conditions, and outdoor conditions.  Data indicate whether or not loads are activated and the amount of heat that those loads are introducing into the space. While every effort has been made to minimize disruptions in data flow, there were times during the test phase when data are not available or particular subsystems within the house are not operating properly.  A <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">log of such instances</a> are maintained on the website where the data can be accessed.</p>
 
-						<a href="https://s3.amazonaws.com/net-zero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a>  
-						</p>
+						<p><a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a></p>
+
+						<p>For a complete list of variables in the dataset please download <a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-minute.csv">the Metadata CSV file</a>. The Metadata CSV also includes information on the subsystem and where possible: the measurement location, units for measurement, and the min/max values.</p>  
 		    		</div>
 				</div>
 	    	</div>
 
+
 	    	<div id="log_revisions">
-	    		<h2>Log of Revisions</h2>
-	    		<h4>(Updated on 07/26/2016</h4>
+	    		<h2>Known Data Gaps and Issues</h2>
+	    		<h4>February 1, 2015 through January 31, 2015</h4>
+	    		<br>
+	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>. For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
 
 	    		<table id="log_revisions_table">
-	    			
-	    			<tr>
-		    			<th>Date</th>
-		    			<th>Revision</th>
+
+		    		<tr>
+		    			<td>
+		    				There were several occasions where sampling of the indoor air quality was taking place.  Those instances are noted in the IAQ column. 
+						</td>
+		    			
+		    		</tr>
+
+		    		<tr>	
+		    			<td>
+		    				At the beginning of the year-long data collection period, some short term tests were conducted to evaluate the flow measurement in the Heat Recovery Ventilator and to assess the transient response of the facility. These dates are noted in the <i>General</i>, <i>Ventilation</i>, and <i>Heat Pump</i> columns. 
+						</td>
+
 		    		</tr>
 
 		    		<tr>
-		    			<td>May 2003</td>
-		    			<td>Power Outage due to thunderstorm</td>
+		    			<td>
+		    				Snow cover of the solar panels is recorded in the <i>General</i> and <i>Solar PV</i> Comments column.
+		    			</td>
 		    		</tr>
 
 		    		<tr>
-		    			<td>June 2005</td>
-		    			<td>Systems flooded by rats</td>
+		    			<td>
+		    				An incorrect setting of a valve on the solar thermal water heating system starting on February 19, 2015 and ending on March 17, 2015 caused a long stretch of operation without that system operational. 
+		    			</td>
 		    		</tr>
 
 		    		<tr>
-		    			<td>April 2007</td>
-		    			<td>Wind blew away robots Dorothy and Todo</td>
+		    			<td>
+		    				The heat pump unit was not working for approximately two days starting on May 30, 2015 due to the failure of a relay on the outdoor unit.
+		    			</td>
 		    		</tr>
 
 		    		<tr>
-		    			<td>August 2008</td>
-		    			<td>Elphaba broke wooden flooring</td>
+		    			<td>
+		    				Approximately three days of data are missing starting on October 20, 2015 on account of a problem with the data acquisition and control system. 
+		    			</td>
 		    		</tr>
 	    		</table>
 	    	</div>
+
+	    	<div id="download_data">
+				<h2>Subsystem Data Downloads (CSV)</h2>
+				<button type="button" class=" active btn btn-primary btn_CSV">CSV</button>
+				<button type="button" class="btn btn-primary btn_JSON">JSON</button>
+				
+				<table class="table table-striped download_data_table" id="download_table">
+					<thead>
+						<tr class="data_download_headers">
+							<th>Subsystem Abbreviation</th>
+							<th>Subsystem Definition</th>
+							<th>Data Download (Minute Readings)</th>
+							<th class="col_not_mobile">File Size</th>
+							<th class="col_not_mobile">Data Download (Hourly Aggregate)</th>
+							<th class="col_not_mobile">File Size</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<!-- DHW -->
+						<tr>
+							<td>DHW</td>
+
+							<td>Domestic Hot Water</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+
+							<td class="col_not_mobile minute_file_size_td">291 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">5.5 MB</td>
+							
+						</tr> 	
+
+						<!-- SHW -->
+						<tr>
+							<td>SHW</td>
+
+							<td>Solar Hot Water</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/SHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">52 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/SHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">830.3 KB</td>
+							
+						</tr> 
+
+						<!-- Load -->
+						<tr>
+							<td>Load</td>
+
+							<td>Electrical and Thermal Loads <br> by equipment and people</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">241 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour">4.6 MB</td>
+							
+						</tr> 
+
+						<!-- HVAC -->
+						<tr>
+							<td>HVAC</td>
+
+							<td>Heating and Cooling System</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">64.3 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">1.3 MB</td>
+							
+						</tr>
+
+						<!-- IndEnv -->
+						<tr>
+							<td>IndEnv</td>
+
+							<td>Indoor Environment</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">269.5 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">5.1 MB</td>
+							
+						</tr>
+
+						<!-- PV -->
+						<tr>
+							<td>PV</td>
+
+							<td>Photovoltaic</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">217.7 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">4.1 MB</td>
+							
+						</tr>
+
+						<!-- OutEnv -->
+						<tr>
+							<td>OutEnv</td>
+
+							<td>Outdoor Environment</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">29.1 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">539.3 KB</td>
+							
+						</tr>
+
+						<!-- Vent -->
+						<tr>
+							<td>Vent</td>
+
+							<td>Ventilation</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">109.4 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">1.9 MB</td>
+							
+						</tr>
+
+						<!-- Elec -->
+						<tr>
+							<td>Elec</td>
+
+							<td>Electrical</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Elec-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">500.5 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Elec-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">9 MB</td>
+							
+						</tr>
+
+						<!-- Misc -->
+						<tr>
+							<td>Misc</td>
+
+							<td>Miscellaneous</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Misc-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">32.1 MB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Misc-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">221.8 KB</td>
+							
+						</tr>
+
+						<!-- Metadata -->
+						<tr>
+							<td>Metadata</td>
+
+							<td>Subsystem Info, Measurement Location & Units, Min/Max Values</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">67.1 KB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">67.1 KB</td>
+							
+						</tr>
+
+						<!-- All Subsystems -->
+						<tr>
+							<td>All Subsystems</td>
+
+							<td>All Subsystem Data</td>
+
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile minute_file_size_td">1.6 GB</td>
+
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+
+							<td class="col_not_mobile hour_file_size_td">31.9 MB</td>
+							
+						</tr>
+						<!-- <tr>
+						</tr> -->
+
+					</tbody>
+				</table>
+	    	</div>
    		
    			<div id="data_faq">
-   				<h2>FAQ/Known Data Issues</h2>
+   				<h2>FAQ</h2>
 
    				<div class="panel-group" id="accordion" aria-multiselectable="true">
    					<div class="panel panel-default">
+   						
    						<div class="panel-heading" id="heading1">
    							<h4 class="panel-title">
-   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What does subsystem mean?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question1">So, what is the Net-Zero Energy Residential Test Facility?
    								</a>
    							</h4>
    						</div>
    						<div id="question1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
    							<div class="panel-body">
-   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   								The Net-Zero Energy Residential Test Facility is a testbed on the campus of the National Institute of Standards of Technology in Gaithersburg, MD designed as a single family house to develop measurement science for assessing equipment and strategies for achieving energy efficient homes with good indoor environmental quality. Check out <a href="https://www.youtube.com/watch?v=xSzu83fyQaQ&feature=youtu.be">this video</a>.
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading2">
    							<h4 class="panel-title">
-   								<a href="#question2" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How did the machines act like humans?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question2">What is a subsystem?
    								</a>
    							</h4>
    						</div>
    						<div id="question2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
    							<div class="panel-body">
-   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   								A subsystem describes a key set of equipment and sensors that either provide an expected service to occupants of a home (e.g., heating, cooling, hot water, lighting, etc.), monitor particular conditions in and around the house, or enable the conduct of experiments.  The NZERTF data set is split into the following subsystems:
+   								<br> 
+   								<br>
+   								<ul>
+   									<li>
+   										<p><i>DHW</i>:  Domestic Hot Water – system to make and deliver hot water in the facility, including flow rates and temperature of those end uses.  Also describes the back-up water heater and the use of cold water.</p>
+   									</li>
+
+   									<li>
+   										<p><i>SHW</i>:  Solar Hot Water – solar water heating system.</p>
+   									</li>
+
+   									<li>
+   										<p><i>HVAC</i>:  Space Heating and Cooling System (the “V” stands for ventilation, but that function has its own subsystem).</p>
+   									</li>
+
+   									<li>
+   										<p><i>Load</i>:  Electrical and Thermal Loads that simulate the presence and actions of the virtual occupants in the home.</p>
+   									</li>
+
+   									<li>
+   										<p><i>IndEnv</i>:  Indoor Environment – Measurement system that captures temperatures and relative humidities throughout the home.  </p>
+   									</li>
+   									
+   									<li>
+   										<p><i>PV</i>: Photovoltaic system, including the array and inverters. </p>
+   									</li>
+
+   									<li>
+   										<p><i>OutEnv</i>:  Outdoor Environment – Measurement system that captures ambient temperature, solar radiation, and wind conditions at the NZERTF.</p>
+   									</li>
+
+   									<li>
+   										<p><i>Vent</i>:  Ventilation – system to deliver outdoor air into the house and to simultaneously exhaust stale indoor air from the home. </p>
+   									</li>
+
+   									<li>
+   										<p><i>Elec</i>:  Electrical – system to monitor each electrical circuit in the home.</p>
+   									</li>
+   								</ul>
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading3">
    							<h4 class="panel-title">
-   								<a href="#question3" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Who is Elphaba?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question3">What are channels?
    								</a>
    							</h4>
    						</div>
    						<div id="question3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
    							<div class="panel-body">
-   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   								A channel is a data stream from a single sensor.  
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading4">
    							<h4 class="panel-title">
-   								<a href="#question4" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why was robot Dorothy and Todo outside during the storm?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question4">Why does the data start on Feb 1st, 2015? Is there older data?
    								</a>
    							</h4>
    						</div>
    						<div id="question4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
    							<div class="panel-body">
-   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   								To date, there have been two complete years of data collection.  The data presented in the database are for the second year, which started on February 1, 2015.  The first year of data collection occurred between July 1, 2013 and June 30, 2014.  NIST is releasing the second year first because there are a larger number of operational anomalies in the first year’s data.  It is expected that the first year data will be released at a later date.  
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading5">
    							<h4 class="panel-title">
-   								<a href="#question5" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What does subsystem mean?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question5">Where can I find out more about the building and instrumentation?
    								</a>
    							</h4>
    						</div>
    						<div id="question5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Health goth hashtag tofu, synth quinoa ugh ennui marfa yr meh mlkshk four dollar toast offal schlitz. Truffaut pitchfork +1 street art kinfolk, iPhone scenester yuccie wayfarers green juice keffiyeh intelligentsia readymade. Photo booth post-ironic waistcoat hoodie yr gentrify. Blog mustache affogato church-key, literally cornhole selfies. Gentrify intelligentsia beard, blog authentic plaid raw denim drinking vinegar asymmetrical vice twee etsy tumblr leggings man braid. +1 8-bit kinfolk, seitan gentrify twee ethical. Godard gochujang seitan, forage meditation artisan vice retro normcore mixtape humblebrag four loko.
+   								NIST maintains a website with links to all publications emerging from the project at <a href="https://www.nist.gov/el/net-zero-energy-residential-test-facility">https://www.nist.gov/el/net-zero-energy-residential-test-facility</a>  Among this information, details on the instrumentation are provided by Davis, et al (2014): <a href="https://www.nist.gov/node/560101?pub_id=917208">https://www.nist.gov/node/560101?pub_id=917208</a>.  Additionally, the <a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Data Dictionary document</a> on the database website provides the building characteristics in accordance with the Department of Energy’s Building Energy Performance Taxonomy, Version 2.1. 
    							</div>
    						</div>
+
+   						<div class="panel-heading" id="heading6">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question6">Where can I get a description of the channels?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								The <a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Data Dictionary</a> document on the database website provides a description of each data channel.  This data dictionary also includes the primary subsystem to which the channel belongs, the location of each sensor, and the units of the values provided by each channel.  
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading7">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question7">How can I pull this data?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								The full year of data, in both hourly aggregate and minute readings, can be downloaded from this website in CSV or JSON format by visiting the <a href="#download_data">Download Data</a> table and selecting a subsystem of interest.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading8">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question8">What variables should I expect in the dataset?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								The dataset includes a wide assortment of variables collected on a minutely basis that describe the energy and thermal comfort performance of the home along with the experimental conditions.  Among these variables are: 
+   								<br> 
+   								<br>
+   								<ul>
+   									<li>
+   										<p>Temperatures and relative humidity in different rooms of the house. </p>
+   									</li>
+
+   									<li>
+   										<p>Temperature, wind conditions, and solar insolation on the main roof and porch roof of the house.</p>
+   									</li>
+
+   									<li>
+   										<p>Electrical power and accumulated energy over the course of the day for each circuit in the house.  Circuits have been arranged so energy consumption by particular devices can be easily identified.</p>
+   									</li>
+
+   									<li>
+   										<p>Temperatures in and out of the heat pump unit and heat recovery ventilator.</p>
+   									</li>
+
+   									<li>
+   										<p>Flags that indicate what appliance, plug load, faucet, or virtual occupant is active at any minute of the day.</p>
+   									</li>
+   									
+   									<li>
+   										<p>Temperatures of water at fixtures and the water heaters.  </p>
+   									</li>
+
+   									<li>
+   										<p>Flow rate and cumulative water consumption at particular fixtures.</p>
+   									</li>
+
+   									<li>
+   										<p>Energy production of the photovoltaic system.</p>
+   									</li>
+   								</ul>
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading9">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question9">How do I validate my data download?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								Use <a href="https://s3.amazonaws.com/net-zero/2015-data-files/hashes.csv">this file</a> of hashes for integrity checking.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading10">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question10">Why doesn’t every day have 1440 minutes of data?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								The data acquisition system was set up to perform a reset at midnight of each day for stability purposes.  This reset could last several minutes, so data points are often missing around midnight.
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading11">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question11">Why are there spikes/gaps in the data?
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+   								With any experiment, occasional glitches in data acquisition result in data points that may not properly capture conditions.  Key gaps in data acquisition, problems with particular equipment, or temporary modifications to the standard operating schedule are noted in the “Known Data Gaps” section of the website.  
+   								<br>
+   								<br>
+								The data are being released without filtering.  Users are encouraged to apply their own criteria for removing data from the data set that are thought to be extraneous.  
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading12">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question12">How do I know what activities are being emulated at a particular time in the house? 
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+								The publication by Omar and Bushby (2013) <a href="https://www.nist.gov/node/575761?pub_id=914650">https://www.nist.gov/node/575761?pub_id=914650</a>  describes the emulation of the virtual family in the home during the year.  The 4-person family follows a weekly schedule throughout the year.  
+								<br>
+								<br>
+								The status of particular devices is available in the <i>Loads</i> subsystem of the dataset.  Channels that begin with the word “Status?” flag whether particular devices are on or off at a particular minute.  
+  
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading12">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question13">What's the difference between the Minute Readings and Hourly Aggregate files? 
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+								The data acquisition system collects data every minute. These granular readings are available in the data files with minute readings. Since these files can become large quickly, we aggregated these readings into hourly values to make them more manageable.  
+								<br>
+								<br>
+								The readings were aggregated differently based on the data type. Temperatures were averaged over the hour, the last reading of the hour was used for cumulative energy consumption, and solar insolation was summed over the hour. The aggregation method used for each variable is defined in the Metadata.   
+  
+   							</div>
+   						</div>
+
    					</div>
    				</div>
-
    			</div>
+
+   			<div id="data_citation">
+   				<h2>NIST Net-Zero Citation</h2>
+   				<br>
+   				<p id="data_citation_text">Fanney, A.H., Healy, W., Dougherty, B., Payne, W.V., Ullah, T., Ng, L, Omar, F. (2016). Net Zero Energy Residential Test Facility Instrumented Data – Year 2. NIST Engineering Lab. https://pages.nist.gov/netzero</p>
+   				<button onclick="copyToClipboard('data_citation_text')">Copy Citation</button>
+   			</div>
+
+   			<hr \>
+			<section class="footer">
+			
+				<br>
+				<a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+			
+			</section>
    		</div>
    	</div>
 
    	<!-- DataTables -->
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
     <!--Dropdowns-->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/nzertf.js"></script>
+    <script type="text/javascript" src="js/data_page.js"></script>
 </body>
 </html>
