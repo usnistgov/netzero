@@ -116,7 +116,7 @@
 library(ggplot2) # plotting library
 
 # get data
-hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
                 <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_Channel.</p>
 
@@ -222,7 +222,7 @@ ggplot(hvac, aes(x = Timestamp)) +
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
         <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_Channel</i>.</p>
@@ -327,7 +327,7 @@ library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
                 </div>
@@ -377,7 +377,7 @@ var converter = new Converter({
     toArrayString: true ## pipes the data to an array
 });
 
-var readStream = require('fs').createReadStream('../All-Subsystems.csv'); ## relative path to where the downloaded CSV is in your repo
+var readStream = require('fs').createReadStream('../All-Subsystems-minute.csv'); ## relative path to where the downloaded CSV is in your repo
 var writeStream = require('fs').createWriteStream('../output.json'); ## relative path to where you would like the JSON file to be made
 
 readStream.pipe(converter).pipe(writeStream);
