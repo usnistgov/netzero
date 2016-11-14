@@ -60,27 +60,6 @@
                     <li><a href="https://www.nist.gov/el" target="_blank">About EL</a></li>
                 </ul>
             </div>
-           <div class="collapse navbar-collapse1 childMenu">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home1</a></li>
-                    <li><a href="#about">About1</a></li>
-                    <li><a href="#contact">Contact1</a></li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse2 childMenu">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home2</a></li>
-                    <li><a href="#about">About2</a></li>
-                    <li><a href="#contact">Contact2</a></li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse3 childMenu">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home3</a></li>
-                    <li><a href="#about">About3</a></li>
-                    <li><a href="#contact">Contact3</a></li>
-                </ul>
-            </div>
             <!-- /.nav-collapse -->
         </div>
     </div>
@@ -92,19 +71,19 @@
         <nav class="col-xs-6 col-sm-3 sidebar-offcanvas sidenav-padding" id="side-nav">
             <ul id="sidebar" class="nav nav-stacked fixed">
                 <li><a href="#Data-From-Subsystem">Work with data from a subsystem</a>
-                   <ul class="nav nav-stacked">
+                   <ul class="nav nav-stacked sub-section">
                        <li><a href="#Data-From-Subsystem-A">Get the Data</a></li>
                        <li><a href="#Data-From-Subsystem-B">Work with the Data</a></li>
                    </ul> 
                 </li>
                 <li><a href="#Data-By-Timestamp">Extract data by timestamp</a>
-                    <ul class="nav nav-stacked">
+                    <ul class="nav nav-stacked sub-section">
                         <li><a href="#Data-By-Timestamp-A">Get the Data</a></li>
                         <li><a href="#Data-By-Timestamp-B">Work with the Data</a></li>
                     </ul>
                 </li>
                 <li><a href="#Analyze-Aggregate-Readings">Analyzing Aggregated Readings</a>
-                    <ul class="nav nav-stacked">
+                    <ul class="nav nav-stacked sub-section">
                         <li><a href="#Analyze-Aggregate-Readings-A">Get the Data</a></li>
                         <li><a href="#Analyze-Aggregate-Readings-B">Work with the Data</a></li>
                     </ul>
@@ -137,7 +116,7 @@
 library(ggplot2) # plotting library
 
 # get data
-hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
                 <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_Channel.</p>
 
@@ -243,7 +222,7 @@ ggplot(hvac, aes(x = Timestamp)) +
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
         <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_Channel</i>.</p>
@@ -348,7 +327,7 @@ library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
                 </div>
@@ -387,6 +366,8 @@ elec_power$total <- rowSums(elec_power[,2:ncol(elec_power)])
 
 
                 <div id="csv_to_json" class="subgroup">
+                <br>
+                <br>
                     <h3>From CSV to JSON</h3>
                     <p>When you download the files from the <a href="data.html#download_data">Download table</a> it will be as a CSV file. If you are interested in building a project using JavaScript, NodeJS, or anything that is more suited to JSON file structures - you will need to covert them from CSVs to JSON. In our work we have recommended using the <a href="https://www.npmjs.com/package/csvtojson">CSVtoJSON Converter</a> module that you can download from npm. Once you have downloaded the npm module you can use the following code as a template to convert the raw CSV to a JSON file. (We do not recommend this tutorial for converting the 'All Subsystems' CSV file because of its size). </p>
 <pre><code>
@@ -396,7 +377,7 @@ var converter = new Converter({
     toArrayString: true ## pipes the data to an array
 });
 
-var readStream = require('fs').createReadStream('../All-Subsystems.csv'); ## relative path to where the downloaded CSV is in your repo
+var readStream = require('fs').createReadStream('../All-Subsystems-minute.csv'); ## relative path to where the downloaded CSV is in your repo
 var writeStream = require('fs').createWriteStream('../output.json'); ## relative path to where you would like the JSON file to be made
 
 readStream.pipe(converter).pipe(writeStream);
@@ -415,7 +396,7 @@ readStream.pipe(converter).pipe(writeStream);
             
             <section class="footer">
             <br>
-                <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+                <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
             </section>
         </div>
 

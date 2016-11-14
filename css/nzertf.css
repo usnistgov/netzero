@@ -225,6 +225,17 @@ li.dropdown {
       font-size: 14px;
     }
 
+
+    .sidenav-padding .nav-stacked.sub-section li a {
+      color: darkgrey;
+    }
+
+    .sidenav-padding .nav-stacked.sub-section li a.active,
+    .sidenav-padding .nav-stacked.sub-section li a:hover,
+    .sidenav-padding .nav-stacked.sub-section li a:focus {
+      color: rgba(38,89,148,.9);
+    } 
+
     /* all links in side bar*/
     .sidenav-padding .nav>li>a {
     /*add trasnparent border */

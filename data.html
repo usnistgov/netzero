@@ -98,7 +98,7 @@
 
 						<p><a href="https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx">Download the data dictionary.</a></p>
 
-						<p>For a complete list of variables in the dataset please download <a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata.csv">the Metadata CSV file</a>. The Metadata CSV also includes information on the subsystem and where possible: the measurement location, units for measurement, and the min/max values.</p>  
+						<p>For a complete list of variables in the dataset please download <a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-minute.csv">the Metadata CSV file</a>. The Metadata CSV also includes information on the subsystem and where possible: the measurement location, units for measurement, and the min/max values.</p>  
 		    		</div>
 				</div>
 	    	</div>
@@ -108,7 +108,11 @@
 	    		<h2>Known Data Gaps and Issues</h2>
 	    		<h4>February 1, 2015 through January 31, 2015</h4>
 	    		<br>
-	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>. For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
+
+	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  When data are missing, the data files presented here replace those missing data values with the symbol “NA.”  The most common time for missing data falls at the beginning of each day when the data acquisition system was going through a reset that would often last several minutes.  Additionally, sensors would occasionally stop working and present erroneous readings.  These readings often resulted in a zero value; such readings have not been removed from the data sets.  Users should be mindful to be aware of such possibilities.</p>
+	    		
+
+	    		<p>The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>. For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
 
 	    		<table id="log_revisions_table">
 
@@ -177,17 +181,15 @@
 							<td>Domestic Hot Water</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 
 							<td class="col_not_mobile minute_file_size_td">291 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/DHW-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
-
-							https://s3.amazonaws.com/net-zero/2015-data-files/DHW-hour.csv
 
 							<td class="col_not_mobile hour_file_size_td">5.5 MB</td>
 							
@@ -200,13 +202,13 @@
 							<td>Solar Hot Water</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/SHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">52 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/SHW-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">830.3 KB</td>
@@ -220,13 +222,13 @@
 							<td>Electrical and Thermal Loads <br> by equipment and people</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">241 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Load-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour">4.6 MB</td>
@@ -240,13 +242,13 @@
 							<td>Heating and Cooling System</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">64.3 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/HVAC-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">1.3 MB</td>
@@ -260,13 +262,13 @@
 							<td>Indoor Environment</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">269.5 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/IndEnv-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">5.1 MB</td>
@@ -280,13 +282,13 @@
 							<td>Photovoltaic</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">217.7 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/PV-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">4.1 MB</td>
@@ -300,13 +302,13 @@
 							<td>Outdoor Environment</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">29.1 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/OutEnv-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">539.3 KB</td>
@@ -320,13 +322,13 @@
 							<td>Ventilation</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">109.4 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Vent-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">1.9 MB</td>
@@ -340,13 +342,13 @@
 							<td>Electrical</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Elec-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">500.5 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Elec-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">9 MB</td>
@@ -360,13 +362,13 @@
 							<td>Miscellaneous</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Misc-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Misc-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">32.1 MB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Misc-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Misc-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">221.8 KB</td>
@@ -380,13 +382,13 @@
 							<td>Subsystem Info, Measurement Location & Units, Min/Max Values</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">67.1 KB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/Metadata-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">67.1 KB</td>
@@ -400,13 +402,13 @@
 							<td>All Subsystem Data</td>
 
 							<td class="download_button">
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile minute_file_size_td">1.6 GB</td>
 
 							<td class="download_button col_not_mobile">		
-								<a href="https://s3.amazonaws.com/net-zero/2015-data-files/All-Subsystems-hour.csv"><div class="button_div">CSV</div></a>
+								<a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv"><div class="button_div">CSV</div></a>
 							</td>
 
 							<td class="col_not_mobile hour_file_size_td">31.9 MB</td>
@@ -424,9 +426,10 @@
 
    				<div class="panel-group" id="accordion" aria-multiselectable="true">
    					<div class="panel panel-default">
+   						
    						<div class="panel-heading" id="heading1">
    							<h4 class="panel-title">
-   								<a href="#question1" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">So, what is the Net-Zero Energy Residential Test Facility?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question1">So, what is the Net-Zero Energy Residential Test Facility?
    								</a>
    							</h4>
    						</div>
@@ -438,7 +441,7 @@
 
    						<div class="panel-heading" id="heading2">
    							<h4 class="panel-title">
-   								<a href="#question2" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What is a subsystem?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question2">What is a subsystem?
    								</a>
    							</h4>
    						</div>
@@ -489,7 +492,7 @@
 
    						<div class="panel-heading" id="heading3">
    							<h4 class="panel-title">
-   								<a href="#question3" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What are channels?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question3">What are channels?
    								</a>
    							</h4>
    						</div>
@@ -501,7 +504,7 @@
 
    						<div class="panel-heading" id="heading4">
    							<h4 class="panel-title">
-   								<a href="#question4" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why does the data start on Feb 1st, 2015? Is there older data?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question4">Why does the data start on Feb 1st, 2015? Is there older data?
    								</a>
    							</h4>
    						</div>
@@ -513,7 +516,7 @@
 
    						<div class="panel-heading" id="heading5">
    							<h4 class="panel-title">
-   								<a href="#question5" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Where can I find out more about the building and instrumentation?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question5">Where can I find out more about the building and instrumentation?
    								</a>
    							</h4>
    						</div>
@@ -525,7 +528,7 @@
 
    						<div class="panel-heading" id="heading6">
    							<h4 class="panel-title">
-   								<a href="#question6" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Where can I get a description of the channels?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question6">Where can I get a description of the channels?
    								</a>
    							</h4>
    						</div>
@@ -537,19 +540,19 @@
 
    						<div class="panel-heading" id="heading7">
    							<h4 class="panel-title">
-   								<a href="#question7" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How can I pull this data?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question7">How can I pull this data?
    								</a>
    							</h4>
    						</div>
    						<div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								The full year of data for each subsystem can be downloaded from this website in CSV format by clicking the “Download” button next to the subsystem of interest.  
+   								The full year of data, in both hourly aggregate and minute readings, can be downloaded from this website in CSV or JSON format by visiting the <a href="#download_data">Download Data</a> table and selecting a subsystem of interest.
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading8">
    							<h4 class="panel-title">
-   								<a href="#question8" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">What variables should I expect in the dataset?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question8">What variables should I expect in the dataset?
    								</a>
    							</h4>
    						</div>
@@ -596,19 +599,19 @@
 
    						<div class="panel-heading" id="heading9">
    							<h4 class="panel-title">
-   								<a href="#question9" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How do I validate my data download?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question9">How do I validate my data download?
    								</a>
    							</h4>
    						</div>
    						<div id="question9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								Use <a href="https://s3.amazonaws.com/net-zero/2015-data-files/hashes.csv">this file</a> of hashes for integrity checking.
+   								Use <a href="https://s3.amazonaws.com/nist-netzero/2015-data-files/hashes.csv">this file</a> of hashes for integrity checking.
    							</div>
    						</div>
 
    						<div class="panel-heading" id="heading10">
    							<h4 class="panel-title">
-   								<a href="#question10" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why doesn’t every day have 1440 minutes of data?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question10">Why doesn’t every day have 1440 minutes of data?
    								</a>
    							</h4>
    						</div>
@@ -620,7 +623,7 @@
 
    						<div class="panel-heading" id="heading11">
    							<h4 class="panel-title">
-   								<a href="#question11" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Why are there spikes/gaps in the data?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question11">Why are there spikes/gaps in the data?
    								</a>
    							</h4>
    						</div>
@@ -635,7 +638,7 @@
 
    						<div class="panel-heading" id="heading12">
    							<h4 class="panel-title">
-   								<a href="#question12" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">How do I know what activities are being emulated at a particular time in the house? 
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question12">How do I know what activities are being emulated at a particular time in the house? 
    								</a>
    							</h4>
    						</div>
@@ -645,6 +648,22 @@
 								<br>
 								<br>
 								The status of particular devices is available in the <i>Loads</i> subsystem of the dataset.  Channels that begin with the word “Status?” flag whether particular devices are on or off at a particular minute.  
+  
+   							</div>
+   						</div>
+
+   						<div class="panel-heading" id="heading12">
+   							<h4 class="panel-title">
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question13">What's the difference between the Minute Readings and Hourly Aggregate files? 
+   								</a>
+   							</h4>
+   						</div>
+   						<div id="question13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+   							<div class="panel-body">
+								The data acquisition system collects data every minute. These granular readings are available in the data files with minute readings. Since these files can become large quickly, we aggregated these readings into hourly values to make them more manageable.  
+								<br>
+								<br>
+								The readings were aggregated differently based on the data type. Temperatures were averaged over the hour, the last reading of the hour was used for cumulative energy consumption, and solar insolation was summed over the hour. The aggregation method used for each variable is defined in the Metadata.   
   
    							</div>
    						</div>
@@ -664,7 +683,7 @@
 			<section class="footer">
 			
 				<br>
-				<a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
+				<a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy">Privacy Policy</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#secnot">Security Notice</a> | <a target="_blank" href="http://www.nist.gov/public_affairs/privacy.cfm#accesstate">Accessibility Statement</a> | <a target="_blank" href="mailto:data@nist.gov?subject=Feedback%20on%20Web%20Site%20Template">Send feedback</a>
 			
 			</section>
    		</div>
