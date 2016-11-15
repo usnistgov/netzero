@@ -459,6 +459,10 @@ tr.link_div {
   margin-top: -50px;
 }
 
+#fault_detection {
+  padding-top: 100px;
+}
+
 .footer {
   text-align: center;
 }
