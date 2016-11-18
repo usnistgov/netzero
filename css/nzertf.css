@@ -441,6 +441,28 @@ tr.link_div {
   margin-top: -50px;
 }
 
+#ongoing_research {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#external_research {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#potential_research {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#fault_detection {
+  padding-top: 100px;
+}
+
 .footer {
   text-align: center;
 }
