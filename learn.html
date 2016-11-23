@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NIST NetZero Learn Page</title>
+    <title>NIST Net-Zero Learn Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>NIST Net-Zero - Learn More</title>
     <meta name="description" content="NIST Net-Zero learn page to get tutorials on data usage">
@@ -104,7 +104,7 @@
         <div class="col-xs-12 col-sm-9 content_stuff">
             <section id="Data-From-Subsystem" class="group">
                 <h1>Work with data from a subsystem</h1>
-                    <p>Data from the Net Zero house includes 400+ variables that include readings from instrumentation around the house in one minute increments. Each of these variables, also called channels in NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems:
+                    <p>Data from the net-zero house includes 400+ variables that include readings from instrumentation around the house in one minute increments. Each of these variables, also called channels in NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems:
                     <br>
                     <ul>
                     <li>DHW - Domestic Hot Water</li> 
@@ -124,7 +124,7 @@
         <div id="Data-From-Subsystem-A" class="subgroup">
 
                 <h3>Get the data you need</h3>
-                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net Zero website and import it into R, or you can use the download link directly.</p>
+                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the net-zero website and import it into R, or you can use the download link directly.</p>
                 <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
 <pre><code class="r">
 # load libraries
@@ -133,7 +133,7 @@ library(ggplot2) # plotting library
 # get data
 hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
-                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub System and the name of the channel as SubSystem_Channel.</p>
+                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the subsystem and the name of the channel as SubSystem_Channel.</p>
 
 <pre><code>
 names(hvac)
@@ -224,13 +224,13 @@ ggplot(hvac, aes(x = Timestamp)) +
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>The Net Zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
+                    <p>The net-zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
                     <br>
                     <br>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> Net-Zero data portal</a> and import it into R, or you can use the download link directly like we did below.</p>
+                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> net-zero data portal</a> and import it into R, or you can use the download link directly like we did below.</p>
                     <p>In order to analyze data from channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem, we can import the data using read.csv():</p>
 
 <pre><code class="r">
