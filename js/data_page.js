@@ -48,47 +48,47 @@ var data_file_sizes = {
   "All Subsystems" : {
     hour_size_CSV: "31.9 MB",
     hour_size_JSON: "117.9 MB",
-    minute_size_CSV: "1.6 GB",
+    minute_size_CSV: "1.5 GB",
     minute_size_JSON: "6.6 GB"
   },
   DHW : {
-    hour_size_CSV: "5.5 MB",
-    hour_size_JSON: "17.2 MB",
-    minute_size_CSV: "291 MB",
+    hour_size_CSV: "6 MB",
+    hour_size_JSON: "17 MB",
+    minute_size_CSV: "292 MB",
     minute_size_JSON: "1 GB"
   },
   SHW: {
-    hour_size_CSV: "830.3 KB",
+    hour_size_CSV: "832 KB",
     hour_size_JSON: "2.6 MB",
     minute_size_CSV: "52 MB",
-    minute_size_JSON: "176.2 MB"
+    minute_size_JSON: "177 MB"
   },
   Elec: {
     hour_size_CSV: "9 MB",
-    hour_size_JSON: "40.9 MB",
-    minute_size_CSV: "500.5 MB",
+    hour_size_JSON: "41 MB",
+    minute_size_CSV: "502 MB",
     minute_size_JSON: "2.3 GB"
   },
   HVAC: {
     hour_size_CSV:"1.3 MB",
     hour_size_JSON:"3.8 MB",
-    minute_size_CSV: "64.3 MB",
-    minute_size_JSON: "230.8 MB"
+    minute_size_CSV: "65 MB",
+    minute_size_JSON: "232 MB"
   },
   IndEnv: {
     hour_size_CSV:"5.1 MB",
     hour_size_JSON:"12.6 MB",
-    minute_size_CSV: "269.5 MB",
-    minute_size_JSON: "737.9 MB"    
+    minute_size_CSV: "270.8 MB",
+    minute_size_JSON: "740.3 MB"    
   },
   Load: {
     hour_size_CSV:"4.6 MB",
     hour_size_JSON:"25.6 MB",
-    minute_size_CSV: "241 MB",
+    minute_size_CSV: "242 MB",
     minute_size_JSON: "1.4 GB"    
   },
   Metadata: {
-    hour_size_CSV:"67.1 KB",
+    hour_size_CSV:"67.4 KB",
     hour_size_JSON:"115.1 KB",
     minute_size_CSV: "67.1 KB",
     minute_size_JSON: "115.1 KB"    
@@ -100,28 +100,28 @@ var data_file_sizes = {
     minute_size_JSON: "78.7 MB" 
   },
   OutEnv: {
-    hour_size_CSV:"539.3 KB",
+    hour_size_CSV:"540 KB",
     hour_size_JSON:"1.3 MB",
     minute_size_CSV: "29.1 MB",
-    minute_size_JSON: "92.6 MB"    
+    minute_size_JSON: "93 MB"    
   },
   PV: {
     hour_size_CSV:"4.1 MB",
     hour_size_JSON:"10.1 MB",
-    minute_size_CSV: "217.7 MB",
-    minute_size_JSON: "594.3 MB"     
+    minute_size_CSV: "219 MB",
+    minute_size_JSON: "596 MB"     
   },
   SHW: {
-    hour_size_CSV:"830.3 KB",
+    hour_size_CSV:"832 KB",
     hour_size_JSON:"2.6 MB",
     minute_size_CSV: "52 MB",
-    minute_size_JSON: "176.2 MB" 
+    minute_size_JSON: "177 MB" 
   },
   Vent: {
     hour_size_CSV:"1.9 MB",
     hour_size_JSON:"5.4 MB",
-    minute_size_CSV: "109.4 MB",
-    minute_size_JSON: "331.6 MB" 
+    minute_size_CSV: "110 MB",
+    minute_size_JSON: "333 MB" 
   }
 };
 
