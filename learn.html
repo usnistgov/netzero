@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NIST NetZero Learn Page</title>
+    <title>NIST Net-Zero Learn Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>NIST Net-Zero - Learn More</title>
     <meta name="description" content="NIST Net-Zero learn page to get tutorials on data usage">
@@ -39,7 +39,13 @@
             </div>
             <div class="collapse navbar-collapse parentMenu">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://www.nist.gov/el/nzertf/rrr.cfm" target="blank">Research</a></li>
+                    <li class="dropdown"><a class="dropbtn" href="research.html">Research  <span class="caret"></span></a>
+                        <div class="dropdown-content">
+                            <a href="research.html#ongoing_research">Ongoing Research at NIST</a>
+                            <a href="research.html#external_research">External Research Efforts</a>
+                            <a href="research.html#potential_research">Potential Research Avenues</a>
+                        </div> 
+                    </li>
                     <li class="dropdown"><a class="dropbtn" href="data.html">Data  <span class="caret"></span></a>
                        <div class="dropdown-content">
                             <a href="data.html#data_dictionary">Data Dictionary</a>
@@ -98,27 +104,36 @@
         <div class="col-xs-12 col-sm-9 content_stuff">
             <section id="Data-From-Subsystem" class="group">
                 <h1>Work with data from a subsystem</h1>
-                    <p>Data from the Net Zero house includes 400+ variables that include readings from instrumentation around the house in one minute increments. Each of these variables, also called channels in NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems:
+                    <p>Data from the net-zero house includes 400+ variables that include readings from instrumentation around the house in one minute increments. Each of these variables, also called channels in NIST documentation, provides the readings from one instrument, and the instruments are grouped into subsystems:
                     <br>
-                    <br>
-                    <i>DHW - Domestic Hot Water</i> <i>SHW - Solar Hot Water</i> <i>Load - Electrical and Thermal Loads by equipment and people</i> <i>HVAC - Heating and Cooling System</i> <i>IndEnv - Indoor Environment</i> <i>PV - Photovoltaic</i> <i>OutEnv - Outdoor Environment</i> <i>Vent - Ventilation</i> <i>Elec - Electrical</i> 
+                    <ul>
+                    <li>DHW - Domestic Hot Water</li> 
+                    <li>SHW - Solar Hot Water</li> 
+                    <li>Load - Electrical and Thermal Loads by equipment and people</li> 
+                    <li>HVAC - Heating and Cooling System</li> 
+                    <li>IndEnv - Indoor Environment</li> 
+                    <li>PV - Photovoltaic</li> 
+                    <li>OutEnv - Outdoor Environment</li> 
+                    <li>Vent - Ventilation</li> 
+                    <li>Elec - Electrical</li> 
+                    </ul>
                     </p>
-
-                    <p> This tutorial walks through loading data from a particular subsystem.</p>
+                    <br>
+                    <p>This tutorial walks through loading data from a particular subsystem.</p>
  
         <div id="Data-From-Subsystem-A" class="subgroup">
 
                 <h3>Get the data you need</h3>
-                <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the Net-Zero website and import it into R, or you can use the download link directly.</p>
+                <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the net-zero website and import it into R, or you can use the download link directly.</p>
                 <p>For example, if you wanted to analyze the channels (like the heat pump air flow rate or the total power used by the heat pump) in the HVAC subsystem, you could pull data for that subsystem:</p>        
 <pre><code class="r">
 # load libraries
 library(ggplot2) # plotting library
 
 # get data
-hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+hvac <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
-                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as SubSystem_Channel.</p>
+                <p>Here are the variables included in the HVAC subsystem data. The nomenclature includes the name of the subsystem and the name of the channel as SubSystem_Channel.</p>
 
 <pre><code>
 names(hvac)
@@ -166,17 +181,18 @@ hvac$Timestamp[1:10]
 </code></pre>
 
 <pre><code>
-##  [1] "2015-02-01 00:00:00 CST" "2015-02-01 00:01:00 CST"
-##  [3] "2015-02-01 00:02:00 CST" "2015-02-01 00:03:00 CST"
-##  [5] "2015-02-01 00:04:00 CST" "2015-02-01 00:05:00 CST"
-##  [7] "2015-02-01 00:06:00 CST" "2015-02-01 00:07:00 CST"
-##  [9] "2015-02-01 00:08:00 CST" "2015-02-01 00:09:00 CST"
+##  [1] "2015-02-01 00:00:00 EST" "2015-02-01 00:01:00 EST"
+##  [3] "2015-02-01 00:02:00 EST" "2015-02-01 00:03:00 EST"
+##  [5] "2015-02-01 00:04:00 EST" "2015-02-01 00:05:00 EST"
+##  [7] "2015-02-01 00:06:00 EST" "2015-02-01 00:07:00 EST"
+##  [9] "2015-02-01 00:08:00 EST" "2015-02-01 00:09:00 EST"
 </code></pre>
 
 
             <p>Now we can use the <i>Timestamp</i> variable to create a new categorical &#39;season&#39; variable:</p>
 
 <pre><code>
+# create a variable for seasons
 hvac$season <- "summer"
 hvac$season[hvac$Timestamp < '2015-03-20 12:30:00'] <- "spring"
 hvac$season[hvac$Timestamp > '2015-09-22 10:21:00' & hvac$Timestamp < '2015-12-21 05:44:00'] <- "fall"
@@ -191,7 +207,7 @@ ggplot(hvac, aes(x = season, y = HVAC_HVACTempSupplyAir, fill = season)) +
     
     <img class="image-padding" src="img/NIST-NetZero-HVAC-Temperature-By-Season.png" alt="HVAC temporature by season visualization" width="672">
 
-            <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the return air:</p>
+            <p>Additionally, we can compare readings between channels in the subsystem; this compares the air temperature in the HVAC supply air with the retun air:</p>
 
 <pre><code class="r">
 # Visualize supply and return air temperature  
@@ -208,24 +224,24 @@ ggplot(hvac, aes(x = Timestamp)) +
 
             <section id="Data-By-Timestamp" class="group">
                 <h2>Extract data by Timestamp</h2>
-                    <p>The Net Zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
+                    <p>The net-zero data also includes a few date/time variables like <i>Timestamp</i>, which is the date and timestamp for each reading, <i>DayOfWeek</i> and <i>TimeStampCount</i>.
                     <br>
                     <br>
                     <p>This tutorial walks through filtering data based on time of day, and comparing channel readings by day of the week.</p>
                 <div id="Data-By-Timestamp-A" class="subgroup">
                     <h3>Get the data you need</h3>
-                    <p>If you want to analyze Net-Zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> Net-Zero data portal</a> and import it into R, or you can use the download link directly.</p>
-                    <p>This is how you can analyze the channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem:</p>
+                    <p>If you want to analyze net-zero data for specific subsystems, rather than data for the whole house, you can download the data from the <a href="https://pages.nist.gov/netzero/data.html"> net-zero data portal</a> and import it into R, or you can use the download link directly like we did below.</p>
+                    <p>In order to analyze data from channels (i.e. instrumentation data) in the <i>Electrical</i> subsystem, we can import the data using read.csv():</p>
 
 <pre><code class="r">
 # load libraries
 library(ggplot2) # plotting library
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
-        <p>Here are the first 20 variables included in the <i>Electrical</i> subsystem data. The nomenclature includes the name of the Sub-System and the name of the channel as <i>SubSystem_Channel</i>.</p>
+        <p>There are 144 variables in the <i>Electrical</i> subsystem, here are the first 20 variables. The nomenclature includes the name of the subsystem and the name of the channel as <i>SubSystem_Channel</i>.</p>
 
 <pre><code>
 names(elec)[1:20]
@@ -272,38 +288,38 @@ elec$Timestamp[1:10]
 </code></pre>
 
 <pre><code>
-##  [1] "2015-02-01 00:00:00 CST" "2015-02-01 00:01:00 CST"
-##  [3] "2015-02-01 00:02:00 CST" "2015-02-01 00:03:00 CST"
-##  [5] "2015-02-01 00:04:00 CST" "2015-02-01 00:05:00 CST"
-##  [7] "2015-02-01 00:06:00 CST" "2015-02-01 00:07:00 CST"
-##  [9] "2015-02-01 00:08:00 CST" "2015-02-01 00:09:00 CST"
+##  [1] "2015-02-01 00:00:00 EST" "2015-02-01 00:01:00 EST"
+##  [3] "2015-02-01 00:02:00 EST" "2015-02-01 00:03:00 EST"
+##  [5] "2015-02-01 00:04:00 EST" "2015-02-01 00:05:00 EST"
+##  [7] "2015-02-01 00:06:00 EST" "2015-02-01 00:07:00 EST"
+##  [9] "2015-02-01 00:08:00 EST" "2015-02-01 00:09:00 EST"
 </code></pre>
 
-            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>Timestamp</i> and using the <i>Elec_PowerRPBA8Refrigerator</i> variable (<i>Power - RP BA-8 Refrigerator</i> in the data dictionary).</p>
+            <p>Now we can choose a random day and look at what the refrigerator readings looked like by filtering our data using on <i>Timestamp</i> and using the <i>Elec_PowerRefrigerator</i> variable.</p>
 
 <pre><code>
-ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_PowerRPBA8Refrigerator)) +
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_PowerRefrigerator)) +
   geom_line(alpha = 0.4) +
   ggtitle("Instantaneous Power Consumption by Refrigerator")
 </code></pre>
 
             <img class="image-padding" src="img/NIST-NetZero-Instan-Consump-Refrig.png" width="673" alt="Refrigerator instantaneous consupmption by refrigerator visualization">
 
-               <p>Alternatively, to look at the cumulative energy consumption for that day (which resets once a day), we could visualize the <i>Elec_EnergyRPBA8Refrigerator</i> variable.</p>
+               <p>Alternatively, to look at the cumulative energy consumption for that day (which resets once a day), we could visualize the <i>Elec_EnergyRefrigerator</i> variable.</p>
 
 <pre><code>
-ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_EnergyRPBA8Refrigerator)) +
+ggplot(elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], aes(x = Timestamp, y = Elec_EnergyRefrigerator)) +
   geom_line(alpha = 0.4) +
-  ggtitle("Cumulative Power Consumption by Refrigerator")
+  ggtitle("Cumulative Energy Consumption by Refrigerator")
 </code></pre>
 
             <img class="image-padding" src="img/NIST-NetZero-Cumul-Power-Refrig.png" width="673" alt="Refrigerator Channel cumulative power by day visualization">
 
-            <p>Visualizing instantaneous power consumption by the refrigerator for that day in comparison to the rest of hte week would allow us to identify any spikes in power consumption.</p>
+            <p>Visualizing instaneous power consumption by the refrigerator for that day in comparison to the rest of the week would allow us to see any spikes in power consumption.</p>
 <pre><code>
-ggplot(elec[elec$Timestamp < '2015-10-05 00:00:00' & elec$Timestamp > '2015-09-28 00:00:00',], aes(x = Timestamp , y = Elec_PowerRPBA8Refrigerator)) +
+ggplot(elec[elec$Timestamp < '2015-10-05 00:00:00' & elec$Timestamp > '2015-09-28 00:00:00',], aes(x = Timestamp , y = Elec_PowerRefrigerator)) +
   geom_point(alpha = 0.4) +
-  geom_point(data = elec[elec$Timestamp < '2015-10-02 00:00:00' & elec$Timestamp > '2015-10-01 00:00:00',], alpha = 0.4, color = "blue") +
+  geom_point(data = elec[elec$Timestamp < '2015-10-01 00:00:00' & elec$Timestamp > '2015-09-30 00:00:00',], alpha = 0.4, color = "blue") +
   ggtitle("Refrigerator Channel Readings")   
 </code></pre>
 
@@ -327,7 +343,7 @@ library(ggplot2) # plotting library
 library(reshape2) # library for reshaping data easily
 
 # get data
-elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
+elec <- read.csv("https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv", header=TRUE, na.strings=c("NA", "NULL", "", " "))
 </code></pre>
 
                 </div>
@@ -377,7 +393,7 @@ var converter = new Converter({
     toArrayString: true ## pipes the data to an array
 });
 
-var readStream = require('fs').createReadStream('../All-Subsystems.csv'); ## relative path to where the downloaded CSV is in your repo
+var readStream = require('fs').createReadStream('../All-Subsystems-minute.csv'); ## relative path to where the downloaded CSV is in your repo
 var writeStream = require('fs').createWriteStream('../output.json'); ## relative path to where you would like the JSON file to be made
 
 readStream.pipe(converter).pipe(writeStream);
