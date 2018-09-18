@@ -416,16 +416,16 @@ tr.link_div {
   margin-top: -50px;
 }
 
-#log_revisions_table > th {
+.log_revisions_table > th {
   text-align: left;
 }
 
-#log_revisions_table td {
+.log_revisions_table td {
   padding: 15px;
   border: 1px solid black;
 }
 
-#log_revisions_table tr:nth-child(even) {
+.log_revisions_table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
