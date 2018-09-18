@@ -1,47 +1,48 @@
 #file,bytes,md5hash,sha256hash
-https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv,33470675,009d6ab68562a45fb5d6f30a4bc2e47a,c0e97763c0940c34cc3810bf43708222dd3aea354f4f485908cbf7604826c4a2
-https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.json,123277982,1a4c8428ed96601f9a28eb1bbbc5b0b3,c18ae7aa0e49ea7019f48d8f913fdc84faf36061ea809b3d2c345b68896fa7f6
-https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-minute.csv,1713180987,db91f6b626442055f95bc0ed01605a82,d5d015280e06a4ea1a78e3555c18abb2c78d52ae204fbe78e2a8a67b58e5a05f
-https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-minute.json,7132821319,d0e021896279524811121369ab64719a,156c786479d7ef7eb2e172f84e8e243e4e8900206f73b187b885edcae355d486
-https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv  ,5876268,deb2c69cc38a4c2ed1d00719ba4a2f5d,3957ea3ae4b9467d5d1ca4faacb667a16facbcfa9f8195b7ebb55161a52e346a
-https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.json  ,18063151,206cb3597b9ec656e9a5507bdc1fbf2b,64c74925bcadaa1f214a381020fd055645326cf2d2d44c77e57a75d7d6a03ee3
-https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-minute.csv  ,306599797,db97b0159e1c08eb6000d7872cd90311,9cc4192d76a5b04b52f0faf316a6e588e15e9cd2afb342e2d6b13d677feef06c
-https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-minute.json  ,1055667008,62ac5f43d35eea4fd20ddb6819141795,7776cb6aa29b854a6ced24e918b47db4e7cb92756ef9737551f5c9270b45853c
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-hour.csv ,9543244,115525d26d8020e2dece60ca1f44923d,64b7ae800489bac7438bf88ef93ecc51c23ecae12fe975ce56fa567740dfafe1
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-hour.json ,42988835,a886c7e24f1318001225a92f933a3687,cb756d7661f3194af52f34b088d494509d886d68b2932590e3d958b62f808b2e
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv ,526608806,c1368e17b6b7e5b52e4eaa353a6454b3,b46727ba9b4481f38540bd3a22150ffe09494317c647e2e48131762a40f0a894
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.json ,2554847793,1912551b14ff02aa42da8cb7d33c4759,06ee9277289a44934fe5fee4eadd7dbde07a0869563fa1802ec6f449d5f2afb0
-https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-hour.csv ,1400722,da13db26ff4d95e478d376c1ad66c94d,91d64b5bb4f859d74812dabfcb479b1ce7b23129b2ad3119c56998b753580be3
-https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-hour.json ,4048445,896ad8412f97c1ccda9563a666b3e53c,24316dfac6c958e0868c55d6e24b1fe974285074caecd834d8a9a5f87eadc0ad
-https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv ,67677931,211a73b368e90def90285c338f3a91ca,dd9dd97c70d97edede26f5f6da17410884b3f2b0b382111b1d492fc9ec45ef23
-https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.json ,242760238,c0e9e091a67528f51b2265b5386da439,63f83fe99132679d4f97146fdacb260c70788a47c4ab115ef34764e3e5e752a0
-https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-hour.csv  ,5393535,c17362e4e7f71c977720a0b03787bff5,72480d8adad1aa8a9b0237d5c5d28a84ed7b1ae157f69124cbbed012b70ba5c5
-https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-hour.json  ,13314622,8cd1127c970cc8c1188329a8af2aae98,c3e8f674be5a8c0c15af9845ce2ef9df364ca8531f72b75082c3b3ab59f78876
-https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-minute.csv  ,283967207,28e09c8d9ad2395ed5b44c99edb3267e,1a4a67c72c9c644777e3dca913076b1f39e07ea8fe7451716297a36986d97584
-https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-minute.json  ,776361750,8429eb7b96abc957709f4e0576564f8d,22c956eb89585c6138e9811611dfacd3a2b686c9e7cf0e3c388fe446af339eb2
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-hour.csv ,4828681,8fb233f352d7b107de733c80473104f9,d9068933fdd98deeb4254a959f0accb778b8a1705ea536859aae9634c8f88d32
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-hour.json ,26929718,e1e95e247f298879cd8fed08a5735b5c,7a0d47f83a8e83d8fd11126b9d96d01b6e2b7945b6d84527e42c2baef928fafe
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-minute.csv ,253385049,7e8ac3fbd2f755e2161d1674d6fa9196,5655ab227fe529556bb212ea1111cf0b82c02006668ebb6372bcff7a18fbb8b0
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-minute.json ,1598989850,42e402efb65c035ad6abd4f9ce70ca25,8663bbfd182c735f774e382ede66e604c4872c37144d61325c79b61c42415df8
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-hour.csv,69048,9dab3b09c082ae04a652329ce235e54d,6e2882e7d48966272196cc5175eef50b2773a13c4a76cbee82b92fb3dd4710e8
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-hour.json,117857,9bccf6de6d20b8fedd2cc0181bc94981,df77681e6317ccc125d908b028da7e17ccea11a8ab59ddc2e05ad7177ad32ca4
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-minute.csv,69048,9dab3b09c082ae04a652329ce235e54d,6e2882e7d48966272196cc5175eef50b2773a13c4a76cbee82b92fb3dd4710e8
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-minute.json,117857,9bccf6de6d20b8fedd2cc0181bc94981,df77681e6317ccc125d908b028da7e17ccea11a8ab59ddc2e05ad7177ad32ca4
-https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-hour.csv ,553241,aa670162a2e35477c87c40c47c9505a2,d40b1f48a92f2fba510af90e1dd0eac0689851542a34ba6b009bcafa908ece5d
-https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-hour.json ,1401162,52b51eb161c62cb55d4fb519fd3948d7,1c079d7f9fadd65ae41483e1f59ec3a661b42f6b1b3e063f3e1084cd3e092a09
-https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-minute.csv ,30658839,4d2c7f1f692574f3d0d5c1f27eab7874,919c354a6735f678bdfe4506037572771380d3455b4d45f521fd4fe992b219fa
-https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-minute.json ,97446125,f2bc79d209e22dd1581be75bc0a3e181,d89f5219876a657b238af33e372cd7203451ecbb8bd1209608529695f44fb357
-https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-hour.csv ,4358237,c50aaa8392b58715f51e96a54761028c,79f1f04423ef54c9eff8813a57d5f5228b1036e4953c3b449f0ada749537434d
-https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-hour.json ,10676357,4cbbbb3b4b167fae29a569d40a2dff24,dc9a789904eabcc41811e45fab2c5f66874be06675680af5ee2d8b7e962861eb
-https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-minute.csv ,229358121,8a7771c77b4f17bce1cc60f251cc0057,a696d26359ffdc8668573d6d70b28987c208826f4bf8406f269643a712136617
-https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-minute.json ,625328957,e81b1e393f3de8e3738c664c53d2b987,962d053a9df8f0088f55d1cdaed7a086abcd0b9cdf23b858b11b89e634ca51d0
-https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-hour.csv ,852201,1cf79d085be05c2cae2e45f976c20c95,e2f5b34fb5c5ef81bbf582e302066ca193252b06f22f5c47e406721296fac8c4
-https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-hour.json ,2760325,6edd6085eb17b42787704270322dafa3,d7c9b6441168f1875a401289c1c7699f7cdbe7a75b15be98636aab1800546c72
-https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-minute.csv ,54855670,c471a4c14c42a3b1e8d4ded4b3fe9977,3201a7246cb0ca44b169e6c381d6756b3d437da2bf4e9cbea07fd61f21e89221
-https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-minute.json ,185452898,d8d0c1a90f14a3688adc7703cbfe497f,d26c8379b94585862031ee38e88e85392402f05aa3356f05bf92150ea1c453e8
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-hour.csv ,2062562,05c84df20c20a9b99ac350ef8f294664,c3e7735de776b45b72c4769440cd5aece6258bb5f17fbc73756895cbbc851239
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-hour.json ,5681535,f22f702eae28fb952fbb0c39320d9bb9,ce0ac4a7094e45ef5b890f162f59e358f9afb549b7ad185ede24bb05a5504dde
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-minute.csv ,115346471,7a2e02b80e63db62a5bec4d2965f89ea,d833a66ad179e0f4aa11860b877360465a8926e56d0b2a43442056dfae478cf7
-https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-minute.json ,348869260,7ec37533e2e15a56a4977056a3875938,d97cb49e60b61941601144ee3df9dbd5c802a291ab9dadf75b3e1d3203485902
+https://s3.amazonaws.com/nist-netzero/2014-data-files/All-Subsystems-hour.csv,36858939,cef26a272b223428676f6cdc3ef4e9ef,101a6ea26862254a30f2643d177fe2b346990f0f9d2514a7be0be30e19841b68
+https://s3.amazonaws.com/nist-netzero/2014-data-files/All-Subsystems-minute.csv,2068712619,cc12196930b49211ffba056742d60f17,6661c7dcbc81e4947a8cc2b01f9873223aaabaac036996bc3f8047ea9ddb3a28
+https://s3.amazonaws.com/nist-netzero/2014-data-files/DHW-hour.csv,5401848,6e2e8ac57a60d03a642b915a76c0653f,c16841761e1f2adc626ac01cc50174f45624972b18ed97d26647a855bdd1e1c9
+https://s3.amazonaws.com/nist-netzero/2014-data-files/DHW-minute.csv,308070329,41bce0e4364ea7d8f7b84279b26f6400,a4c33f0c00578e817470b3196e3944e07dcd7ee80ba1cc9925703703c3fbc944
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Elec-hour.csv,12169461,83e8cd39b31e59eeb78555171e926fb9,6f85c7466a95472551eda3110fa52d7f50d5cf9be1d88e2da48c625bb15dc30f
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Elec-minute.csv,707530843,c03e9fb99e7df4fec85db319e855f760,52f0f6b9add87278eee3ac9e57e0998507c4853e2fbe5b4e8cb85a1d44afd0a7
+https://s3.amazonaws.com/nist-netzero/2014-data-files/HVAC-hour.csv,1192144,a57e69ce620c65b161081eb8f8675396,7d31e46a69895c195daedee1f154d855c1a7b7b48338fce336df0d60d051379e
+https://s3.amazonaws.com/nist-netzero/2014-data-files/HVAC-minute.csv,68790230,c1550d536684310fbe91350fa1d06211,695bb13f300b3871b0bdc9c4ac74ba84da7aec89cae0b8aab5c78aff405adc8f
+https://s3.amazonaws.com/nist-netzero/2014-data-files/IndEnv-hour.csv,6094173,46ec63d5fbc88c64f415f9b8ae54ff84,c098f189b9926bec3ef50d2695504482959008d6a54639f29f0a792980e68c0e
+https://s3.amazonaws.com/nist-netzero/2014-data-files/IndEnv-minute.csv,371822929,9566c27fcb5491cd8ea781447caec121,b81e47d38cd8655e3cc6993f37bdfd3b0c7ca61d0617f7289b41469825fb3d90
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Load-hour.csv,7161018,8c967c1444bb3f91f7a2ddd54b81a23b,8de4872c82fe034167b119bcb1d1886732335bb64484ca1cae43496dbb5350ed
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Load-minute.csv,367266298,26e477fbabd9d71dba007e3226ed477b,0889a768e04994fc403aa2b13e2787b536144f158155f37a12f5f64ad6c7600c
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Metadata-hour.csv,60705,8e106385c3ba7633a8a8a930e466166f,9380ed87f1187813b405259beb267aa4abb23431d090b7f2b2baf75c3cb50aec
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Metadata-minute.csv,60697,b80e7e88c05a3abc015bd9406d1c3459,03cf13236bdfcc9b2fd1c03d23b6a51d5c1e0bb22bc08271f6e711e565923b04
+https://s3.amazonaws.com/nist-netzero/2014-data-files/OutEnv-hour.csv,656715,6dc5422ae565e59c4d473fa4b3e70753,8fd4cc9f1140fa3830a07cf5d5cc88db2fd1c4126c3f1cff3d403e4096c9c901
+https://s3.amazonaws.com/nist-netzero/2014-data-files/OutEnv-minute.csv,35938521,6cb0cd31601b9112e7999addd57ed64e,77c525e940885531fb718459ba4755bdd5e3da7761df2c05ae5efa5cf7f1906e
+https://s3.amazonaws.com/nist-netzero/2014-data-files/PV-hour.csv,4370953,aad0f13ddfd1d95caa6e7011d2ac9bb3,51161830309bcc17904fd3c2e64ac696aa203a3d98c5408cfcf346ac0cb2a5af
+https://s3.amazonaws.com/nist-netzero/2014-data-files/PV-minute.csv,268060035,e0d96af0c088d760390efbd1958c92d5,cec5290ceb1fc4e2c3bf36a0e00994eda8ee6f6bf7189ad7d0d2748c538a7634
+https://s3.amazonaws.com/nist-netzero/2014-data-files/SHW-hour.csv,651228,f58598d8f55cf9153be46984c8517aae,7f19b8357255a1bb41113d32aeab311634cc7792741d2f9d0cccb3f22bbe4041
+https://s3.amazonaws.com/nist-netzero/2014-data-files/SHW-minute.csv,44698160,0fa720f152a4695df7a6cd979fb91df7,8ccec934c2f6dc926842c5a9770df778a4e318a0004a926757ef254b5d1b6283
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Vent-hour.csv,983767,817474e6f80b08c2a1c5b970f627dede,a29fc48ff339ff08c8da002e9828790fdf8aa12b2c36db5c4ffa52802b4f2a09
+https://s3.amazonaws.com/nist-netzero/2014-data-files/Vent-minute.csv,66401338,6bc07cf7817f77e4ee5577d043c1be04,96eb91697f043562ce0b437337d932cd3b2d4ecca4cdfc7b2791df1a7d3e60a9
+https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-hour.csv,33470717,894af7052a7a57b118ca3bd72be77dfb,85aeecc5e01f0936b833046cc96bd1ca402af2b997a6f1c7257208024103b04d
+https://s3.amazonaws.com/nist-netzero/2015-data-files/All-Subsystems-minute.csv,1713107408,b0ef0d7beea7acc0547f4c75211776d4,d78c8cf6ea218716cbe91f94bc7896c025ba2ba780968eade143481f0e6a070f
+https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-hour.csv,5876280,081f5e5a18a77fe6b1c8aa28bc6a13c1,20665e3b2e94fbdeebfe070a647379dcf26222c5d16f5248151f933c0a2c8725
+https://s3.amazonaws.com/nist-netzero/2015-data-files/DHW-minute.csv,306588260,3304a4737db60125e54ae1ebdd7f34ea,c94ea6ddc7dc5909814188f03d32dd1decfa277ec1e8bde4f4bb866a23b1662a
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-hour.csv,9543259,1d0a3a43be9cc2b38187f20eee5fa0ad,d1b4493795b5bec764a30e7bd22c7030904f991e968b587fcc99dc93a7341856
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Elec-minute.csv,526580405,23684417e9efb5b0e39c2b540c5f11ea,6bcff1fb4595ffbb9ead4c5fb930ce1baded22696ba74eee74c9a4688731dc4a
+https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-hour.csv,1400707,c72576255d85192ca5e032617d73015a,19ab5c957cc09852832e142383bb56c3343acaddef7e687e38415b42a5ac1ef6
+https://s3.amazonaws.com/nist-netzero/2015-data-files/HVAC-minute.csv,67672522,4243babfdd8a223c84509a7163934baf,e79ec7e5f6da471e457ab81be92777ed8bbea80b038575052b662c8a2dcba0e9
+https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-hour.csv,5393564,36658ac283fed8459ae1b298057b5d6f,0ed2e308a6d574716136418aa9d1fe99e21976febc0942dff0e59e33cfd67c5f
+https://s3.amazonaws.com/nist-netzero/2015-data-files/IndEnv-minute.csv,283958172,00211b6030cbdc40f80c2bde9deb6ec5,713d48b48ee4207c7133e15359db93210ce468999799826d8b1790fabbdcfa76
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-hour.csv,4828681,9f8fcbce2f2783116b2331b5b9a923af,25397745b186058ce9e47e75f8366a6be029d546f0da4b80bf47afada32c8293
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Load-minute.csv,253367462,f2164b6e84ce07caba960f2dcfbbb1df,3986a5930f4964632576129d54120e2dade9ed5bb0312c0cddc168b98a7129a2
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-hour.csv,69048,7959304c9c9c99821ef61743f0280164,ac271b8c0267e00147c7c11e962c1be4a845be598d7b8a4c44ab62103dafadd4
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Metadata-minute.csv,69048,7959304c9c9c99821ef61743f0280164,ac271b8c0267e00147c7c11e962c1be4a845be598d7b8a4c44ab62103dafadd4
+https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-hour.csv,553254,5c0676120251c190b4692b38a6770b74,970bf65ee931cec8555bbd7459ce4f11f5ac898d7a48760e2faf8c4c70fd808a
+https://s3.amazonaws.com/nist-netzero/2015-data-files/OutEnv-minute.csv,30656127,6015e26e0ef3d162910c4a48734e7378,249f26ef6de49077790b41000fd1bdb6d8630a72bc97284f424e880e6a77e038
+https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-hour.csv,4358240,f14b98113268ff11bfa7967a1083d229,e46212fb250d7102849f2ed627b1a86a804790bf9c956fbf458998274b3bc4a3
+https://s3.amazonaws.com/nist-netzero/2015-data-files/PV-minute.csv,229350060,06c2c444c506b318f35509c12f9bd06f,908564590b80423cfdc7ef4ca5b32fa1ef2521cbf2e32c1f97ca89e102f0b1cc
+https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-hour.csv,852176,e9ee82de3aef1d981457315f68a59c3a,6d51d844e9e92916113b0c256747d9f2aa8047274318029cd9ffd340772e84ed
+https://s3.amazonaws.com/nist-netzero/2015-data-files/SHW-minute.csv,54852203,3a35ea1daaeb3c8e5c2485e79734c9ea,019e09c7128348f1198bffc0cb7f0bcf428c4ea78d74b3aecc5be5a7438bcdb6
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-hour.csv,2062572,e60d22f083415cc3edec0ef866c81031,6f5a5c638177570787fb3aa1a3b4b563dd3754a7a35cac294858a4bfac81b393
+https://s3.amazonaws.com/nist-netzero/2015-data-files/Vent-minute.csv,115341821,5d12dc3957b924c41820398306f657c9,7d155d36ddf4ad301acf96c8a1316aca40079fadc2b03e435562c6d7bd1b52d6
+https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year1_ForDataRelease.xlsx,32235,2cfd82fd2d32d5dfe4c649da9cbe9a47,950df4f0016bd1b65164c611ddd46074358e5aae532e1c3153447158446f32de
 https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls,27524,d1ef7f7d0e868550bf66a1586e394044,2b8a8a4d678605e2d646d11f5d5044ec68d83346042a77ff4a19e887d465cdaa
-https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx,106529,0714cefd6bc2b95b61c79d54f1381c55,b253e7abd352c0fab7246c90e7224f53f4cbfc72bacc448e75d9df18c863d3c2
+https://s3.amazonaws.com/nist-netzero/NZERTF-Data-Dictionary.docx,106529,0e420d5c06f546c200e48bb2c70eedcc,b55cf95c07e6fecdea02095b5fe2a255899e27d60fa2dbd573a0bdc1dde9b71d
