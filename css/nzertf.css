@@ -441,6 +441,10 @@ tr.link_div {
   margin-top: -50px;
 }
 
+#data_citation button {
+  margin-bottom: 25px;
+}
+
 #ongoing_research {
   margin-bottom: 80px;
   padding-top: 50px;
