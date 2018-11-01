@@ -112,15 +112,77 @@
 
 	    	<div id="log_revisions">
 	    		<h2>Known Data Gaps and Issues</h2>
-	    		<h4>February 1, 2015 through January 31, 2016</h4>
+				<h3>July 1, 2013 through June 30, 2014</h3>
+				<br>
+
+				<p> During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from July 1, 2013 through June 30, 2014, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset. When data are missing, the data files presented here replace those missing data values with the symbol “NA.” One of the more notable issues occurred between August 2 and 6 when the data acquisition system was not operational and all data are missing.  The most common time for missing data falls at the beginning of each day when the data acquisition system was going through a reset that would often last several minutes. Additionally, sensors would occasionally stop working and present erroneous readings. These readings often resulted in a zero value; such readings have not been removed from the data sets. Users should be mindful to be aware of such possibilities. </p>
+
+				<p>The table provided here lists the known issues by the main subsystems: <i>General, Solar, Ventilation, Indoor Air Quality (IAQ), Heat Pump, and Domestic Hot Water (DHW)</i>. 
+				For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year1_ForDataRelease.xlsx">download the complete Log</a>.
+				Some of the key issues are as follows: </p>
+
+	    		<table class="log_revisions_table">
+					<tr>
+						<td>
+							Data are missing on account of a data acquisition system problem from August 2 through August 6
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							The glycol circulating pump for the solar water heating system was not operational from August 24 through September 3
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							The compressor of the heat pump water heater was not operational from November 25 through December 5 because of a wiring issue on the controller
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Gaithersburg received a larger amount of snowfall than normal during this period; the log shows days when the solar panels were covered with snow
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							The wind sensor gave many errors during the year-long period
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Adjustments were made throughout the test year to the loads to account for defective loads or to better allocate energy consumption of plug loads.  
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Sampling of volatile organic compounds took place throughout the year.  During those times, the blower for the heat pump unit was set to “On” from “Auto” to better mix the air in the house.  
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Replumbing of the piping between the solar water heater and heat pump water heater was done in August to shorten the length of piping between those two tanks.  
+						</td>
+					</tr>
+
+				</table>
+
+	    		<h3>February 1, 2015 through January 31, 2016</h3>
 	    		<br>
 
 	    		<p>During the one-year test phase of the Net-Zero Energy Residential Test Facility (NZERTF) from February 1, 2015 through January 31, 2016, NIST is aware of several data gaps or operational anomalies that are reflected in the dataset.  When data are missing, the data files presented here replace those missing data values with the symbol “NA.”  The most common time for missing data falls at the beginning of each day when the data acquisition system was going through a reset that would often last several minutes.  Additionally, sensors would occasionally stop working and present erroneous readings.  These readings often resulted in a zero value; such readings have not been removed from the data sets.  Users should be mindful to be aware of such possibilities.</p>
 	    		
 
-	    		<p>The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>. For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>. Some of the key issues are as follows: </p>
+				<p>The table provided here lists the known issues by the main subsystems:  <i>General</i>, <i>Solar</i>, <i>Ventilation</i>, <i>Indoor Air Quality (IAQ)</i>, <i>Heat Pump</i>, and <i>Domestic Hot Water (DHW)</i>.
+				For a complete listing please <a href="https://s3.amazonaws.com/nist-netzero/Log_NZERTF_Year2_ForDataRelease.xls">download the complete Log</a>.
+				Some of the key issues are as follows: </p>
 
-	    		<table id="log_revisions_table">
+	    		<table class="log_revisions_table">
 
 		    		<tr>
 		    			<td>
@@ -163,11 +225,187 @@
 	    	</div>
 
 	    	<div id="download_data">
-				<h2>Subsystem Data Downloads (CSV)</h2>
-				<button type="button" class=" active btn btn-primary btn_CSV">CSV</button>
-				<button type="button" class="btn btn-primary btn_JSON">JSON</button>
+
+			  <h2>Subsystem Data Downloads</h2>
+
+			  <div id="year1_data">
+				<h3>Year1</h3>
+
+				<table class="table table-striped download_data_table" id="year1_download_table">
+					<thead>
+						<tr class="data_download_headers">
+							<th>Subsystem Abbreviation</th>
+							<th>Subsystem Definition</th>
+							<th>Data Download (Minute Readings)</th>
+							<th class="col_not_mobile">File Size</th>
+							<th class="col_not_mobile">Data Download (Hourly Aggregate)</th>
+							<th class="col_not_mobile">File Size</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- DHW -->
+						<tr>
+							<td>DHW</td>
+							<td>Domestic Hot Water</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/DHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">293.8 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/DHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">5.2 MB</td>
+						</tr> 	
+
+						<!-- SHW -->
+						<tr>
+							<td>SHW</td>
+							<td>Solar Hot Water</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/SHW-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">42.6 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/SHW-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">636.0 KB</td>
+						</tr> 
+
+						<!-- Load -->
+						<tr>
+							<td>Load</td>
+							<td>Electrical and Thermal Loads <br> by equipment and people</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Load-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">350.3 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Load-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour">6.8 MB</td>
+						</tr> 
+
+						<!-- HVAC -->
+						<tr>
+							<td>HVAC</td>
+							<td>Heating and Cooling System</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/HVAC-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">65.6 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/HVAC-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">1.1 MB</td>
+						</tr>
+
+						<!-- IndEnv -->
+						<tr>
+							<td>IndEnv</td>
+							<td>Indoor Environment</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/IndEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">354.6 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/IndEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">5.8 MB</td>
+						</tr>
+
+						<!-- PV -->
+						<tr>
+							<td>PV</td>
+							<td>Photovoltaic</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/PV-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">255.6 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/PV-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">4.2 MB</td>
+						</tr>
+
+						<!-- OutEnv -->
+						<tr>
+							<td>OutEnv</td>
+							<td>Outdoor Environment</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/OutEnv-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">34.3 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/OutEnv-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">641.3 KB</td>
+						</tr>
+
+						<!-- Vent -->
+						<tr>
+							<td>Vent</td>
+							<td>Ventilation</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Vent-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">63.3 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Vent-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">960.7 KB</td>
+						</tr>
+
+						<!-- Elec -->
+						<tr>
+							<td>Elec</td>
+							<td>Electrical</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Elec-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">674.8 MB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Elec-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">11.6 MB</td>
+
+						<!-- Metadata -->
+						<tr>
+							<td>Metadata</td>
+							<td>Subsystem Info, Measurement Location & Units, Min/Max Values</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Metadata-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">59.3 KB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/Metadata-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">59.3 KB</td>
+						</tr>
+
+						<!-- All Subsystems -->
+						<tr>
+							<td>All Subsystems</td>
+							<td>All Subsystem Data</td>
+							<td class="download_button">
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/All-Subsystems-minute.csv"><div class="button_div mobile_grey_out">CSV</div></a>
+							</td>
+							<td class="col_not_mobile minute_file_size_td">1.9 GB</td>
+							<td class="download_button col_not_mobile">		
+								<a href="https://s3.amazonaws.com/nist-netzero/2014-data-files/All-Subsystems-hour.csv"><div class="button_div">CSV</div></a>
+							</td>
+							<td class="col_not_mobile hour_file_size_td">35.2 MB</td>
+						</tr>
+					</tbody>
+
+				</table>
+			  </div>
+
+			  <br>
+
+			  <div id="year2_data">
+				<h3>Year2</h3>
 				
-				<table class="table table-striped download_data_table" id="download_table">
+				<table class="table table-striped download_data_table" id="year2_download_table">
 					<thead>
 						<tr class="data_download_headers">
 							<th>Subsystem Abbreviation</th>
@@ -403,6 +641,7 @@
 
 					</tbody>
 				</table>
+			  </div>
 	    	</div>
    		
    			<div id="data_faq">
@@ -488,13 +727,17 @@
 
    						<div class="panel-heading" id="heading4">
    							<h4 class="panel-title">
-   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question4">Why does the data start on Feb 1st, 2015? Is there older data?
+   								<a href="#" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#question4">
+									Why are there two data sets
    								</a>
    							</h4>
    						</div>
    						<div id="question4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
    							<div class="panel-body">
-   								To date, there have been two complete years of data collection.  The data presented in the database are for the second year, which started on February 1, 2015.  The first year of data collection occurred between July 1, 2013 and June 30, 2014.  NIST is releasing the second year first because there are a larger number of operational anomalies in the first year’s data.  It is expected that the first year data will be released at a later date.  
+								NIST conducted two year-long tests. Between the two years,
+								modifications were made in an effort to improve the performance of
+								the house. Details on each configuration of the house are provided
+								<a href="https://dx.doi.org/10.6028/jres.122.014">here</a>. 
    							</div>
    						</div>
 
@@ -530,7 +773,7 @@
    						</div>
    						<div id="question7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
    							<div class="panel-body">
-   								The full year of data, in both hourly aggregate and minute readings, can be downloaded from this website in CSV or JSON format by visiting the <a href="#download_data">Download Data</a> table and selecting a subsystem of interest.
+   								The full year of data, in both hourly aggregate and minute readings, can be downloaded from this website in CSV format by visiting the <a href="#download_data">Download Data</a> table and selecting a subsystem of interest.
    							</div>
    						</div>
 
@@ -658,9 +901,10 @@
 
    			<div id="data_citation">
    				<h2>NIST Net-Zero Citation</h2>
-   				<br>
-   				<p id="data_citation_text">Healy, William, A. Hunter Fanney, Brian Dougherty, W. Vance Payne, Tania Ullah, Lisa Ng, and Farhad Omar. “Net Zero Energy Residential Test Facility Instrumented Data; Year 2,” January 2017. doi: <a href="https://doi.org/10.18434/T46W2X">https://doi.org/10.18434/T46W2X</a></p>
-   				<button onclick="copyToClipboard('data_citation_text')">Copy Citation</button>
+   				<p id="data_citation_year2">Healy, William, A. Hunter Fanney, Brian Dougherty, W. Vance Payne, Tania Ullah, Lisa Ng, and Farhad Omar. “Net Zero Energy Residential Test Facility Instrumented Data; Year 2,” January 2017. doi: <a href="https://doi.org/10.18434/T46W2X">https://doi.org/10.18434/T46W2X</a>
+				</p> <button onclick="copyToClipboard('data_citation_year2')">Copy Citation</button>
+				<p id="data_citation_year1">Healy, William, Tzong Hao Chen, Brian Dougherty, A. Hunter Fanney, Tania Ullah, W. Vance Payne, Lisa Ng, and Farhad Omar. “Net Zero Energy Residential Test Facility Instrumented Data; Year 1,” October 2018. doi: <a href="https://doi.org/10.18434/T4/1503134">https://doi.org/10.18434/T4/1503134</a>
+				</p> <button onclick="copyToClipboard('data_citation_year1')">Copy Citation</button>
    			</div>
 
    			<hr \>
@@ -681,6 +925,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/nzertf.js"></script>
-    <script type="text/javascript" src="js/data_page.js"></script>
+	<script type="text/javascript" src="js/data_page.js"></script>
+	<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
 </body>
 </html>
